@@ -1,0 +1,110 @@
+body {
+  background-color: rgb(33, 74, 136);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(54, 78, 114);
+  border: 3px solid white;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px #000000;
+}
+
+nav a {
+  color: whitesmoke;
+  font-size: 25px;
+  margin: 15px;
+}
+
+.mainpage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* .mainpage div {
+  margin: 30px 10px;
+} */
+
+.shelf {
+  text-align: center;
+  margin: 40px 30px;
+  background-color: antiquewhite;
+  width: 400px;
+  height: 850px;
+}
+
+.card {
+  text-align: center;
+  width: 320px;
+  height: 550px;
+  background-color: beige;
+  margin-right: 90px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px #000000;
+}
+
+/* Card Contents */
+
+.spellDetails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-betweencenter-start;
+  margin: 0 10px;
+  padding-bottom: 30px;
+  /* border: 3px inset grey; */
+}
+
+.title {
+  border-bottom: 2px solid grey;
+  margin: 0px auto;
+  width: 200px;
+}
+
+#spellName {
+  margin-bottom: 0px;
+}
+
+#spellLevel {
+  margin-top: 3px;
+  margin-left: 33%;
+}
+
+#spellPlane {
+  margin-top: 3px;
+  margin-left: 5px;
+}
+#spellRitual {
+  margin-top: 3px;
+  margin-left: -26%;
+}
+#spellCost {
+  margin: 0px 35%;
+}
+#spellCastTime {
+  margin-left: 10%;
+}
+#spellRange {
+  margin-left: 13%;
+}
+#spellType {
+  margin-top: 5px;
+  margin-left: 10%;
+}
+#spellComponents {
+  margin-top: 5px;
+  margin-left: 13%;
+}
+#spellDuration {
+  margin: 0px 24%;
+}
+.description {
+  height: 52%;
+  margin: 0 10px;
+  margin-top: -15px;
+  padding: 0 5px;
+  border: 3px outset grey;
+  display: flex;
+  align-items: center;
+}
