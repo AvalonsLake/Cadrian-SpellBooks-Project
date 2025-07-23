@@ -21,7 +21,7 @@ nav a {
 .mainpage {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 /* .mainpage div {
   margin: 30px 10px;
@@ -35,14 +35,33 @@ nav a {
   height: 850px;
 }
 
-.card {
+#arcaneShelf p {
+  margin: 3px;
+  border: 1px solid grey;
+}
+
+#arcaneShelf p:hover {
+  background-color: grey;
+}
+
+.card,
+.backface {
   text-align: center;
-  width: 320px;
+  width: 335px;
   height: 550px;
   background-color: beige;
   margin-right: 90px;
+  margin-left: 90px;
   border-radius: 15px;
   box-shadow: 1px 1px 5px #000000;
+}
+
+.backface {
+  background-image: url(img/Cardback.jpg);
+  background-size: cover;
+}
+
+.card {
 }
 
 /* Card Contents */
