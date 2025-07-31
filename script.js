@@ -147,6 +147,8 @@ let spellDuration = document.getElementById("spellDuration");
 let spellDescription = document.getElementById("spellDescription");
 let arcaneList = document.getElementById("arcaneShelf");
 
+let shelfItem = document.getElementsByName("shelfItem");
+
 function generateShelf() {
   let length = arcane.length;
   for (let i = 0; i <= length; i++) {
@@ -156,6 +158,7 @@ function generateShelf() {
     p.addEventListener("click", () => {
       displayedSpell = p.value;
       displaySpell();
+      flipCard();
     });
     arcaneList.appendChild(p);
   }
@@ -175,7 +178,9 @@ function displaySpell() {
   spellDescription.innerText = arcane[displayedSpell].description;
 }
 
-function flipCard() {}
+function flipCard() {
+  console.log("card flipped!");
+}
 
 displaySpell();
 generateShelf();

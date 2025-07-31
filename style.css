@@ -44,7 +44,23 @@ nav a {
   background-color: grey;
 }
 
-.card,
+/* first attempt */
+
+.card {
+  width: 335px;
+  height: 550px;
+  margin-right: 90px;
+  margin-left: 90px;
+  padding-top: 5px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px #000000;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.frontface,
 .backface {
   text-align: center;
   width: 335px;
@@ -52,8 +68,11 @@ nav a {
   background-color: beige;
   margin-right: 90px;
   margin-left: 90px;
+  padding-top: 5px;
   border-radius: 15px;
   box-shadow: 1px 1px 5px #000000;
+  backface-visibility: hidden;
+  position: absolute;
 }
 
 .backface {
@@ -62,7 +81,13 @@ nav a {
   margin-left: 0px;
 }
 
-.card {
+.flip {
+  transform: rotateY(180deg);
+}
+
+.card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
 }
 
 /* Card Contents */
