@@ -59,6 +59,7 @@ nav a {
 .backface {
   background-image: url(img/Cardback.jpg);
   background-size: cover;
+  margin-left: 0px;
 }
 
 .card {
