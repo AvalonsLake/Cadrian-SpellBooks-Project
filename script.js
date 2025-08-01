@@ -59,8 +59,7 @@ const arcane = [
     target: "",
     components: "V,S",
     duration: "Instantaneous",
-    description:
-      "You are able to manipulate things with your mind. Choose one of the following affects to have happen when to cast the spell:- You purge an area that can fit within 1 cubic foot or 10 square feet of all filth and debris, it can clean a creature's body and clothing.- You wave your hand over inorganic material and form it into a ball that can fit into your hand. The ball has a thin layer of magic that holds it together so you can make a ball out of liquid as well.- You cause an unlocked door or window you can swee within range to open or close. Or you cause a tiny object to move up to 5 feet.- You create a noise or a voice saying up to 5 words at a point within range.",
+    description: `<p style="font-size: smaller;">You are able to manipulate things with your mind. Choose one of the following affects to have happen when to cast the spell:<br/><br/>- You purge an area that can fit within 1 cubic foot or 10 square feet of all filth and debris, it can clean a creature's body and clothing.<br/><br/>- You wave your hand over inorganic material and form it into a ball that can fit into your hand. The ball has a thin layer of magic that holds it together so you can make a ball out of liquid as well.<br/><br/>- You cause an unlocked door or window you can swee within range to open or close. Or you cause a tiny object to move up to 5 feet.<br/>- You create a noise or a voice saying up to 5 words at a point within range.</p>`,
   },
   {
     name: "Siphon",
@@ -175,7 +174,7 @@ function displaySpell() {
   spellType.innerText = `Type: ${arcane[displayedSpell].type}`;
   spellComponents.innerText = `Components: ${arcane[displayedSpell].components}`;
   spellDuration.innerText = `Duration: ${arcane[displayedSpell].duration}`;
-  spellDescription.innerText = arcane[displayedSpell].description;
+  spellDescription.innerHTML = arcane[displayedSpell].description;
 }
 
 function flipCard() {
@@ -192,7 +191,6 @@ function flipCard() {
       backFace.classList.add("flip");
       flipped = true;
       displaySpell();
-      sameCard = this;
     } else {
       card.classList.add("flip");
       backFace.classList.remove("flip");
@@ -201,7 +199,6 @@ function flipCard() {
         backFace.classList.add("flip");
         displaySpell();
       }, 800);
-      sameCard = this;
     }
   }
 }
