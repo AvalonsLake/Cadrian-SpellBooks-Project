@@ -147,7 +147,8 @@ let spellDuration = document.getElementById("spellDuration");
 let spellDescription = document.getElementById("spellDescription");
 let arcaneList = document.getElementById("arcaneShelf");
 
-let shelfItem = document.getElementsByName("shelfItem");
+let flipped = false;
+let sameCard;
 
 function generateShelf() {
   let length = arcane.length;
@@ -157,7 +158,6 @@ function generateShelf() {
     p.value = i;
     p.addEventListener("click", () => {
       displayedSpell = p.value;
-      displaySpell();
       flipCard();
     });
     arcaneList.appendChild(p);
@@ -179,8 +179,40 @@ function displaySpell() {
 }
 
 function flipCard() {
-  console.log("card flipped!");
+  let card = document.querySelector(".frontface");
+  let backFace = document.querySelector(".backface");
+
+  if (this === sameCard) {
+    card.classList.add("flip");
+    backFace.classList.remove("flip");
+    sameCard = "";
+  } else {
+    if ((flipped = false)) {
+      card.classList.remove("flip");
+      backFace.classList.add("flip");
+      flipped = true;
+      displaySpell();
+      sameCard = this;
+    } else {
+      card.classList.add("flip");
+      backFace.classList.remove("flip");
+      setTimeout(() => {
+        card.classList.remove("flip");
+        backFace.classList.add("flip");
+        displaySpell();
+      }, 800);
+      sameCard = this;
+    }
+  }
 }
+
+// function unflip() {
+//   let card = document.querySelector(".card");
+//   let backFace = document.querySelector(".backface");
+
+//   card.classList.add("flip");
+//   backFace.classList.add("flip");
+// }
 
 displaySpell();
 generateShelf();

@@ -51,13 +51,7 @@ nav a {
   height: 550px;
   margin-right: 90px;
   margin-left: 90px;
-  padding-top: 5px;
   border-radius: 15px;
-  box-shadow: 1px 1px 5px #000000;
-  position: relative;
-  transform: scale(1);
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
 }
 
 .frontface,
@@ -67,27 +61,17 @@ nav a {
   height: 550px;
   background-color: beige;
   margin-right: 90px;
-  margin-left: 90px;
-  padding-top: 5px;
   border-radius: 15px;
   box-shadow: 1px 1px 5px #000000;
   backface-visibility: hidden;
   position: absolute;
-}
-
-.backface {
-  background-image: url(img/Cardback.jpg);
-  background-size: cover;
-  margin-left: 0px;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
 }
 
 .flip {
   transform: rotateY(180deg);
-}
-
-.card:active {
-  transform: scale(0.97);
-  transition: transform 0.2s;
 }
 
 /* Card Contents */
