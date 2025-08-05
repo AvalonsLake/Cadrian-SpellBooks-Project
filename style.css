@@ -1,5 +1,6 @@
 body {
   background-color: rgb(33, 74, 136);
+  background-image: url(img/bookshelf.jpg);
 }
 
 nav {
@@ -27,21 +28,50 @@ nav a {
   margin: 30px 10px;
 } */
 
+/* Shelf Settings */
+
 .shelf {
   text-align: center;
   margin: 40px 30px;
   background-color: antiquewhite;
+  /* background-color: rgb(164, 145, 122); */
   width: 400px;
   height: 850px;
+  overflow-y: auto;
 }
 
 #arcaneShelf p {
+  padding: 10px 0px;
   margin: 3px;
   border: 1px solid grey;
 }
 
 #arcaneShelf p:hover {
   background-color: grey;
+}
+
+/* Shelf Filter */
+
+.settings {
+  width: 100%;
+  display: flex;
+}
+
+.planes {
+  width: 100px;
+}
+
+.level {
+  width: 200px;
+}
+
+.misc {
+  width: 100px;
+}
+
+.apply {
+  margin: 10px 0px;
+  align-self: flex-end;
 }
 
 /* first attempt */
