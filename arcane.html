@@ -17,7 +17,8 @@
     <div class="mainpage">
       <div class="shelf">
         <h3>The Shelf / index</h3>
-        <button onclick="showFilter()">Show Filter</button>
+        <button id="showFltr" onclick="showFilter()">Show Filter</button>
+        <button id="hideFltr" onclick="hideFilter()">Hide Filter</button>
         <div class="filter">
           <div class="settings">
             <section class="planes">
@@ -86,9 +87,8 @@
           </div>
 
           <section class="apply">
-            <button>Apply Filter</button>
+            <button>Apply</button>
             <button>Reset</button>
-            <button onclick="hideFilter()">Hide Filter</button>
           </section>
         </div>
         <div id="arcaneShelf"></div>
