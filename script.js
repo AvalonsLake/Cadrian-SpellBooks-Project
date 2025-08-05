@@ -151,6 +151,7 @@ let sameCard;
 
 function generateShelf() {
   let length = arcane.length;
+  hideFilter();
   for (let i = 0; i <= length; i++) {
     let p = document.createElement("p");
     p.innerText = `${arcane[i].plane} Plane --- || --- ${arcane[i].name} --- || --- Level: ${arcane[i].level}`;
@@ -203,13 +204,13 @@ function flipCard() {
   }
 }
 
-// function unflip() {
-//   let card = document.querySelector(".card");
-//   let backFace = document.querySelector(".backface");
+function showFilter() {
+  document.querySelector(".filter").style.display = "";
+}
 
-//   card.classList.add("flip");
-//   backFace.classList.add("flip");
-// }
+function hideFilter() {
+  document.querySelector(".filter").style.display = "none";
+}
 
 displaySpell();
 generateShelf();

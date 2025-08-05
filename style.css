@@ -52,17 +52,26 @@ nav a {
 
 /* Shelf Filter */
 
-.filter {
-  background-color: aliceblue;
-  height: 200px;
+.settings {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.level label {
-  padding: 0px;
-  margin: 0px 5px;
+.planes {
+  width: 100px;
+}
+
+.level {
+  width: 200px;
+}
+
+.misc {
+  width: 100px;
+}
+
+.apply {
+  margin: 10px 0px;
+  align-self: flex-end;
 }
 
 /* first attempt */
