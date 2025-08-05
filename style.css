@@ -59,14 +59,15 @@ nav a {
 .settings {
   width: 100%;
   display: flex;
+  justify-content: center;
 }
 
 .planes {
-  width: 100px;
+  width: 80px;
 }
 
 .level {
-  width: 200px;
+  width: 180px;
 }
 
 .misc {
@@ -75,7 +76,6 @@ nav a {
 
 .apply {
   margin: 10px 0px;
-  align-self: flex-end;
 }
 
 /* first attempt */
