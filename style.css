@@ -113,10 +113,8 @@ nav a {
 .spellDetails {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-betweencenter-start;
   margin: 0 10px;
   padding-bottom: 30px;
-  /* border: 3px inset grey; */
 }
 
 .title {
@@ -138,8 +136,8 @@ nav a {
   margin-top: 3px;
   margin-left: 5px;
 }
-#spellRitual {
-  margin-top: 3px;
+#spellMod {
+  margin-top: 20px;
   margin-left: -26%;
 }
 #spellCost {
@@ -162,6 +160,78 @@ nav a {
 #spellDuration {
   margin: 0px 24%;
 }
+
+/* CSS Grid Layout experiment */
+
+/* .spellDetails {
+  display: grid;
+  grid-template-columns: max-content;
+  gap: 5px;
+  margin: 0 10px;
+  padding-bottom: 30px;
+}
+
+.spellDetails p {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  border-bottom: 2px solid grey;
+  margin: 0px auto;
+  width: 200px;
+}
+
+#spellName {
+  margin-bottom: 0px;
+}
+
+#spellLevel {
+  background-color: aliceblue;
+  grid-row: 1;
+  grid-column: 2;
+}
+
+#spellPlane {
+  background-color: aliceblue;
+  grid-row: 1;
+  grid-column: 4;
+}
+#spellMod {
+  background-color: aliceblue;
+  grid-row: 2;
+  grid-column: 1 / span 5;
+}
+#spellCost {
+  background-color: aliceblue;
+  grid-row: 3;
+  grid-column: 2;
+}
+#spellCastTime {
+  background-color: aliceblue;
+  grid-row: 3;
+  grid-column: 4;
+}
+#spellRange {
+  background-color: aliceblue;
+  grid-row: 4;
+  grid-column: 3;
+}
+#spellType {
+  background-color: aliceblue;
+  grid-row: 5;
+  grid-column: 2;
+}
+#spellComponents {
+  background-color: aliceblue;
+  grid-row: 5;
+  grid-column: 5;
+}
+#spellDuration {
+  background-color: aliceblue;
+  grid-row: 6;
+  grid-column: 3;
+} */
 .description {
   height: 52%;
   margin: 0 10px;
