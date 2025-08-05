@@ -206,10 +206,14 @@ function flipCard() {
 
 function showFilter() {
   document.querySelector(".filter").style.display = "";
+  document.querySelector("#showFltr").style.display = "none";
+  document.querySelector("#hideFltr").style.display = "";
 }
 
 function hideFilter() {
   document.querySelector(".filter").style.display = "none";
+  document.querySelector("#hideFltr").style.display = "none";
+  document.querySelector("#showFltr").style.display = "";
 }
 
 displaySpell();
