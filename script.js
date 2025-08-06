@@ -3,7 +3,7 @@
     name: "",
     level: ,
     plane: ,
-    ritual: ,
+    mod: ,
     manaCost: ,
     castTime: ,
     range: ,
@@ -21,12 +21,12 @@ const arcane = [
     name: "Arcane Blast",
     level: 0,
     plane: "Arcane",
-    ritual: "",
+    mod: "",
     manaCost: 0,
     castTime: "Action",
     range: "60ft",
     type: "Energy",
-    target: "Single Target",
+    target: "single target",
     components: "V,S",
     duration: "Instantaneous",
     description:
@@ -37,7 +37,7 @@ const arcane = [
     level: 0,
     manaCost: 0,
     plane: "Arcane",
-    ritual: "",
+    mod: "",
     castTime: "Action",
     range: "60ft",
     type: "Utility",
@@ -51,7 +51,7 @@ const arcane = [
     name: "Manipulate",
     level: 0,
     plane: "Arcane",
-    ritual: "",
+    mod: "",
     manaCost: 0,
     castTime: "Action",
     range: "30ft",
@@ -65,12 +65,12 @@ const arcane = [
     name: "Siphon",
     level: 0,
     plane: "Eldritch",
-    ritual: "",
+    mod: "",
     manaCost: 0,
     castTime: "Action",
     range: "Touch",
     type: "Utility",
-    target: "Single Target",
+    target: "single target",
     components: "S",
     duration: "Instantaneous",
     description:
@@ -80,7 +80,7 @@ const arcane = [
     name: "Stabalize",
     level: 0,
     plane: "Arcane",
-    ritual: "",
+    mod: "",
     manaCost: 0,
     castTime: "Action",
     range: "Self",
@@ -95,7 +95,7 @@ const arcane = [
     name: "Return",
     level: 0,
     plane: "Arcane",
-    ritual: "",
+    mod: "",
     manaCost: 0,
     castTime: "Action",
     range: "60ft",
@@ -106,12 +106,63 @@ const arcane = [
     description:
       "You stretch out your hand towards an object that you can see within range, that is not being worn or carried, and is no heavier than 5 pounds, and it instantly appears in your hand.",
   },
+  {
+    name: "Minor Missle",
+    level: 1,
+    plane: "Arcane",
+    mod: "(charge)",
+    manaCost: 1,
+    castTime: "Action",
+    range: "120 feet",
+    type: "Energy",
+    target: "single target",
+    components: "V,S",
+    duration: "instantaneous",
+    description: `<p style="font-size: smaller;">You create a missile of force and launch it toward a creature within range. Make an Arcane Attack, on a hit you deal (5)2d4 + your Mind Score force damage. <br /> <br />
+
+Empowering: When you empower this spell, you increase the damage by (3)1d4 for each mana used to empower the spell. <br /> <br />
+
+Charge: When you charge this spell you must maintain concentration on the spell until you release it. You can charge the spell for a number of rounds equal to half your Mind Score, and for each round you charge the spell you must expend the necessary mana to cast the spell, and the damage increases by (7)3d4 + your Mind Score each round.</p>`,
+  },
+  {
+    name: "Picture",
+    level: 1,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 1,
+    castTime: "1 Minute",
+    range: "Touch",
+    type: "Utility",
+    target: "single target",
+    components: "S,M (ink)",
+    duration: "Instantaneous",
+    description: `Taking the paint, you pour it over the paper/canvas/skin, when you touch the paper/canvas/skin while focusing on a memory or image that you have seen, the paint creates the thing that you imagined and leaves a lasting picture on the paper/canvas/skin. <br /> <br />
+
+This spell can be used with magical ink to create moving pictures of a memory, or magical tattoos that can be used.`,
+  },
+  {
+    name: "Psychic Shard",
+    level: 1,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 1,
+    castTime: "Action",
+    range: "30 feet",
+    type: "Energy, Debuff",
+    target: "single target",
+    components: "V,S",
+    duration: "Instantaneous",
+    description: `You drive a shard of pure psychic energy into a creatures mind within range. Make an Arcane Attack, on a hit you deal (7)2d6 + your Mind Score psychic damage. The creature has disadvantage on their next Mind Save before the beginning of your next turn.<br /> <br />
+
+Empowering: When you empower this spell, you increase the damage by (3)1d6 for each mana used to empower the spell.`,
+  },
 ];
 const dragon = [];
 const space = [];
 const time = [];
 const ethereal = [];
 const eldritch = [];
+const material = [];
 
 // Faith Spells
 const heavens = [];
@@ -132,11 +183,12 @@ const shadowLands = [];
 let aura = [];
 let featuredSpell;
 let displayedSpell = 0;
+let currentArray;
 
 let spellName = document.getElementById("spellName");
 let spellLevel = document.getElementById("spellLevel");
 let spellPlane = document.getElementById("spellPlane");
-let spellRitual = document.getElementById("spellRitual");
+let spellMod = document.getElementById("spellMod");
 let spellCost = document.getElementById("spellCost");
 let spellCastTime = document.getElementById("spellCastTime");
 let spellRange = document.getElementById("spellRange");
@@ -147,7 +199,9 @@ let spellDescription = document.getElementById("spellDescription");
 let arcaneList = document.getElementById("arcaneShelf");
 
 let flipped = false;
-let sameCard;
+let sameCard = '';
+
+// Shelf Functions
 
 function generateShelf() {
   let length = arcane.length;
@@ -157,52 +211,84 @@ function generateShelf() {
     p.innerText = `${arcane[i].plane} Plane --- || --- ${arcane[i].name} --- || --- Level: ${arcane[i].level}`;
     p.value = i;
     p.addEventListener("click", () => {
-      displayedSpell = p.value;
-      flipCard();
+      displayedSpell = p.value
+      p.setAttribute('value', 'p.value');
+      currentArray = "arcane";
+      if (sameCard === '' || sameCard != p.value){
+        flipCard();
+        sameCard = p.value
+      } else {
+        resetCard()
+        sameCard = ''
+      }
+      
     });
     arcaneList.appendChild(p);
   }
 }
 
+// Card & Display Functions
+
 function displaySpell() {
-  spellName.innerText = arcane[displayedSpell].name;
-  spellLevel.innerText = `Level: ${arcane[displayedSpell].level}`;
-  spellPlane.innerText = arcane[displayedSpell].plane;
-  spellRitual.innerText = arcane[displayedSpell].ritual;
-  spellCost.innerText = `Mana Cost: ${arcane[displayedSpell].manaCost}`;
-  spellCastTime.innerText = `Cast Time: ${arcane[displayedSpell].castTime}`;
-  spellRange.innerText = `Range: ${arcane[displayedSpell].range}`;
-  spellType.innerText = `Type: ${arcane[displayedSpell].type}`;
-  spellComponents.innerText = `Components: ${arcane[displayedSpell].components}`;
-  spellDuration.innerText = `Duration: ${arcane[displayedSpell].duration}`;
-  spellDescription.innerHTML = arcane[displayedSpell].description;
+  if (currentArray === "arcane") {
+    spellName.innerText = arcane[displayedSpell].name;
+    spellLevel.innerText = `Level ${arcane[displayedSpell].level}`;
+    spellPlane.innerText = arcane[displayedSpell].plane;
+    spellMod.innerText = arcane[displayedSpell].mod;
+    spellCost.innerText = `Mana Cost: ${arcane[displayedSpell].manaCost}`;
+    spellCastTime.innerText = `Cast Time: ${arcane[displayedSpell].castTime}`;
+    spellRange.innerText = `Range: ${arcane[displayedSpell].range}`;
+    spellType.innerText = `Type: ${arcane[displayedSpell].type}`;
+    spellComponents.innerText = `Components: ${arcane[displayedSpell].components}`;
+    spellDuration.innerText = `Duration: ${arcane[displayedSpell].duration}`;
+    spellDescription.innerHTML = arcane[displayedSpell].description;
+  }
+  if (currentArray === "dragon") {
+    spellName.innerText = dragon[displayedSpell].name;
+    spellLevel.innerText = `Level: ${arcane[displayedSpell].level}`;
+    spellPlane.innerText = dragon[displayedSpell].plane;
+    spellMod.innerText = dragon[displayedSpell].mod;
+    spellCost.innerText = `Mana Cost: ${dragon[displayedSpell].manaCost}`;
+    spellCastTime.innerText = `Cast Time: ${dragon[displayedSpell].castTime}`;
+    spellRange.innerText = `Range: ${dragon[displayedSpell].range}`;
+    spellType.innerText = `Type: ${dragon[displayedSpell].type}`;
+    spellComponents.innerText = `Components: ${dragon[displayedSpell].components}`;
+    spellDuration.innerText = `Duration: ${dragon[displayedSpell].duration}`;
+    spellDescription.innerHTML = dragon[displayedSpell].description;
+  }
 }
 
 function flipCard() {
-  let card = document.querySelector(".frontface");
+let card = document.querySelector(".frontface");
   let backFace = document.querySelector(".backface");
 
-  if (this === sameCard) {
-    card.classList.add("flip");
-    backFace.classList.remove("flip");
-    sameCard = "";
-  } else {
-    if ((flipped = false)) {
+  if ((flipped = false)) {
       card.classList.remove("flip");
       backFace.classList.add("flip");
       flipped = true;
       displaySpell();
-    } else {
-      card.classList.add("flip");
-      backFace.classList.remove("flip");
-      setTimeout(() => {
-        card.classList.remove("flip");
-        backFace.classList.add("flip");
-        displaySpell();
-      }, 800);
-    }
+  } else {
+    card.classList.add("flip");
+    backFace.classList.remove("flip");
+    setTimeout(() => {
+      card.classList.remove("flip");
+      backFace.classList.add("flip");
+      displaySpell();
+    }, 500);
   }
+  
 }
+
+function resetCard() {
+  let card = document.querySelector(".frontface");
+  let backFace = document.querySelector(".backface");
+
+      card.classList.add("flip");
+    backFace.classList.remove("flip");
+    sameCard = "";
+}
+
+// Filter Functions
 
 function showFilter() {
   document.querySelector(".filter").style.display = "";
