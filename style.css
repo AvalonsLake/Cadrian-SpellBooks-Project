@@ -24,9 +24,38 @@ nav a {
   align-items: center;
   justify-content: center;
 }
-/* .mainpage div {
-  margin: 30px 10px;
-} */
+
+@font-face {
+  font-family: greatVibes;
+  src: url('/Fonts/Caveat-Regular.ttf');
+}
+@font-face {
+  font-family: chopinScript;
+  src: url('/Fonts/ChopinScript.ttf');
+}
+
+.notice {
+  background-color: rgb(54, 78, 114);
+  text-align: center;
+  height: 590px;
+  width: 500px;
+  color:beige;
+  margin: 200px auto;
+  padding: 5px 15px;
+  border-radius: 8%;
+  font-size: 23px;
+  font-family: greatVibes
+  ;
+}
+
+.notice p {
+  margin: 10px;
+}
+
+.signature {
+  font-family: chopinScript;
+  font-size: 40px;
+}
 
 /* Shelf Settings */
 

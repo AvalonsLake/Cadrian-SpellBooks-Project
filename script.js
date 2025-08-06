@@ -126,7 +126,7 @@ Charge: When you charge this spell you must maintain concentration on the spell 
   },
   {
     name: "Picture",
-    level: "Level 1",
+    level: 1,
     plane: "Arcane",
     mod: "",
     manaCost: 1,
@@ -142,7 +142,7 @@ This spell can be used with magical ink to create moving pictures of a memory, o
   },
   {
     name: "Psychic Shard",
-    level: "Level 1",
+    level: 1,
     plane: "Arcane",
     mod: "",
     manaCost: 1,
@@ -152,7 +152,7 @@ This spell can be used with magical ink to create moving pictures of a memory, o
     target: "single target",
     components: "V,S",
     duration: "Instantaneous",
-    description: `You drive a shard of pure psychic energy into a creature’s mind within range. Make an Arcane Attack, on a hit you deal (7)2d6 + your Mind Score psychic damage. The creature has disadvantage on their next Mind Save before the beginning of your next turn.<br /> <br />
+    description: `You drive a shard of pure psychic energy into a creatures mind within range. Make an Arcane Attack, on a hit you deal (7)2d6 + your Mind Score psychic damage. The creature has disadvantage on their next Mind Save before the beginning of your next turn.<br /> <br />
 
 Empowering: When you empower this spell, you increase the damage by (3)1d6 for each mana used to empower the spell.`,
   },
@@ -199,7 +199,7 @@ let spellDescription = document.getElementById("spellDescription");
 let arcaneList = document.getElementById("arcaneShelf");
 
 let flipped = false;
-let sameCard;
+let sameCard = '';
 
 // Shelf Functions
 
@@ -211,9 +211,17 @@ function generateShelf() {
     p.innerText = `${arcane[i].plane} Plane --- || --- ${arcane[i].name} --- || --- Level: ${arcane[i].level}`;
     p.value = i;
     p.addEventListener("click", () => {
-      displayedSpell = p.value;
+      displayedSpell = p.value
+      p.setAttribute('value', 'p.value');
       currentArray = "arcane";
-      flipCard();
+      if (sameCard === '' || sameCard != p.value){
+        flipCard();
+        sameCard = p.value
+      } else {
+        resetCard()
+        sameCard = ''
+      }
+      
     });
     arcaneList.appendChild(p);
   }
@@ -224,7 +232,7 @@ function generateShelf() {
 function displaySpell() {
   if (currentArray === "arcane") {
     spellName.innerText = arcane[displayedSpell].name;
-    spellLevel.innerText = `Level: ${arcane[displayedSpell].level}`;
+    spellLevel.innerText = `Level ${arcane[displayedSpell].level}`;
     spellPlane.innerText = arcane[displayedSpell].plane;
     spellMod.innerText = arcane[displayedSpell].mod;
     spellCost.innerText = `Mana Cost: ${arcane[displayedSpell].manaCost}`;
@@ -251,29 +259,33 @@ function displaySpell() {
 }
 
 function flipCard() {
-  let card = document.querySelector(".frontface");
+let card = document.querySelector(".frontface");
   let backFace = document.querySelector(".backface");
 
-  if (this === sameCard) {
-    card.classList.add("flip");
-    backFace.classList.remove("flip");
-    sameCard = "";
-  } else {
-    if ((flipped = false)) {
+  if ((flipped = false)) {
       card.classList.remove("flip");
       backFace.classList.add("flip");
       flipped = true;
       displaySpell();
-    } else {
-      card.classList.add("flip");
-      backFace.classList.remove("flip");
-      setTimeout(() => {
-        card.classList.remove("flip");
-        backFace.classList.add("flip");
-        displaySpell();
-      }, 800);
-    }
+  } else {
+    card.classList.add("flip");
+    backFace.classList.remove("flip");
+    setTimeout(() => {
+      card.classList.remove("flip");
+      backFace.classList.add("flip");
+      displaySpell();
+    }, 500);
   }
+  
+}
+
+function resetCard() {
+  let card = document.querySelector(".frontface");
+  let backFace = document.querySelector(".backface");
+
+      card.classList.add("flip");
+    backFace.classList.remove("flip");
+    sameCard = "";
 }
 
 // Filter Functions
