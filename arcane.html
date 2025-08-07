@@ -24,9 +24,19 @@
             <section class="planes">
               <h3><u>Planes</u></h3>
               <label for="arcane">Arcane</label>
-              <input type="checkbox" id="arcane" name="arcane" />
+              <input
+                type="checkbox"
+                id="arcane"
+                name="arcane"
+                onclick="arcaneFilter()"
+              />
               <label for="dragon">Dragon</label>
-              <input type="checkbox" id="dragon" name="dragon" />
+              <input
+                type="checkbox"
+                id="dragon"
+                name="dragon"
+                onclick="dragonFilter()"
+              />
               <label for="space">Space</label>
               <input type="checkbox" id="space" name="space" />
               <label for="time">Time</label>
@@ -37,7 +47,7 @@
               <input type="checkbox" id="eldritch" name="eldritch" />
             </section>
 
-            <section class="level">
+            <!-- <section class="level">
               <h3><u>Levels</u></h3>
               <label for="level0">Level 0</label>
               <input type="checkbox" id="level0" name="level0" />
@@ -77,13 +87,7 @@
                 <option value="Action">Arcane</option>
                 <option value="Bonus-Action">Bonus Action</option>
               </select>
-              <label for="verbal">Verbal</label>
-              <input type="checkbox" id="verbal" name="verbal" />
-              <label for="somatic">Somatic</label>
-              <input type="checkbox" id="somatic" name="somatic" />
-              <label for="material">Material</label>
-              <input type="checkbox" id="material" name="material" />
-            </section>
+            </section> -->
           </div>
 
           <section class="apply">
@@ -92,6 +96,7 @@
           </section>
         </div>
         <div id="arcaneShelf"></div>
+        <div id="dragonShelf"></div>
       </div>
 
       <div class="card">

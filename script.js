@@ -59,7 +59,11 @@ const arcane = [
     target: "",
     components: "V,S",
     duration: "Instantaneous",
-    description: `<p style="font-size: smaller;">You are able to manipulate things with your mind. Choose one of the following affects to have happen when to cast the spell:<br/><br/>- You purge an area that can fit within 1 cubic foot or 10 square feet of all filth and debris, it can clean a creature's body and clothing.<br/><br/>- You wave your hand over inorganic material and form it into a ball that can fit into your hand. The ball has a thin layer of magic that holds it together so you can make a ball out of liquid as well.<br/><br/>- You cause an unlocked door or window you can swee within range to open or close. Or you cause a tiny object to move up to 5 feet.<br/>- You create a noise or a voice saying up to 5 words at a point within range.</p>`,
+    description: `<p style="margin-top: 55%;">You are able to manipulate things with your mind. Choose one of the following affects to have happen when to cast the spell:<br/><br/>
+    - You purge an area that can fit within 1 cubic foot or 10 square feet of all filth and debris, it can clean a creature's body and clothing.<br/><br/>
+    - You wave your hand over inorganic material and form it into a ball that can fit into your hand. The ball has a thin layer of magic that holds it together so you can make a ball out of liquid as well.<br/><br/>
+    - You cause an unlocked door or window you can swee within range to open or close. Or you cause a tiny object to move up to 5 feet.<br/><br/>
+    - You create a noise or a voice saying up to 5 words at a point within range.</p>`,
   },
   {
     name: "Siphon",
@@ -118,7 +122,7 @@ const arcane = [
     target: "single target",
     components: "V,S",
     duration: "instantaneous",
-    description: `<p style="font-size: smaller;">You create a missile of force and launch it toward a creature within range. Make an Arcane Attack, on a hit you deal (5)2d4 + your Mind Score force damage. <br /> <br />
+    description: `<p style="margin-top:30%;">You create a missile of force and launch it toward a creature within range. Make an Arcane Attack, on a hit you deal (5)2d4 + your Mind Score force damage. <br /> <br />
 
 Empowering: When you empower this spell, you increase the damage by (3)1d4 for each mana used to empower the spell. <br /> <br />
 
@@ -157,7 +161,23 @@ This spell can be used with magical ink to create moving pictures of a memory, o
 Empowering: When you empower this spell, you increase the damage by (3)1d6 for each mana used to empower the spell.`,
   },
 ];
-const dragon = [];
+const dragon = [
+  {
+    name: "Dragon Fists",
+    level: 1,
+    plane: "Dragon",
+    mod: "",
+    manaCost: 1,
+    castTime: "Bonus Action",
+    range: "Self",
+    type: "Buff",
+    target: "single target",
+    components: "S",
+    duration: "1 Minute Concentration",
+    description: `Your next unarmed strike that hits before the spell ends deals an additional (6)1d12 damage, choose from: acid, ice, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder damage <br/> <br/>
+    Empowering: When you empower this spell, you increase the damage by (6)1d12 for each mana used to empower the spell`,
+  },
+];
 const space = [];
 const time = [];
 const ethereal = [];
@@ -197,33 +217,58 @@ let spellComponents = document.getElementById("spellComponents");
 let spellDuration = document.getElementById("spellDuration");
 let spellDescription = document.getElementById("spellDescription");
 let arcaneList = document.getElementById("arcaneShelf");
+let dragonList = document.getElementById("dragonShelf");
 
 let flipped = false;
-let sameCard = '';
+let sameCard = "";
 
 // Shelf Functions
 
 function generateShelf() {
-  let length = arcane.length;
   hideFilter();
-  for (let i = 0; i <= length; i++) {
+  generateArcane();
+  generateDragon();
+}
+
+function generateArcane() {
+  let length = arcane.length;
+  for (let i = 0; i < length; i++) {
     let p = document.createElement("p");
     p.innerText = `${arcane[i].plane} Plane --- || --- ${arcane[i].name} --- || --- Level: ${arcane[i].level}`;
     p.value = i;
     p.addEventListener("click", () => {
-      displayedSpell = p.value
-      p.setAttribute('value', 'p.value');
+      displayedSpell = p.value;
       currentArray = "arcane";
-      if (sameCard === '' || sameCard != p.value){
+      if (sameCard === "" || sameCard != p.value) {
         flipCard();
-        sameCard = p.value
+        sameCard = p.value;
       } else {
-        resetCard()
-        sameCard = ''
+        resetCard();
+        sameCard = "";
       }
-      
     });
     arcaneList.appendChild(p);
+  }
+}
+
+function generateDragon() {
+  let length = dragon.length;
+  for (let i = 0; i < length; i++) {
+    let p = document.createElement("p");
+    p.innerText = `${dragon[i].plane} Plane --- || --- ${dragon[i].name} --- || --- Level: ${dragon[i].level}`;
+    p.value = i;
+    p.addEventListener("click", () => {
+      displayedSpell = p.value;
+      currentArray = "dragon";
+      if (sameCard === "" || sameCard != p.value) {
+        flipCard();
+        sameCard = p.value;
+      } else {
+        resetCard();
+        sameCard = "";
+      }
+    });
+    dragonList.appendChild(p);
   }
 }
 
@@ -259,14 +304,14 @@ function displaySpell() {
 }
 
 function flipCard() {
-let card = document.querySelector(".frontface");
+  let card = document.querySelector(".frontface");
   let backFace = document.querySelector(".backface");
 
   if ((flipped = false)) {
-      card.classList.remove("flip");
-      backFace.classList.add("flip");
-      flipped = true;
-      displaySpell();
+    card.classList.remove("flip");
+    backFace.classList.add("flip");
+    flipped = true;
+    displaySpell();
   } else {
     card.classList.add("flip");
     backFace.classList.remove("flip");
@@ -276,16 +321,15 @@ let card = document.querySelector(".frontface");
       displaySpell();
     }, 500);
   }
-  
 }
 
 function resetCard() {
   let card = document.querySelector(".frontface");
   let backFace = document.querySelector(".backface");
 
-      card.classList.add("flip");
-    backFace.classList.remove("flip");
-    sameCard = "";
+  card.classList.add("flip");
+  backFace.classList.remove("flip");
+  sameCard = "";
 }
 
 // Filter Functions
@@ -300,6 +344,27 @@ function hideFilter() {
   document.querySelector(".filter").style.display = "none";
   document.querySelector("#hideFltr").style.display = "none";
   document.querySelector("#showFltr").style.display = "";
+}
+
+let filterArcane = false;
+let filterDragon = false;
+function arcaneFilter() {
+  if (filterArcane === false) {
+    arcaneList.style.display = "none";
+    filterArcane = true;
+  } else {
+    arcaneList.style.display = "";
+    filterArcane = false;
+  }
+}
+function dragonFilter() {
+  if (filterDragon === false) {
+    dragonList.style.display = "none";
+    filterDragon = true;
+  } else {
+    dragonList.style.display = "";
+    filterDragon = false;
+  }
 }
 
 displaySpell();
