@@ -27,11 +27,11 @@ nav a {
 
 @font-face {
   font-family: greatVibes;
-  src: url('/Fonts/Caveat-Regular.ttf');
+  src: url("/Fonts/Caveat-Regular.ttf");
 }
 @font-face {
   font-family: chopinScript;
-  src: url('/Fonts/ChopinScript.ttf');
+  src: url("/Fonts/ChopinScript.ttf");
 }
 
 .notice {
@@ -39,13 +39,12 @@ nav a {
   text-align: center;
   height: 590px;
   width: 500px;
-  color:beige;
+  color: beige;
   margin: 200px auto;
   padding: 5px 15px;
   border-radius: 8%;
   font-size: 23px;
-  font-family: greatVibes
-  ;
+  font-family: greatVibes;
 }
 
 .notice p {
@@ -76,6 +75,16 @@ nav a {
 }
 
 #arcaneShelf p:hover {
+  background-color: grey;
+}
+
+#dragonShelf p {
+  padding: 10px 0px;
+  margin: 3px;
+  border: 1px solid grey;
+}
+
+#dragonShelf p:hover {
   background-color: grey;
 }
 
@@ -269,4 +278,5 @@ nav a {
   border: 3px outset grey;
   display: flex;
   align-items: center;
+  overflow-y: auto;
 }
