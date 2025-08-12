@@ -160,6 +160,90 @@ This spell can be used with magical ink to create moving pictures of a memory, o
 
 Empowering: When you empower this spell, you increase the damage by (3)1d6 for each mana used to empower the spell.`,
   },
+  {
+    name: "Retrieve Memory",
+    level: 1,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 1,
+    castTime: "Action",
+    range: "Touch",
+    type: "Utility",
+    target: "single target",
+    components: `S,M <br/>(a bowl of water or an object)`,
+    duration: "Until Dismissed",
+    description: `<p style="margin-top:30%;">You withdraw a memory from your mind, or the mind of a willing creature, and place it within a bowl of water, or bind it to an object. When you do this you give a password to trigger the memory. When the password is said while touching the water or object, the creature experiences the memory as if in the person’s body. Once the memory is done the creature returns to their own body. While a creature is in the memory their body becomes paralyzed until they return.<br/><br/>
+
+Alternatively, instead of withdrawing a memory, you can give the creature advantage on skill checks used to recall details about their memories for 1 minute.</p>`,
+  },
+  {
+    name: "Scribe",
+    level: 1,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 1,
+    castTime: "Bonus Action",
+    range: "Touch",
+    type: "Utility",
+    target: "",
+    components: `V,S,M <br/>(quill, ink and paper)`,
+    duration: "1 Hour",
+    description: `<p style="margin-top:100%;">You touch a quill and imbue it with magic so that it can move on its own. The quill writes whatever you tell it, or whatever is said within 60 feet of it. Alternatively you can spend the full hour to create a common technique scroll for something you are at least level 2 in (you only need to be proficient in armor or techniques to make a scroll for them). <br/><br/>
+
+Empowering: When you empower this spell you increase the rarity of the technique scroll you scribe. You must be the correct level in the thing you are making a scroll for, and spend the necessary time and mana to make the scroll. The rarity, the level you must be in the thing you are making a scroll for, the time it takes and the mana needed are as follows:<br/><br/>
+
+Common: must be level 2, spend 1 hour and 1 mana.<br/>
+Uncommon: must be level 4, spend 2 hours and 3 mana.<br/>
+Rare: must be level 6, spend 4 hours and 5 mana.<br/>
+Epic: must be level 8, spend 6 hours and 7 mana.<br/>
+Legendary: must be level 10, spend 8 hours and 9 mana.<br/></p>`,
+  },
+  {
+    name: "Speed Read",
+    level: 1,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 1,
+    castTime: "Action",
+    range: "Self",
+    type: "Utility",
+    target: "",
+    components: `V`,
+    duration: "1 Hour",
+    description: `You speed up your mind to comprehend text faster. For the duration you are able to read a page full of words in one second. As you read, the pages magically lift and turn themselves, moving at the rate you are reading. If used while reading a technique scroll you gain an additional skill point. Magic text and hidden text cannot be comprehended while using this spell.`,
+  },
+  {
+    name: `Tal’Dar’s Stunning Missiles`,
+    level: 1,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 1,
+    castTime: "Action",
+    range: "60ft",
+    type: "Debuff",
+    target: "multiple",
+    components: `S`,
+    duration: "instantaneous",
+    description: `<p style="margin-top:62%;">You create three darts of stunning energy. Each dart hits a creature of your choice that you can see within range. The darts all strike simultaneously and you can direct them to hit one creature or several.<br/><br/>
+
+When a dart strikes a creature it must make a Durability Save against your Arcane DC or be stunned until the beginning of their next turn. If two darts strike the same creature your Arcane DC has a +2 added to it. If three darts strike the same creature your Arcane DC has a +5 added to it; if the target[s] fail their Durability Save by 5 or more they become stunned for 1 minute. Every time they take damage they can make a Durability Save against your normal Arcane DC, ending the stunned effect on a success.<br/><br/>
+
+Empowering: When you empower this spell, you increase the number of darts by 1 for each mana used to empower the spell.</p>`,
+  },
+  {
+    name: "Unlock",
+    level: 1,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 1,
+    castTime: "Bonus Action",
+    range: "15ft",
+    type: "Utility",
+    target: "",
+    components: `V,S`,
+    duration: "instantaneous",
+    description: `You point at a lock that isn’t magically enhanced, and it unlocks. If the lock is magically enhanced you can make an Arcane Attack against the locks DC, on a success the object is unlocked.`,
+  },
 ];
 const dragon = [
   {
@@ -284,7 +368,7 @@ function displaySpell() {
     spellCastTime.innerText = `Cast Time: ${arcane[displayedSpell].castTime}`;
     spellRange.innerText = `Range: ${arcane[displayedSpell].range}`;
     spellType.innerText = `Type: ${arcane[displayedSpell].type}`;
-    spellComponents.innerText = `Components: ${arcane[displayedSpell].components}`;
+    spellComponents.innerHTML = `Components: ${arcane[displayedSpell].components}`;
     spellDuration.innerText = `Duration: ${arcane[displayedSpell].duration}`;
     spellDescription.innerHTML = arcane[displayedSpell].description;
   }
