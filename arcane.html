@@ -25,55 +25,173 @@
               <h3><u>Planes</u></h3>
               <label for="arcane">Arcane</label>
               <input
+                class="checkbox"
                 type="checkbox"
                 id="arcane"
                 name="arcane"
                 onclick="arcaneFilter()"
+                checked
               />
               <label for="dragon">Dragon</label>
               <input
+                class="checkbox"
                 type="checkbox"
                 id="dragon"
                 name="dragon"
                 onclick="dragonFilter()"
+                checked
               />
               <label for="space">Space</label>
-              <input type="checkbox" id="space" name="space" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="space"
+                name="space"
+                onclick="spaceFilter()"
+                checked
+              />
               <label for="time">Time</label>
-              <input type="checkbox" id="time" name="time" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="time"
+                name="time"
+                onclick=""
+                checked
+              />
               <label for="ethereal">Ethereal</label>
-              <input type="checkbox" id="ethereal" name="ethereal" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="ethereal"
+                name="ethereal"
+                onclick="timeFilter()"
+                checked
+              />
               <label for="eldritch">Eldritch</label>
-              <input type="checkbox" id="eldritch" name="eldritch" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="eldritch"
+                name="eldritch"
+                onclick="eldritchFilter()"
+                checked
+              />
+              <label for="material">Material</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="material"
+                name="material"
+                onclick="materialFilter()"
+                checked
+              />
             </section>
 
-            <!-- <section class="level">
+            <section class="level">
               <h3><u>Levels</u></h3>
               <label for="level0">Level 0</label>
-              <input type="checkbox" id="level0" name="level0" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level0"
+                name="level0"
+                onclick="filterLevel0()"
+                checked
+              />
               <label for="level5">Level 5</label>
-              <input type="checkbox" id="level5" name="level5" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level5"
+                name="level5"
+                onclick=""
+                checked
+              />
               <label for="level1">Level 1</label>
-              <input type="checkbox" id="level1" name="level1" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level1"
+                name="level1"
+                onclick="filterLevel1()"
+                checked
+              />
               <label for="level6">Level 6</label>
-              <input type="checkbox" id="level6" name="level6" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level6"
+                name="level6"
+                onclick=""
+                checked
+              />
               <label for="level2">Level 2</label>
-              <input type="checkbox" id="level2" name="level2" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level2"
+                name="level2"
+                onclick=""
+                checked
+              />
               <label for="level7">Level 7</label>
-              <input type="checkbox" id="level7" name="level7" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level7"
+                name="level7"
+                onclick=""
+                checked
+              />
               <label for="level3">Level 3</label>
-              <input type="checkbox" id="level3" name="level3" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level3"
+                name="level3"
+                onclick=""
+                checked
+              />
               <label for="level8">Level 8</label>
-              <input type="checkbox" id="level8" name="level8" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level8"
+                name="level8"
+                onclick=""
+                checked
+              />
               <label for="Level 4">Level 4</label>
-              <input type="checkbox" id="Level 4" name="Level 4" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="Level 4"
+                name="Level 4"
+                onclick=""
+                checked
+              />
               <label for="Level 9">Level 9</label>
-              <input type="checkbox" id="Level 9" name="Level 9" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="Level 9"
+                name="Level 9"
+                onclick=""
+                checked
+              />
               <label for="level10">Level 10</label>
-              <input type="checkbox" id="level10" name="level10" />
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level10"
+                name="level10"
+                onclick=""
+                checked
+              />
             </section>
 
-            <section class="misc">
+            <!-- <section class="misc">
               <h3><u>Misc</u></h3>
               <label for="utility">Utility</label>
               <input type="checkbox" id="utility" name="utility" />
@@ -91,12 +209,11 @@
           </div>
 
           <section class="apply">
-            <button>Apply</button>
-            <button>Reset</button>
+            <button onclick="resetFilter()">Select All</button>
+            <button onclick="clearFilter()">Clear</button>
           </section>
         </div>
         <div id="arcaneShelf"></div>
-        <div id="dragonShelf"></div>
       </div>
 
       <div class="card">

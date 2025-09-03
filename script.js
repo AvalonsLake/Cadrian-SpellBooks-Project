@@ -301,7 +301,6 @@ let spellComponents = document.getElementById("spellComponents");
 let spellDuration = document.getElementById("spellDuration");
 let spellDescription = document.getElementById("spellDescription");
 let arcaneList = document.getElementById("arcaneShelf");
-let dragonList = document.getElementById("dragonShelf");
 
 let flipped = false;
 let sameCard = "";
@@ -320,6 +319,7 @@ function generateArcane() {
     let p = document.createElement("p");
     p.innerText = `${arcane[i].plane} Plane --- || --- ${arcane[i].name} --- || --- Level: ${arcane[i].level}`;
     p.value = i;
+    p.classList.add("spell", `${arcane[i].plane}`, `level${arcane[i].level}`);
     p.addEventListener("click", () => {
       displayedSpell = p.value;
       currentArray = "arcane";
@@ -341,6 +341,7 @@ function generateDragon() {
     let p = document.createElement("p");
     p.innerText = `${dragon[i].plane} Plane --- || --- ${dragon[i].name} --- || --- Level: ${dragon[i].level}`;
     p.value = i;
+    p.classList.add("spell", `${dragon[i].plane}`, `level${dragon[i].level}`);
     p.addEventListener("click", () => {
       displayedSpell = p.value;
       currentArray = "dragon";
@@ -352,7 +353,7 @@ function generateDragon() {
         sameCard = "";
       }
     });
-    dragonList.appendChild(p);
+    arcaneList.appendChild(p);
   }
 }
 
@@ -430,24 +431,376 @@ function hideFilter() {
   document.querySelector("#showFltr").style.display = "";
 }
 
+function resetFilter() {
+  const checkboxes = document.querySelectorAll(".checkbox");
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = true;
+  });
+
+  filterArcane = true;
+  filterDragon = true;
+  filterSpace = true;
+  filterTime = true;
+  filterEthereal = true;
+  filterEldritch = true;
+  filterMaterial = true;
+
+  filterLvl0 = true;
+  filterLvl1 = true;
+  filterLvl2 = true;
+  filterLvl3 = true;
+  filterLvl4 = true;
+  filterLvl5 = true;
+  filterLvl6 = true;
+  filterLvl7 = true;
+  filterLvl8 = true;
+  filterLvl9 = true;
+  filterLvl10 = true;
+
+  arcaneFilter();
+  dragonFilter();
+  SpaceFilter();
+  timeFilter();
+  etherealFilter();
+  eldritchFilter();
+  materialFilter();
+
+  filterLevel0();
+  filterLevel1();
+  filterLevel2();
+  filterLevel3();
+  filterLevel4();
+  filterLevel5();
+  filterLevel6();
+  filterLevel7();
+  filterLevel8();
+  filterLevel9();
+  filterLevel10();
+}
+
+function clearFilter() {
+  const checkboxes = document.querySelectorAll(".checkbox");
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+
+  filterArcane = false;
+  filterDragon = false;
+  filterSpace = false;
+  filterTime = false;
+  filterEthereal = false;
+  filterEldritch = false;
+  filterMaterial = false;
+
+  filterLvl0 = false;
+  filterLvl1 = false;
+  filterLvl2 = false;
+  filterLvl3 = false;
+  filterLvl4 = false;
+  filterLvl5 = false;
+  filterLvl6 = false;
+  filterLvl7 = false;
+  filterLvl8 = false;
+  filterLvl9 = false;
+  filterLvl10 = false;
+
+  arcaneFilter();
+  dragonFilter();
+  SpaceFilter();
+  timeFilter();
+  etherealFilter();
+  eldritchFilter();
+  materialFilter();
+
+  filterLevel0();
+  filterLevel1();
+  filterLevel2();
+  filterLevel3();
+  filterLevel4();
+  filterLevel5();
+  filterLevel6();
+  filterLevel7();
+  filterLevel8();
+  filterLevel9();
+  filterLevel10();
+}
+
+// Filter By Plane
+
 let filterArcane = false;
 let filterDragon = false;
+let filterSpace = false;
+let filterTime = false;
+let filterEthereal = false;
+let filterEldritch = false;
+let filterMaterial = false;
+
 function arcaneFilter() {
+  const arcaneSpells = document.querySelectorAll(".Arcane");
   if (filterArcane === false) {
-    arcaneList.style.display = "none";
+    arcaneSpells.forEach((spell) => {
+      spell.style.display = "none";
+    });
     filterArcane = true;
   } else {
-    arcaneList.style.display = "";
+    arcaneSpells.forEach((spell) => {
+      spell.style.display = "";
+    });
     filterArcane = false;
   }
 }
 function dragonFilter() {
+  const dragonSpells = document.querySelectorAll(".Dragon");
   if (filterDragon === false) {
-    dragonList.style.display = "none";
+    dragonSpells.forEach((spell) => {
+      spell.style.display = "none";
+    });
     filterDragon = true;
   } else {
-    dragonList.style.display = "";
+    dragonSpells.forEach((spell) => {
+      spell.style.display = "";
+    });
     filterDragon = false;
+  }
+}
+function SpaceFilter() {
+  const spaceSpells = document.querySelectorAll(".Space");
+  if (filterSpace === false) {
+    spaceSpells.forEach((spell) => {
+      spell.style.display = "none";
+    });
+    filterSpace = true;
+  } else {
+    spaceSpells.forEach((spell) => {
+      spell.style.display = "";
+    });
+    filterSpace = false;
+  }
+}
+function timeFilter() {
+  const timeSpells = document.querySelectorAll(".Time");
+  if (filterTime === false) {
+    timeSpells.forEach((spell) => {
+      spell.style.display = "none";
+    });
+    filterTime = true;
+  } else {
+    timeSpells.forEach((spell) => {
+      spell.style.display = "";
+    });
+    filterTime = false;
+  }
+}
+function etherealFilter() {
+  const etherealSpells = document.querySelectorAll(".Ethereal");
+  if (filterEthereal === false) {
+    etherealSpells.forEach((spell) => {
+      spell.style.display = "none";
+    });
+    filterEthereal = true;
+  } else {
+    etherealSpells.forEach((spell) => {
+      spell.style.display = "";
+    });
+    filterEthereal = false;
+  }
+}
+function eldritchFilter() {
+  const eldritchSpells = document.querySelectorAll(".Eldritch");
+  if (filterEldritch === false) {
+    eldritchSpells.forEach((spell) => {
+      spell.style.display = "none";
+    });
+    filterEldritch = true;
+  } else {
+    eldritchSpells.forEach((spell) => {
+      spell.style.display = "";
+    });
+    filterEldritch = false;
+  }
+}
+function materialFilter() {
+  const materialSpells = document.querySelectorAll(".Material");
+  if (filterMaterial === false) {
+    materialSpells.forEach((spell) => {
+      spell.style.display = "none";
+    });
+    filterMaterial = true;
+  } else {
+    materialSpells.forEach((spell) => {
+      spell.style.display = "";
+    });
+    filterMaterial = false;
+  }
+}
+
+// filter by Level
+
+let filterLvl0 = false;
+let filterLvl1 = false;
+let filterLvl2 = false;
+let filterLvl3 = false;
+let filterLvl4 = false;
+let filterLvl5 = false;
+let filterLvl6 = false;
+let filterLvl7 = false;
+let filterLvl8 = false;
+let filterLvl9 = false;
+let filterLvl10 = false;
+
+function filterLevel0() {
+  const spellLvl0 = document.querySelectorAll(".level0");
+  if (filterLvl0 === false) {
+    spellLvl0.forEach((e) => {
+      e.style.display = "none";
+    });
+    filterLvl0 = true;
+  } else {
+    spellLvl0.forEach((e) => {
+      e.style.display = "";
+    });
+    filterLvl0 = false;
+  }
+}
+
+function filterLevel1() {
+  const spellLvl1 = document.querySelectorAll(".level1");
+  if (filterLvl1 === false) {
+    spellLvl1.forEach((e) => {
+      e.style.display = "none";
+    });
+    filterLvl1 = true;
+  } else {
+    spellLvl1.forEach((e) => {
+      e.style.display = "";
+    });
+    filterLvl1 = false;
+  }
+}
+function filterLevel2() {
+  const spellLvl2 = document.querySelectorAll(".level2");
+  if (filterLvl2 === false) {
+    spellLvl2.forEach((e) => {
+      e.style.display = "none";
+    });
+    filterLvl2 = true;
+  } else {
+    spellLvl2.forEach((e) => {
+      e.style.display = "";
+    });
+    filterLvl2 = false;
+  }
+}
+function filterLevel3() {
+  const spellLvl3 = document.querySelectorAll(".level3");
+  if (filterLvl3 === false) {
+    spellLvl3.forEach((e) => {
+      e.style.display = "none";
+    });
+    filterLvl3 = true;
+  } else {
+    spellLvl3.forEach((e) => {
+      e.style.display = "";
+    });
+    filterLvl3 = false;
+  }
+}
+function filterLevel4() {
+  const spellLvl4 = document.querySelectorAll(".level4");
+  if (filterLvl4 === false) {
+    spellLvl4.forEach((e) => {
+      e.style.display = "none";
+    });
+    filterLvl4 = true;
+  } else {
+    spellLvl4.forEach((e) => {
+      e.style.display = "";
+    });
+    filterLvl4 = false;
+  }
+}
+function filterLevel5() {
+  const spellLvl5 = document.querySelectorAll(".level5");
+  if (filterLvl5 === false) {
+    spellLvl5.forEach((e) => {
+      e.style.display = "none";
+    });
+    filterLvl5 = true;
+  } else {
+    spellLvl5.forEach((e) => {
+      e.style.display = "";
+    });
+    filterLvl5 = false;
+  }
+}
+function filterLevel6() {
+  const spellLvl6 = document.querySelectorAll(".level6");
+  if (filterLvl6 === false) {
+    spellLvl6.forEach((e) => {
+      e.style.display = "none";
+    });
+    filterLvl6 = true;
+  } else {
+    spellLvl6.forEach((e) => {
+      e.style.display = "";
+    });
+    filterLvl6 = false;
+  }
+}
+function filterLevel7() {
+  const spellLvl7 = document.querySelectorAll(".level7");
+  if (filterLvl7 === false) {
+    spellLvl7.forEach((e) => {
+      e.style.display = "none";
+    });
+    filterLvl7 = true;
+  } else {
+    spellLvl7.forEach((e) => {
+      e.style.display = "";
+    });
+    filterLvl7 = false;
+  }
+}
+function filterLevel8() {
+  const spellLvl8 = document.querySelectorAll(".level8");
+  if (filterLvl8 === false) {
+    spellLvl8.forEach((e) => {
+      e.style.display = "none";
+    });
+    filterLvl8 = true;
+  } else {
+    spellLvl8.forEach((e) => {
+      e.style.display = "";
+    });
+    filterLvl8 = false;
+  }
+}
+function filterLevel9() {
+  const spellLvl9 = document.querySelectorAll(".level9");
+  if (filterLvl9 === false) {
+    spellLvl9.forEach((e) => {
+      e.style.display = "none";
+    });
+    filterLvl9 = true;
+  } else {
+    spellLvl9.forEach((e) => {
+      e.style.display = "";
+    });
+    filterLvl9 = false;
+  }
+}
+function filterLevel10() {
+  const spellLvl10 = document.querySelectorAll(".level10");
+  if (filterLvl10 === false) {
+    spellLvl10.forEach((e) => {
+      e.style.display = "none";
+    });
+    filterLvl10 = true;
+  } else {
+    spellLvl10.forEach((e) => {
+      e.style.display = "";
+    });
+    filterLvl10 = false;
   }
 }
 
