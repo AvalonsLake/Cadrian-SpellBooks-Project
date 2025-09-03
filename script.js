@@ -289,6 +289,14 @@ let featuredSpell;
 let displayedSpell = 0;
 let currentArray;
 
+const arcaneSpines = [
+  "img/BookSpines/arcane/ArcaneSpine1.jpg",
+  "img/BookSpines/arcane/ArcaneSpine2.jpg",
+  "img/BookSpines/arcane/ArcaneSpine3.jpg",
+  "img/BookSpines/arcane/ArcaneSpine4.jpg",
+  "img/BookSpines/arcane/ArcaneSpine5.jpg",
+];
+
 let spellName = document.getElementById("spellName");
 let spellLevel = document.getElementById("spellLevel");
 let spellPlane = document.getElementById("spellPlane");
@@ -316,10 +324,13 @@ function generateShelf() {
 function generateArcane() {
   let length = arcane.length;
   for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * arcaneSpines.length);
+    const selectedSpine = arcaneSpines[randomIndex];
     let p = document.createElement("p");
-    p.innerText = `${arcane[i].plane} Plane --- || --- ${arcane[i].name} --- || --- Level: ${arcane[i].level}`;
+    p.innerText = `${arcane[i].plane} Plane - || - ${arcane[i].name} - || - Level: ${arcane[i].level}`;
     p.value = i;
     p.classList.add("spell", `${arcane[i].plane}`, `level${arcane[i].level}`);
+    p.style.backgroundImage = `url('${selectedSpine}')`;
     p.addEventListener("click", () => {
       displayedSpell = p.value;
       currentArray = "arcane";
@@ -339,7 +350,7 @@ function generateDragon() {
   let length = dragon.length;
   for (let i = 0; i < length; i++) {
     let p = document.createElement("p");
-    p.innerText = `${dragon[i].plane} Plane --- || --- ${dragon[i].name} --- || --- Level: ${dragon[i].level}`;
+    p.innerText = `${dragon[i].plane} Plane - || - ${dragon[i].name} - || - Level: ${dragon[i].level}`;
     p.value = i;
     p.classList.add("spell", `${dragon[i].plane}`, `level${dragon[i].level}`);
     p.addEventListener("click", () => {
