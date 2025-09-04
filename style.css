@@ -61,7 +61,7 @@ nav a {
 .shelf {
   text-align: center;
   margin: 40px 30px;
-  background-color: #352315;
+  background-color: #523f30;
   /* background-color: rgb(164, 145, 122); */
   width: 400px;
   height: 850px;
@@ -79,7 +79,7 @@ nav a {
 }
 
 .spell {
-  color: white;
+  color: rgb(255, 196, 0);
   text-shadow: 1px 1px 0px black;
   background-size: 390px 38px;
   /* font-weight: bold; */
@@ -293,7 +293,7 @@ nav a {
   }
 
   .shelf {
-    height: 200px;
+    height: 400px;
     width: 400px;
   }
 }

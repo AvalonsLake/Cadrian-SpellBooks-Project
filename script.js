@@ -26,7 +26,7 @@ const arcane = [
     castTime: "Action",
     range: "60ft",
     type: "Energy",
-    target: "single target",
+    target: "single",
     components: "V,S",
     duration: "Instantaneous",
     description:
@@ -74,7 +74,7 @@ const arcane = [
     castTime: "Action",
     range: "Touch",
     type: "Utility",
-    target: "single target",
+    target: "single",
     components: "S",
     duration: "Instantaneous",
     description:
@@ -98,7 +98,7 @@ const arcane = [
   {
     name: "Return",
     level: 0,
-    plane: "Arcane",
+    plane: "Space",
     mod: "",
     manaCost: 0,
     castTime: "Action",
@@ -117,9 +117,9 @@ const arcane = [
     mod: "(charge)",
     manaCost: 1,
     castTime: "Action",
-    range: "120 feet",
+    range: "120ft",
     type: "Energy",
-    target: "single target",
+    target: "single",
     components: "V,S",
     duration: "instantaneous",
     description: `<p style="margin-top:30%;">You create a missile of force and launch it toward a creature within range. Make an Arcane Attack, on a hit you deal (5)2d4 + your Mind Score force damage. <br /> <br />
@@ -137,7 +137,7 @@ Charge: When you charge this spell you must maintain concentration on the spell 
     castTime: "1 Minute",
     range: "Touch",
     type: "Utility",
-    target: "single target",
+    target: "single",
     components: "S,M (ink)",
     duration: "Instantaneous",
     description: `Taking the paint, you pour it over the paper/canvas/skin, when you touch the paper/canvas/skin while focusing on a memory or image that you have seen, the paint creates the thing that you imagined and leaves a lasting picture on the paper/canvas/skin. <br /> <br />
@@ -151,9 +151,9 @@ This spell can be used with magical ink to create moving pictures of a memory, o
     mod: "",
     manaCost: 1,
     castTime: "Action",
-    range: "30 feet",
+    range: "30ft",
     type: "Energy, Debuff",
-    target: "single target",
+    target: "single",
     components: "V,S",
     duration: "Instantaneous",
     description: `You drive a shard of pure psychic energy into a creatures mind within range. Make an Arcane Attack, on a hit you deal (7)2d6 + your Mind Score psychic damage. The creature has disadvantage on their next Mind Save before the beginning of your next turn.<br /> <br />
@@ -169,7 +169,7 @@ Empowering: When you empower this spell, you increase the damage by (3)1d6 for e
     castTime: "Action",
     range: "Touch",
     type: "Utility",
-    target: "single target",
+    target: "single",
     components: `S,M <br/>(a bowl of water or an object)`,
     duration: "Until Dismissed",
     description: `<p style="margin-top:30%;">You withdraw a memory from your mind, or the mind of a willing creature, and place it within a bowl of water, or bind it to an object. When you do this you give a password to trigger the memory. When the password is said while touching the water or object, the creature experiences the memory as if in the person’s body. Once the memory is done the creature returns to their own body. While a creature is in the memory their body becomes paralyzed until they return.<br/><br/>
@@ -244,6 +244,110 @@ Empowering: When you empower this spell, you increase the number of darts by 1 f
     duration: "instantaneous",
     description: `You point at a lock that isn’t magically enhanced, and it unlocks. If the lock is magically enhanced you can make an Arcane Attack against the locks DC, on a success the object is unlocked.`,
   },
+  {
+    name: "Magic Lock",
+    level: 2,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 2,
+    castTime: "Action",
+    range: "Touch",
+    type: "Utility",
+    target: "",
+    components: "V,S,M (a lock)",
+    duration: "Until Dispelled",
+    description: `<p style="margin-top:400px;">You magically enhance a single lock that you touch. When you cast the spell choose a password that will open the lock when spoken within 10 feet of the lock. Choose from one of the magical enhancements to apply to the lock.<br/><br/>
+
+Illusory: When you cast the spell on the lock, the lock vanishes and an illusionary duplicate appears on the opposite side of the object the lock is on (if the door handle is on the right side it vanishes and appears on the left side of the door). A successful Perception Check against your Arcane DC + the number of mana used to cast the spell, reveals that it is an illusion, and the creature can see the other handle.<br/><br/>
+
+Intricate You make the lock a lot more difficult to open with anything other than the password (not even the original key works in it). The DC to pick the lock gains a bonus equal to the number of mana used to cast the spell.<br/><br/>
+
+Trapped You bind a level 1 spell to the lock, and the first time a creature attempts to open the lock without using the password the spell is triggered, and targets the creature trying to open the lock. The damage dealt is equal to the spells original damage + the number of mana used to cast the spell.<br/><br/>
+
+Empowering: When you empower this spell, you increase the bonuses to the lock by 1 for each mana used to empower the spell.</p>`,
+  },
+  {
+    name: "Magic Sight",
+    level: 2,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 2,
+    castTime: "Action",
+    range: "60ft",
+    type: "Utility",
+    target: "",
+    components: "V",
+    duration: "10 Minutes",
+    description: `Your eyes glow with arcane energy, allowing you to see the auras given off by magic within 60 feet of you. Any magical creature, weapon or object will have an aura. You can determine whether it is Arcane, Faith and/or Nature magic, and gain a general idea of how much mana is in the magical creature, weapon or object. Creatures and objects protected from scrying appear as if they aren’t magical. Invisible creatures are still invisible to this spell.<br/><br/>
+
+Empowering: When you empower this spell you increase the distance you can see by 15 feet for each mana used to empower the spell.`,
+  },
+  {
+    name: "Mind Sliver",
+    level: 2,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 2,
+    castTime: "Action",
+    range: "120ft",
+    type: "Utility",
+    target: "single/multiple",
+    components: "V,S",
+    duration: "1 Hour",
+    description: `<p style="margin-top:25%;">You create a sliver of arcane magic and send it into the mind of a creature you can see within range. The target must make a Mind Save against your Arcane DC. On a failure you know the location of the creature for the duration (as long as they are on the same plane as you). If you spend one minute concentrating on the connection you can see through their eyes, and hear through their ears; at which time you are blind and deaf until you choose to stop focusing on the connection.<br/><br/>
+
+Empowering: When you empower this spell you increase the number of creatures you can target by 1 for each mana used to empower the spell. You can still only focus on seeing and listening in on one creature at a time.</p>`,
+  },
+  {
+    name: "Reversal",
+    level: 2,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 2,
+    castTime: "Reflexive Action",
+    range: "15ft",
+    type: "Protection",
+    target: "",
+    components: "S",
+    duration: "Instantaneous",
+    description: `If you or an ally within range are hit by a single or multi target spell that requires an attack roll, you can attempt to reflect the spell back at the caster. You reduce the damage of the spell by (11)2d10 + your Mind Score. If you reduce the damage to 0 you send the spell back at the caster, make an Arcane Attack, on a hit you deal the same damage you would have taken.<br/><br/>
+
+Empowering: When you empower this spell, you increase the number of damage you can reduce by (5)1d10 for each mana used to empower the spell.`,
+  },
+  {
+    name: "Summon Automaton",
+    level: 2,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 2,
+    castTime: "Action",
+    range: "30ft",
+    type: "Summon",
+    target: "",
+    components: "V,S",
+    duration: "24 Hours",
+    description: `<p style="margin-top:1150px;">You summon an automaton within range. The automaton is a tiny steam powered robot that you can use magic to alter to give them different attacks, movement speeds, and more. When you cast the spell you summon a tiny automaton (you choose what the automaton looks like). The automaton has: a number of HP equal to your Mind Score (minimum of 1), a 20 feet movement speed, and each of its Ability Scores is equal to your Mind Score, and they are immune to poison and psychic damage. When you cast the spell choose 2 of the following traits for your automaton to have:<br/><br/>
+
+Attacker When it attacks it can add (2)1d4 to their attack rolls.<br/>
+Defender It is made out of enchanted materials that reduce the damage taken from non-magical weapons that deal blunt, piercing and slashing, and the damage reduction is equal to your Mind Score.<br/>
+Digger It gains a burrowing speed equal to half their movement speed.<br/>
+Flyer It gains a flying speed equal to its movement speed.<br/>
+Powerful It counts as a size larger when determining its carrying, and lifting capacity, along with shoving/throwing distances and grappling DC.<br/>
+Quick All of its movement speeds increase by 50%. For example, if its movement speed is 30 feet, it becomes 45 feet, or if your movement speed is 80 feet, it becomes 120 feet.<br/>
+Swimmer It gains a swimming speed equal to its movement speed.<br/>
+As a bonus action you can give the summons under your command a single command, and they do their best to follow your instructions. If you don’t give a command they defend themselves. The automaton can make a single unarmed attack using your Nature Attack, dealing 1d4 + your Mind Score blunt, piercing or slashing damage (your choice when you summon it). Alternatively if it is small it can use any weapon you are proficient in.<br/><br/>
+
+The maximum number of summons you can have under your control is equal to your Mind Score (minimum of 1). When the spell ends the summons becomes hostile toward you and your allies, unless you cast the spell on it again (using the same amount of mana used to summon it). Before the spell ends you can use an action to dismiss the summon.<br/><br/>
+
+Empowering: When you empower this spell, you can modify your summon with 1 of the following options for each mana used to empower the spell. Choose from:<br/><br/>
+
+An extra attack (max of 4 attacks)<br/>
+Increase the automaton one size category (max size is huge. Increases movement speed by 5 feet, and the number of damage dice to 2 for large and 4 for huge)<br/>
+Increase unarmed attack damage die (increases from d4 to d6, and d6 to d8. Max of d12)<br/>
+Increase base movement speed by 10 feet (max of 70)<br/>
+A new movement speed (burrowing is half of the automaton’s movement speed)<br/>
+Increase HP level by 2 (the automaton’s health = Mind Score x HP level + Mind Score. Max level is 10)</p>`,
+  },
 ];
 const dragon = [
   {
@@ -264,7 +368,26 @@ const dragon = [
 ];
 const space = [];
 const time = [];
-const ethereal = [];
+const ethereal = [
+  {
+    name: "Bind Object",
+    level: 1,
+    plane: "Eldritch",
+    mod: "",
+    manaCost: 1,
+    castTime: "Bonus Action",
+    range: "Touch",
+    type: "Buff, Utility",
+    target: "",
+    components: "S,M(a small or tiny object)",
+    duration: "Instantaneous",
+    description: `<p style="margin-top:62%;">As a bonus action you can bind an object to your weapon giving it a bonus to damage, and changing the damage type. If the object binded is a natural weapon of a creature (claws, teeth, horns, ect.) then your bonus to damage is equal to one damage die of that creature. If the thing fused to your weapon is not a natural weapon it adds +1 to the damage rolls, and changes the damage type. You can also bind other weapons to your weapon to change the damage type, and deal bonus damage equal to one damage die of the weapon. The bound item breaks after hitting something a number of times equal to half your Mind Score (minimum of 1), or if the weapon is not on your character by the end of your turn.<br/><br/>
+
+    You can bind any item that is 5 lbs. or less to your weapon, up to a total of 10lb. If the extra weight puts your weapon at or above 6 lb. your weapon becomes heavy, and two-handed, and loses its fast or thrown properties if it had them. Ammunition can only have items that are 1 lb. or less bound to them, and anything beyond the short range automatically misses.<br/><br/>
+
+    Alternatively you are able to bind a small or tiny object you are holding to any solid surface, that isn’t a creature, or being worn or carried by one. The object can hold a number of pounds equal to 10 x your Mind Score, but the object itself can still break if it can’t support that much weight. The binding lasts for one minute, after which it falls to the ground, or until you use a bonus action to break the binding.</p>`,
+  },
+];
 const eldritch = [];
 const material = [];
 
@@ -291,10 +414,15 @@ let currentArray;
 
 const arcaneSpines = [
   "img/BookSpines/arcane/ArcaneSpine1.jpg",
-  "img/BookSpines/arcane/ArcaneSpine2.jpg",
-  "img/BookSpines/arcane/ArcaneSpine3.jpg",
+  "img/BookSpines/nature/NatureSpine1.png",
+  "img/BookSpines/nature/NatureSpine3.png",
+  "img/BookSpines/nature/NatureSpine4.png",
   "img/BookSpines/arcane/ArcaneSpine4.jpg",
-  "img/BookSpines/arcane/ArcaneSpine5.jpg",
+  "img/BookSpines/faith/FaithSpine1.jpg",
+  "img/BookSpines/faith/FaithSpine2.jpg",
+  "img/BookSpines/faith/FaithSpine3.jpg",
+  "img/BookSpines/faith/FaithSpine4.jpg",
+  "img/BookSpines/faith/FaithSpine5.jpg",
 ];
 
 let spellName = document.getElementById("spellName");
