@@ -1,0 +1,27 @@
+{
+  "name": "cadrianspellsproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AvalonsLake/Cadrian-SpellBooks-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AvalonsLake/Cadrian-SpellBooks-Project/issues"
+  },
+  "homepage": "https://github.com/AvalonsLake/Cadrian-SpellBooks-Project#readme",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "mongodb": "^6.19.0",
+    "mongoose": "^8.18.0"
+  }
+}
