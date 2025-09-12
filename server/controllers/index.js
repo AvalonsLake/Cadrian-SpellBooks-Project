@@ -1,9 +1,17 @@
-const mongodb = require("../config/db.js");
+const mongodb = require("../config/db");
 const ObjectId = require("mongodb").ObjectId;
 
 // Get All Spells
 const getAllSpells = async (req, res) => {
-  res.send("Getting all the Spells");
+  try {
+    const result = await mongodb.getDb().db().collection("arcanes").find();
+    result.toArray().then((lists) => {
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).json(lists);
+    });
+  } catch (error) {
+    res.status(500).json(error);
+  }
 };
 
 //Get One Spell

@@ -1,16 +1,21 @@
-require("dotenv").config;
-const mongoose = require("mongoose");
+require("dotenv").config();
+const MongoClient = require("mongodb").MongoClient;
 
-const dbPathway = process.env.MONGO_URI;
+let _db;
 
-const connectDB = async () => {
-  try {
-    await mongoose.connect(dbPathway);
-    console.log("MongoDB Connected");
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
+const initDb = (callback) => {
+  if (_db) {
+    console.log("Db is already initialized!");
+    return callback(null, _db);
   }
+  MongoClient.connect(process.env.MONGO_URI)
+    .then((client) => {
+      _db = client;
+      callback(null, _db);
+    })
+    .catch((err) => {
+      callback(err);
+    });
 };
 
 const getDb = () => {
@@ -30,4 +35,4 @@ function insertData() {
 
 insertData();
 */
-module.exports = { connectDB, getDb };
+module.exports = { getDb, initDb };
