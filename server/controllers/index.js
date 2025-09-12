@@ -29,4 +29,8 @@ const updateSpell = async (req, res) => {
   res.send("you've updated a spell");
 };
 
-module.exports = { getAllSpells, getSpell, deleteSpell, updateSpell };
+const addSpell = async (req, res) => {
+  res.send("you've added a spell");
+};
+
+module.exports = { getAllSpells, getSpell, deleteSpell, updateSpell, addSpell };
