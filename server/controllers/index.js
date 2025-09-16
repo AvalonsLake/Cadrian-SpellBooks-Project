@@ -16,7 +16,21 @@ const getAllSpells = async (req, res) => {
 
 //Get One Spell
 const getSpell = async (req, res) => {
-  res.send("Getting a Spell");
+  // res.send("You're getting one spell");
+  try {
+    const userId = new ObjectId(req.params.id);
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection("arcanes")
+      .find({ _id: userId });
+    result.toArray().then((lists) => {
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).json(lists[0]);
+    });
+  } catch (error) {
+    res.status(500).json(error);
+  }
 };
 
 //Delete Spell
