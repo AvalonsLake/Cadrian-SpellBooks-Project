@@ -81,7 +81,7 @@ nav a {
 .spell {
   color: rgb(255, 196, 0);
   text-shadow: 1px 1px 0px black;
-  background-size: 440px 38px;
+  background-size: 427px 38px;
   /* font-weight: bold; */
   filter: brightness(70%);
 }
@@ -297,5 +297,9 @@ nav a {
   .shelf {
     height: 400px;
     width: 400px;
+  }
+
+  .spell {
+    background-size: 392px 38px;
   }
 }

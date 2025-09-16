@@ -124,7 +124,7 @@ const arcaneSpells1 = [
     target: "",
     components: "S,M(a small or tiny object)",
     duration: "Instantaneous",
-    description: `<p style="margin-top:62%;">As a bonus action you can bind an object to your weapon giving it a bonus to damage, and changing the damage type. If the object binded is a natural weapon of a creature (claws, teeth, horns, ect.) then your bonus to damage is equal to one damage die of that creature. If the thing fused to your weapon is not a natural weapon it adds +1 to the damage rolls, and changes the damage type. You can also bind other weapons to your weapon to change the damage type, and deal bonus damage equal to one damage die of the weapon. The bound item breaks after hitting something a number of times equal to half your Mind Score (minimum of 1), or if the weapon is not on your character by the end of your turn.<br/><br/>
+    description: `<p style="margin-top:440px;">As a bonus action you can bind an object to your weapon giving it a bonus to damage, and changing the damage type. If the object binded is a natural weapon of a creature (claws, teeth, horns, ect.) then your bonus to damage is equal to one damage die of that creature. If the thing fused to your weapon is not a natural weapon it adds +1 to the damage rolls, and changes the damage type. You can also bind other weapons to your weapon to change the damage type, and deal bonus damage equal to one damage die of the weapon. The bound item breaks after hitting something a number of times equal to half your Mind Score (minimum of 1), or if the weapon is not on your character by the end of your turn.<br/><br/>
 
     You can bind any item that is 5 lbs. or less to your weapon, up to a total of 10lb. If the extra weight puts your weapon at or above 6 lb. your weapon becomes heavy, and two-handed, and loses its fast or thrown properties if it had them. Ammunition can only have items that are 1 lb. or less bound to them, and anything beyond the short range automatically misses.<br/><br/>
 
@@ -157,7 +157,7 @@ const arcaneSpells1 = [
     target: "",
     components: "V,S",
     duration: "1 Hour Concentration",
-    description: `<p style="margin-top:20%;">You touch the ground, a rock or a tree and use it as an anchor to pull ghostly echoes from the plane of time to replay everything that has happened within 10 feet of the thing you are touching within the last 24 hours. You can choose how fast the echoes replay the memories, or you can choose specific times for the echoes to play out. The echoes are silent and only give visual effects as the area remembers (this spell is not affected by creatures that are protected from scrying).<br/><br/>
+    description: `<p style="margin-top:18%;">You touch the ground, a rock or a tree and use it as an anchor to pull ghostly echoes from the plane of time to replay everything that has happened within 10 feet of the thing you are touching within the last 24 hours. You can choose how fast the echoes replay the memories, or you can choose specific times for the echoes to play out. The echoes are silent and only give visual effects as the area remembers (this spell is not affected by creatures that are protected from scrying).<br/><br/>
 
     Empowering: When you empower this spell, you increase the number of days the echoes can recall by 1 for each mana used to empower the spell.</p>`,
   },
@@ -217,7 +217,7 @@ Mana Drain: You cause the ritual to drain the mana from creatures in the area. T
     target: "single/multiple",
     components: "V,S,M (1cp worth of Salt or Chalk, a copper rod)",
     duration: "1 Minute",
-    description: `<p style="margin-top:1600px;">When you finish the ritual a magical tether sprouts from the top of the rod in the middle of the ritual and wraps around the nearest hostile creature within 15 feet of the rod and the creature must make a Power Save against a DC 12 or be dragged to the rod (it doesn’t drag creatures fast enough to deal collision damage). A tethered creature is still able to move, but their movement speed is reduced by half, and at the beginning of your turn all tethered creatures must remake the save or be pulled back to the rod. If a creature attempt to move outside of the tether range the creature must make another Power Save or be dragged back 5 feet; but on a success the tether breaks and the creature is able to move freely, while the tether returns to the rod, where it will wrap around another creature at the beginning of your next turn.<br/><br/>
+    description: `<p style="margin-top:1520px;">When you finish the ritual a magical tether sprouts from the top of the rod in the middle of the ritual and wraps around the nearest hostile creature within 15 feet of the rod and the creature must make a Power Save against a DC 12 or be dragged to the rod (it doesn’t drag creatures fast enough to deal collision damage). A tethered creature is still able to move, but their movement speed is reduced by half, and at the beginning of your turn all tethered creatures must remake the save or be pulled back to the rod. If a creature attempt to move outside of the tether range the creature must make another Power Save or be dragged back 5 feet; but on a success the tether breaks and the creature is able to move freely, while the tether returns to the rod, where it will wrap around another creature at the beginning of your next turn.<br/><br/>
 
 The rod can be removed with a successful Power Save* against a DC 12, or destroyed (the rod has a defense of 10 and 5 Hit Points). If the rod is removed or destroyed it immediately explodes, dealing (2)1d4 force damage to all creatures within 5 feet of the rod and they are all pushed back 5 feet and fall prone.<br/><br/>
 
@@ -278,7 +278,7 @@ f`,
     target: "single",
     components: "V,S",
     duration: "Instantaneous (Concentration while charging)",
-    description: `<p style="margin-top:1%;">You fire a beam of concentrated energy at a creature you can see within range. Make an Arcane Attack, on a hit you deal (7)2d6 + your Mind Score force damage.<br/><br/>
+    description: `<p style="margin-top:20%;">You fire a beam of concentrated energy at a creature you can see within range. Make an Arcane Attack, on a hit you deal (7)2d6 + your Mind Score force damage.<br/><br/>
 
 Empowering: When you empower this spell, you increase the damage by (3)1d6 for each mana used to empower the spell.<br/><br/>
 
@@ -313,7 +313,7 @@ Empowering: When you empower this spell, you increase the maximum total weight b
     components:
       "V,S,M (1cp worth of Salt or Chalk per size category above medium)",
     duration: "Instantaneous",
-    description: `<p style="margin-top:1500px;">You create a ritual circle around a creature that recently died (and hasn’t been harvested for parts) and cause the magic to cleanly extract the average number of creature parts from the creature based on its size: you can get 1 creature part from a small creature, 2 parts from a medium creature, 5 parts from a large creature, 7 parts from a huge creature, 12 parts from a gargantuan creature, and 25 parts from a colossal creature; if the creature had at least 2 levels in Mana you can harvest a Mana Core that is equal to half the creature’s Mana level (rounded down). All creature parts appear at your feet, and they become unusable after 1 week.<br/><br/>
+    description: `<p style="margin-top:1610px;">You create a ritual circle around a creature that recently died (and hasn’t been harvested for parts) and cause the magic to cleanly extract the average number of creature parts from the creature based on its size: you can get 1 creature part from a small creature, 2 parts from a medium creature, 5 parts from a large creature, 7 parts from a huge creature, 12 parts from a gargantuan creature, and 25 parts from a colossal creature; if the creature had at least 2 levels in Mana you can harvest a Mana Core that is equal to half the creature’s Mana level (rounded down). All creature parts appear at your feet, and they become unusable after 1 week.<br/><br/>
 
 Once the ritual ends the looted body quickly disintegrates into ash.<br/><br/>
 
@@ -347,7 +347,7 @@ Essences: You expend 20 mana to cause the magic to create an essence of the crea
     target: "single",
     components: "V,S",
     duration: "instantaneous",
-    description: `<p style="margin-top:30%;">You create a missile of force and launch it toward a creature within range. Make an Arcane Attack, on a hit you deal (5)2d4 + your Mind Score force damage. <br /> <br />
+    description: `<p style="margin-top:22%;">You create a missile of force and launch it toward a creature within range. Make an Arcane Attack, on a hit you deal (5)2d4 + your Mind Score force damage. <br /> <br />
 
 Empowering: When you empower this spell, you increase the damage by (3)1d4 for each mana used to empower the spell. <br /> <br />
 
@@ -411,7 +411,7 @@ Empowering: When you empower this spell, you increase the damage by (3)1d6 for e
     target: "single",
     components: `S,M <br/>(a bowl of water or an object)`,
     duration: "Until Dismissed",
-    description: `<p style="margin-top:30%;">You withdraw a memory from your mind, or the mind of a willing creature, and place it within a bowl of water, or bind it to an object. When you do this you give a password to trigger the memory. When the password is said while touching the water or object, the creature experiences the memory as if in the person’s body. Once the memory is done the creature returns to their own body. While a creature is in the memory their body becomes paralyzed until they return.<br/><br/>
+    description: `<p style="margin-top:18%;">You withdraw a memory from your mind, or the mind of a willing creature, and place it within a bowl of water, or bind it to an object. When you do this you give a password to trigger the memory. When the password is said while touching the water or object, the creature experiences the memory as if in the person’s body. Once the memory is done the creature returns to their own body. While a creature is in the memory their body becomes paralyzed until they return.<br/><br/>
 
 Alternatively, instead of withdrawing a memory, you can give the creature advantage on skill checks used to recall details about their memories for 1 minute.</p>`,
   },
@@ -427,7 +427,7 @@ Alternatively, instead of withdrawing a memory, you can give the creature advant
     target: "",
     components: "V,S,M (1cp worth of Chalk, and 1cp worth of copper shavings)",
     duration: "Until Dispelled/Disabled",
-    description: `<p style="margin-top:62%;">You draw out the ritual on an object that is able to close (a door, chest, locket, etc.) and make it so that the object cannot be opened through force, or normal methods, including being picked with lock picks. When the ritual is being performed you choose what will unlock the object, it could be as simple as a password, or a specific object or person comes within 5 feet of it, or it could be as complex as a sequence of movements like touching certain parts of the object in a certain order, or spinning around three times then touching the object without looking. Once the ritual is complete the diagram becomes permanent and invisible (a creature can see the ritual diagram if they cast Magic Sight or See Invisibility).<br/><br/>
+    description: `<p style="margin-top: 1940px;">You draw out the ritual on an object that is able to close (a door, chest, locket, etc.) and make it so that the object cannot be opened through force, or normal methods, including being picked with lock picks. When the ritual is being performed you choose what will unlock the object, it could be as simple as a password, or a specific object or person comes within 5 feet of it, or it could be as complex as a sequence of movements like touching certain parts of the object in a certain order, or spinning around three times then touching the object without looking. Once the ritual is complete the diagram becomes permanent and invisible (a creature can see the ritual diagram if they cast Magic Sight or See Invisibility).<br/><br/>
 
 While you are performing the ritual you are able to add a number of alterations to the ritual equal to half your Arcane Magic Level, and you are able to fuel those alterations by expending the necessary mana up to a total of 100 mana. Choose from:<br/><br/>
 
@@ -471,7 +471,7 @@ Alternatively you can use this ritual to disable a ritual lock permanently or pa
     target: "",
     components: `V,S,M (quill, ink and paper)`,
     duration: "1 Hour",
-    description: `<p style="margin-top:100%;">You touch a quill and imbue it with magic so that it can move on its own. The quill writes whatever you tell it, or whatever is said within 60 feet of it. Alternatively you can spend the full hour to create a common technique scroll for something you are at least level 2 in (you only need to be proficient in armor or techniques to make a scroll for them).<br/><br/>
+    description: `<p style="margin-top:90%;">You touch a quill and imbue it with magic so that it can move on its own. The quill writes whatever you tell it, or whatever is said within 60 feet of it. Alternatively you can spend the full hour to create a common technique scroll for something you are at least level 2 in (you only need to be proficient in armor or techniques to make a scroll for them).<br/><br/>
 
 Empowering: When you empower this spell you increase the rarity of the technique scroll you scribe. You must be the correct level in the thing you are making a scroll for, and spend the necessary time and mana to make the scroll. The rarity, the level you must be in the thing you are making a scroll for, the time it takes and the mana needed are as follows:<br/><br/>
 
@@ -539,7 +539,7 @@ Empowering: When you empower this spell, you increase the length of the speed tu
     target: "multiple",
     components: `S`,
     duration: "instantaneous",
-    description: `<p style="margin-top:62%;">You create three darts of stunning energy. Each dart hits a creature of your choice that you can see within range. The darts all strike simultaneously and you can direct them to hit one creature or several.<br/><br/>
+    description: `<p style="margin-top:52%;">You create three darts of stunning energy. Each dart hits a creature of your choice that you can see within range. The darts all strike simultaneously and you can direct them to hit one creature or several.<br/><br/>
 
 When a dart strikes a creature it must make a Durability Save against your Arcane DC or be stunned until the beginning of their next turn. If two darts strike the same creature your Arcane DC has a +2 added to it. If three darts strike the same creature your Arcane DC has a +5 added to it; if the target[s] fail their Durability Save by 5 or more they become stunned for 1 minute. Every time they take damage they can make a Durability Save against your normal Arcane DC, ending the stunned effect on a success.<br/><br/>
 
@@ -585,9 +585,13 @@ Empowering: When you empower this spell, you increase the number of darts by 1 f
     target: "single",
     components: "V,S",
     duration: "1 Hour",
-    description: `<p style="margin-top:5%;">You call a will-o’-the-wisp into the material plane and it appears within 30 feet of you, and appears as a tiny ball of brilliant colored flames floating in the air, that gives off an eerie light out to 10 feet. For the duration the little spirit obeys your commands and has a flying speed equal to your movement speed, but must stay within range of you (it can follow simple commands like lead us north, stay within 10 feet of me, or touch the first enemy we come across… etc.). If a creature comes in contact with the wisp it explodes and the creature must make a Durability Save against your Arcane DC or take (5)2d4 + your Mind Score necrotic damage (half as much on a success). The spell ends if you dismiss the wisp, if you cast the spell again, or if the wisp comes in contact with a creature and explodes.</p>`,
+    description: `<p style="margin-top:28%;">You call a will-o’-the-wisp into the material plane and it appears within 30 feet of you, and appears as a tiny ball of brilliant colored flames floating in the air, that gives off an eerie light out to 10 feet. For the duration the little spirit obeys your commands and has a flying speed equal to your movement speed, but must stay within range of you (it can follow simple commands like lead us north, stay within 10 feet of me, or touch the first enemy we come across… etc.). If a creature comes in contact with the wisp it explodes and the creature must make a Durability Save against your Arcane DC or take (5)2d4 + your Mind Score necrotic damage (half as much on a success). The spell ends if you dismiss the wisp, if you cast the spell again, or if the wisp comes in contact with a creature and explodes.</p>`,
   },
 ];
+const arcaneSpells2 = [];
+const arcaneSpells3 = [];
+const arcaneSpells4 = [];
+const arcaneSpells5 = [];
 
 // Faith Spells
 const heavens = [];
@@ -668,7 +672,7 @@ function generateSpellLvl0() {
     const randomIndex = Math.floor(Math.random() * arcaneSpines.length);
     const selectedSpine = arcaneSpines[randomIndex];
     let p = document.createElement("p");
-    p.innerText = `${arcaneSpells0[i].plane} Plane - || - ${arcaneSpells0[i].name}`;
+    p.innerText = `${arcaneSpells0[i].name} - || - ${arcaneSpells0[i].plane} Plane`;
     p.value = i;
     p.classList.add("spell", `${arcaneSpells0[i].plane}`);
     p.id = `lv0-${i}`;
@@ -694,7 +698,7 @@ function generateSpellLvl1() {
     const randomIndex = Math.floor(Math.random() * arcaneSpines.length);
     const selectedSpine = arcaneSpines[randomIndex];
     let p = document.createElement("p");
-    p.innerText = `${arcaneSpells1[i].plane} Plane - || - ${arcaneSpells1[i].name}`;
+    p.innerText = `${arcaneSpells1[i].name} - || - ${arcaneSpells1[i].plane} Plane`;
     p.value = i;
     p.classList.add("spell", `${arcaneSpells1[i].plane}`);
     p.id = `lv1-${i}`;
