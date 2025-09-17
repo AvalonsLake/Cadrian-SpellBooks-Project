@@ -592,425 +592,874 @@ const arcaneSpells2 = [
   // Absorb Energy - Dragon
   {
     name: "Absorb Energy",
-    level: 0,
+    level: 2,
     plane: "Dragon",
     mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
-    type: "Utility",
+    manaCost: 2,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
     target: "",
     components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    duration: "1 Round",
+    description: `<p style="margin-top: 88%;">When you are subject to acid, ice, fire, force, lightning, necrotic, poison, radiant, or thunder damage, you absorb damage equal to 5 x the number of mana used to cast the spell. On your next turn you can use an action to use the energy in one of the following ways:<br/><br/>
+
+Convert You convert the energy absorbed into usable mana. You gain 1 mana for every 20 damage absorbed.<br/><br/>
+
+Redirect You concentrate the energy and redirect it at a target you can see within 30 feet of you. Make an Arcane Attack, on a hit you deal half the damage you absorbed (rounded down).<br/><br/>
+
+Protection You surround yourself with the energy you absorbed, gaining Temporary Hit Points equal to half the damage absorbed (rounded down)<br/><br/>
+
+Empowering: When you empower this spell, you increase the amount of damage you can absorb by 5 for each mana used to empower the spell.</p>`,
   },
   // Air Bubble Ritual - Material
-  {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
-    mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
-    type: "Utility",
-    target: "",
-    components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
-  },
   // Barrier Ritual - Material
-  {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
-    mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
-    type: "Utility",
-    target: "",
-    components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
-  },
   // Bound Weapon - Eldritch
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Bound Weapon",
+    level: 2,
+    plane: "Eldritch",
     mod: "",
-    manaCost: 0,
+    manaCost: 2,
     castTime: "Action",
-    range: "30ft",
+    range: "Touch",
     type: "Utility",
     target: "",
-    components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    components: "V,M (a thrown Weapon)",
+    duration: "24 Hours",
+    description: `<p>You touch a thrown weapon and bind it to you so that when you throw it it immediately returns to your hand. If a creature other than you throws it, it doesn’t return to them.</p>`,
   },
   // Comprehend Languages - Eldritch
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Comprehend Languages",
+    level: 2,
+    plane: "Eldritch",
     mod: "",
-    manaCost: 0,
+    manaCost: 2,
     castTime: "Action",
-    range: "30ft",
+    range: "Touch",
     type: "Utility",
-    target: "",
-    components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    target: "single",
+    components: "V",
+    duration: "1 Hour",
+    description: `<p>You pull on the knowledge of the planes to give yourself or a willing creature that you touch the ability to read, understand and speak any language as if it were common.<br/><br/>
+
+Empowering: When you empower this spell, you increase the duration by 1 hour for each mana used to empower the spell.</p>`,
   },
   // Damage Transmutation Ritual - Material
-  {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
-    mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
-    type: "Utility",
-    target: "",
-    components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
-  },
   // Dragon Breath - Dragon
   {
-    name: "Absorb Energy",
-    level: 0,
+    name: "Dragon Breath",
+    level: 2,
     plane: "Dragon",
     mod: "",
-    manaCost: 0,
+    manaCost: 2,
     castTime: "Action",
     range: "30ft",
-    type: "Utility",
-    target: "",
+    type: "Energy",
+    target: "multiple",
     components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    duration: "1 Hour",
+    description: `<p style="margin-top: 37%;">You touch a willing creature and they gain a breath weapon that can be used as an action, you choose if it is a 15-foot cone, or a 30-foot line, all creatures in the area must make a save against your Arcane DC, the save is based on the damage type. When you cast the spell choose a damage type from: acid (Power Save), ice (Durability Save), fire (Power Save), force (Power Save), lightning (Power Save), necrotic (Mind Save), poison (Durability Save), psychic (Mind Save), radiant (Power Save), or thunder (Durability Save). For the duration the creature can use their action to expend any number of mana up to half their Durability Score (minimum of 1) to deal 1d8 for each mana expended + their Durability Score of the chosen damage type to each of the creatures in the area.</p>`,
   },
   // Excavation Ritual - Material
-  {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
-    mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
-    type: "Utility",
-    target: "",
-    components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
-  },
   // Gildal's Mark - Ethereal
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Gildal's Mark",
+    level: 2,
+    plane: "Ethereal",
     mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
-    type: "Utility",
-    target: "",
+    manaCost: 2,
+    castTime: "Bonus Action",
+    range: "60ft",
+    type: "Buff, Debuff",
+    target: "Single",
     components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    duration: "1 Hour Concentration",
+    description: `<p style="margin-top: 2%;">You mark a creature you can see within range as your quarry. The mark pulls you toward the creature, giving you disadvantage on attacks against other creatures. Each time you deal damage to the marked creature you deal an additional 1d4 force, necrotic or radiant damage (your choice). As a bonus action you can move your mark to a different creature within range. If the marked creature turns invisible or attempts to hide you know where they are and can target them as normal.</p>`,
   },
   // Hover - Space
   {
-    name: "Absorb Energy",
-    level: 0,
+    name: "Hover",
+    level: 2,
     plane: "Dragon",
     mod: "",
-    manaCost: 0,
+    manaCost: 2,
     castTime: "Action",
-    range: "30ft",
-    type: "Utility",
-    target: "",
+    range: "15ft",
+    type: "Buff, Utility",
+    target: "single",
     components: "V,S",
     duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    description: `<p style="margin-top: 5%;">You bend the space around a willing creature you can see within range and give them a hover speed equal to their walking speed, and they can hover up to 15 feet off the ground, making them immune to the prone condition, and they resist collision damage from falling.<br/><br/>
+
+Empowering: When you empower this spell, you increase the number of creatures you can target by 1 for each mana used to empower the spell.</p>`,
   },
   // Magic Lock - Arcane
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Magic Lock",
+    level: 2,
+    plane: "Arcane",
     mod: "",
-    manaCost: 0,
+    manaCost: 2,
     castTime: "Action",
-    range: "30ft",
+    range: "Touch",
     type: "Utility",
     target: "",
-    components: "V,S",
+    components: "V,S,M (a lock)",
     duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    description: `<p style="margin-top: 450px;">You magically enhance a single lock that you touch. When you cast the spell choose a password that will open the lock when spoken within 10 feet of the lock. Choose from one of the magical enhancements to apply to the lock.<br/><br/>
+
+Illusory: When you cast the spell on the lock, the lock vanishes and an illusionary duplicate appears on the opposite side of the object the lock is on (if the door handle is on the right side it vanishes and appears on the left side of the door). A successful Perception Check against your Arcane DC + the number of mana used to cast the spell, reveals that it is an illusion, and the creature can see the other handle.<br/><br/>
+
+Intricate You make the lock a lot more difficult to open with anything other than the password (not even the original key works in it). The DC to pick the lock gains a bonus equal to the number of mana used to cast the spell. <br/><br/>
+
+Trapped You bind a level 1 spell to the lock, and the first time a creature attempts to open the lock without using the password the spell is triggered, and targets the creature trying to open the lock. The damage dealt is equal to the spells original damage + the number of mana used to cast the spell.<br/><br/>
+
+Empowering: When you empower this spell, you increase the bonuses to the lock by 1 for each mana used to empower the spell.</p>`,
   },
   // Magic Sight - Arcane
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Magic Sight",
+    level: 2,
+    plane: "Arcane",
     mod: "",
-    manaCost: 0,
+    manaCost: 2,
     castTime: "Action",
-    range: "30ft",
+    range: "60ft",
     type: "Utility",
     target: "",
-    components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    components: "V",
+    duration: "10 Minutes",
+    description: `<p style="margin-top: 28%;">Your eyes glow with arcane energy, allowing you to see the auras given off by magic within 60 feet of you. Any magical creature, weapon or object will have an aura. You can determine whether it is Arcane, Faith and/or Nature magic, and gain a general idea of how much mana is in the magical creature, weapon or object. Creatures and objects protected from scrying appear as if they aren’t magical. Invisible creatures are still invisible to this spell.<br/><br/>
+
+Empowering: When you empower this spell you increase the distance you can see by 15 feet for each mana used to empower the spell.</p>`,
   },
   // Mind Sliver - Arcane
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Mind Sliver",
+    level: 2,
+    plane: "Arcane",
     mod: "",
-    manaCost: 0,
+    manaCost: 2,
     castTime: "Action",
-    range: "30ft",
+    range: "120ft",
     type: "Utility",
-    target: "",
+    target: "single/multi",
     components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    duration: "1 Hour",
+    description: `<p style="margin-top: 38%;">You create a sliver of arcane magic and send it into the mind of a creature you can see within range. The target must make a Mind Save against your Arcane DC. On a failure you know the location of the creature for the duration (as long as they are on the same plane as you). If you spend one minute concentrating on the connection you can see through their eyes, and hear through their ears; at which time you are blind and deaf until you choose to stop focusing on the connection.<br/><br/>
+
+Empowering: When you empower this spell you increase the number of creatures you can target by 1 for each mana used to empower the spell. You can still only focus on seeing and listening in on one creature at a time.</p>`,
   },
   // Mirth's Bizarre Floating Disk - Space
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Mirth's Bizarre Floating Disk",
+    level: 2,
+    plane: "Space",
     mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
-    type: "Utility",
+    manaCost: 2,
+    castTime: "BonusAction",
+    range: "15ft",
+    type: "Utility, Protection",
     target: "",
     components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    duration: "1 Hour Concentration",
+    description: `<p style="margin-top: 21%;">You create a transparent floating disk that is 5 feet in diameter, 6 inches thick, hovers 1 foot off the ground, and always stays within 15 feet of you. As you move the disk moves with you to stay within 15 feet, but as a bonus action you can take control of the disk to move it, or make it stand vertically, giving ¾ cover from 1 direction. The disk can hold 500 pounds before it starts to sink to the ground.<br/><br/>
+
+Empowering: When you empower this spell, you increase the diameter by 5 feet (you gain full cover), and the weight the disk can hold by 500 pounds for each mana used to empower the spell.</p>`,
   },
   // Mysterious Disappearance - Ethereal
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Mysterious Disappearance",
+    level: 2,
+    plane: "Ethereal",
     mod: "",
-    manaCost: 0,
+    manaCost: 2,
     castTime: "Action",
-    range: "30ft",
-    type: "Utility",
+    range: "Self",
+    type: "Buff, Utility",
     target: "",
     components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    duration: "a number of rounds equal to half your Mind Score (minimum of 1)",
+    description: `<p>You create a cloud of mist around yourself and turn invisible for the duration. The invisibility ends early if you make a weapon attack, or cast a spell.</p>`,
   },
   // Portal Strike - Space
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Portal Strike",
+    level: 2,
+    plane: "Space",
     mod: "",
-    manaCost: 0,
-    castTime: "Action",
+    manaCost: 2,
+    castTime: "Bonus Action",
     range: "30ft",
-    type: "Utility",
-    target: "",
+    type: "Buff, Utility",
+    target: "single",
     components: "V,S",
     duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    description: `<p style="margin-top: 8%;">You open a small portal in front of you that only you can see, just big enough to swing a weapon through it, and open a corresponding portal up in front of a creature you can see within range, so that your weapon attacks hit the creature as if you were standing in front of the creature. All of your attacks are made with advantage as if you are invisible, then both portals close.<br/><br/>
+
+Empowering: When you empower this spell, you increase the range by 15 feet for each mana used to empower the spell.</p>`,
   },
   // Quarion's Overcharging Ritual - Material
-  {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
-    mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
-    type: "Utility",
-    target: "",
-    components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
-  },
   // Quo's Item Swap - Space
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Quo's Item Swap",
+    level: 2,
+    plane: "Space",
     mod: "",
-    manaCost: 0,
-    castTime: "Action",
+    manaCost: 2,
+    castTime: "Bonus Action",
     range: "30ft",
     type: "Utility",
     target: "",
-    components: "V,S",
+    components:
+      "S,M (an object that is no more than 1 pound different than the target item)",
     duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    description: `<p style="margin-top: 5%;">You target an object that weighs no more than 10 pounds, that isn’t being worn or stuck/bolted to a larger object, and magically swap it for the object you are holding. If a creature is holding the object when you a attempt to swap items they can make a Power Save against your Arcane DC to hold onto the item.<br/><br/>
+
+Empowering: When you empower this spell, you increase the range by 15 feet for each mana used to empower the spell.</p>`,
   },
   // Retrace - Time
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Retrace",
+    level: 2,
+    plane: "Time",
     mod: "",
-    manaCost: 0,
-    castTime: "Action",
+    manaCost: 2,
+    castTime: "Bonus/Reflexive Action",
     range: "30ft",
     type: "Utility",
-    target: "",
+    target: "single",
     components: "V,S",
     duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    description: `<p>After moving at least 15 feet, you can cast this spell as a bonus action to retrace your steps to where you were at the beginning of your turn in a blink of an eye. This spell doesn’t provoke reflexive attacks. Alternatively, you can target a creature you can see within range that has moved at least 15 feet, and use your reflexive action to cast the spell, forcing the creature to make a Mind Save against your Arcane DC or have their steps retraced back to where they were at the beginning of their turn (a creature can choose to fail the save).</p>`,
   },
   // Reversal - Arcane
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Reversal",
+    level: 2,
+    plane: "Arcane",
     mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
+    manaCost: 2,
+    castTime: "Reflexive Action",
+    range: "15ft",
     type: "Utility",
     target: "",
-    components: "V,S",
+    components: "S",
     duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    description: `<p style="margin-top: 10%;">If you or an ally within range are hit by a single or multi target spell that requires an attack roll, you can attempt to reflect the spell back at the caster. You reduce the damage of the spell by (11)2d10 + your Mind Score. If you reduce the damage to 0 you send the spell back at the caster, make an Arcane Attack, on a hit you deal the same damage you would have taken.<br/><br/>
+
+Empowering: When you empower this spell, you increase the number of damage you can reduce by (5)1d10 for each mana used to empower the spell.</p>`,
   },
   // Reverse Injury - Time
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Reverse Injury",
+    level: 2,
+    plane: "Time",
     mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
-    type: "Utility",
-    target: "",
+    manaCost: 2,
+    castTime: "1 Minute",
+    range: "Touch",
+    type: "Healing",
+    target: "single",
     components: "V,S",
     duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    description: `<p>You focus on an injury that happened in the last 24 hours. Isolating the injury in a time bubble, you reverse time within the bubble. The injured creature recovers a number of Hit Points equal to (11)2d10 + your Mind Score. This spell can reattach missing limbs.<br/><br/>
+
+Empowering: When you empower this spell, you increase the HP recovered by (5)1d10 for each mana used to empower the spell.</p>`,
   },
   // Slow Fall - Space
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Slow Fall",
+    level: 2,
+    plane: "Space",
     mod: "",
-    manaCost: 0,
-    castTime: "Action",
+    manaCost: 2,
+    castTime: "Bonus/Reflexive Action",
     range: "30ft",
-    type: "Utility",
-    target: "",
+    type: "Protection",
+    target: "multiple",
     components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    duration: "1 Minute",
+    description: `<p>You manipulate the gravity around up to 4 creatures you can see within range, so that for the duration when they fall, they fall at a controlled rate and don’t take collision damage when they land.<br/><br/>
+
+Empowering: When you empower this spell, you increase the number of creatures you can target by 2 for each mana used to empower the spell.</p>`,
   },
   // Summon Automaton - Arcane
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Summon Automaton",
+    level: 2,
+    plane: "Arcane",
     mod: "",
-    manaCost: 0,
+    manaCost: 2,
     castTime: "Action",
     range: "30ft",
-    type: "Utility",
+    type: "Summon",
     target: "",
     components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    duration: "24 Hours",
+    description: `<p style="margin-top: 1190px;">You summon an automaton within range. The automaton is a tiny steam powered robot that you can use magic to alter to give them different attacks, movement speeds, and more. When you cast the spell you summon a tiny automaton (you choose what the automaton looks like). The automaton has: a number of HP equal to your Mind Score (minimum of 1), a 20 feet movement speed, and each of its Ability Scores is equal to your Mind Score, and they are immune to poison and psychic damage. When you cast the spell choose 2 of the following traits for your automaton to have:<br/><br/>
+
+Attacker When it attacks it can add (2)1d4 to their attack rolls.<br/>
+Defender It is made out of enchanted materials that reduce the damage taken from non-magical weapons that deal blunt, piercing and slashing, and the damage reduction is equal to your Mind Score.<br/>
+Digger It gains a burrowing speed equal to half their movement speed.<br/>
+Flyer It gains a flying speed equal to its movement speed.<br/>
+Powerful It counts as a size larger when determining its carrying, and lifting capacity, along with shoving/throwing distances and grappling DC.<br/>
+Quick All of its movement speeds increase by 50%. For example, if its movement speed is 30 feet, it becomes 45 feet, or if your movement speed is 80 feet, it becomes 120 feet.<br/>
+Swimmer It gains a swimming speed equal to its movement speed.<br/>
+As a bonus action you can give the summons under your command a single command, and they do their best to follow your instructions. If you don’t give a command they defend themselves. The automaton can make a single unarmed attack using your Nature Attack, dealing 1d4 + your Mind Score blunt, piercing or slashing damage (your choice when you summon it). Alternatively if it is small it can use any weapon you are proficient in.<br/><br/>
+
+The maximum number of summons you can have under your control is equal to your Mind Score (minimum of 1). When the spell ends the summons becomes hostile toward you and your allies, unless you cast the spell on it again (using the same amount of mana used to summon it). Before the spell ends you can use an action to dismiss the summon.<br/><br/>
+
+Empowering: When you empower this spell, you can modify your summon with 1 of the following options for each mana used to empower the spell. Choose from:<br/><br/>
+
+An extra attack (max of 4 attacks)<br/>
+Increase the automaton one size category (max size is huge. Increases movement speed by 5 feet, and the number of damage dice to 2 for large and 4 for huge)<br/>
+Increase unarmed attack damage die (increases from d4 to d6, and d6 to d8. Max of d12)<br/>
+Increase base movement speed by 10 feet (max of 70)<br/>
+A new movement speed (burrowing is half of the automaton’s movement speed)<br/>
+Increase HP level by 2 (the automaton’s health = Mind Score x HP level + Mind Score. Max level is 10)</p>`,
   },
   // Summon Minor Alien - Space
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Summon Minor Alien",
+    level: 2,
+    plane: "Space",
     mod: "",
-    manaCost: 0,
+    manaCost: 2,
     castTime: "Action",
     range: "30ft",
-    type: "Utility",
+    type: "Summon",
     target: "",
     components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    duration: "24 Hours",
+    description: `<p style="margin-top: 1020px;">You summon an alien within range. You can use magic to alter them to give them different attacks, movement speeds, and more. When you cast the spell you summon a tiny alien (you choose which type of alien you summon). The alien has: immunity to fire and ice damage, a number of HP equal to your Mind Score (minimum of 1), a 20 feet flying speed, and each of its Ability Scores is equal to your Mind Score. Choose which type of alien you summon:<br/><br/>
+
+Armor Fish has natural armor so it can add your Mind Score to its defense, and it can shoot slag at a creature it can see within 15 feet of it dealing (2)1d4 fire damage on a hit. Meteor Muncher has natural armor so it can add your Mind Score to its defense, and it does critical damage to objects. Oxygen Jelly creates a bubble of oxygen 5 feet around itself, and its attacks deal an additional (2)1d4 radiant damage. Pseudo Kanuki resists necrotic and psychic damage, and when it bites a creature it can transform into one of the creature’s weapons (using its defense while in that form) it can stay in that form for 1 minute, maintaining concentration as if concentrating on a spell. Space Worm resists physical damage, and resists radiant damage.<br/><br/>
+
+As a bonus action you can give the summons under your command a single command, and they do their best to follow your instructions. If you don’t give a command they defend themselves. The alien can make a single unarmed attack using your Nature Attack, dealing (2)1d4 + your Mind Score blunt, piercing or slashing damage (your choice when you summon it).<br/><br/>
+
+The maximum number of summons you can have under your control is equal to your Mind Score (minimum of 1). When the spell ends the summons becomes hostile toward you and your allies, unless you cast the spell on it again (using the same amount of mana used to summon it). Before the spell ends you can use an action to dismiss the summon.<br/><br/>
+
+Empowering: When you empower this spell, you can modify your summon with 1 of the following options for each mana used to empower the spell. Choose from:<br/><br/>
+
+An extra attack (max of 4 attacks)<br/>
+Increase the alien one size category (max size is large. Increases movement speed by 5 feet, and the number of damage dice to 2 for large)<br/>
+Increase damage die (increases from d4 to d6, and d6 to d8. Max of d12)<br/>
+Increase base movement speed by 10 feet (max of 70)<br/>
+Increase HP level by 2 (the beast’s health = Mind Score x HP level + Mind Score. Max level is 10)</p>`,
   },
   // Summon Spirit - Ethereal
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Summon Spirit",
+    level: 2,
+    plane: "Ethereal",
     mod: "",
-    manaCost: 0,
+    manaCost: 2,
     castTime: "Action",
     range: "30ft",
-    type: "Utility",
+    type: "Summon",
     target: "",
     components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    duration: "24 Hours",
+    description: `<p style="margin-top: 1480px;">You summon a spirit within range. The spirit appears as a ghost of a creature of your choice, you can use magic to alter them to give them different attacks, movement speeds, and more. When you cast the spell you summon a tiny spirit (you choose what the spirit looks like). The spirit has: a number of HP equal to your Mind Score (minimum of 1), a 20 feet flying speed, and each of its Ability Scores is equal to your Mind Score. All spirits have the same first trait but depending on what type of spirit you summon it has a different second trait:<br/><br/>
+
+First Trait: The spirit passes through solid objects, making it resist physical weapon attacks, and the spirit deals necrotic damage.<br/><br/>
+
+Ghost: As an action the spirit can change its form to look like a creature it can see within 30 feet of it. While in its new form it can copy one of the creature’s special traits.<br/><br/>
+
+Phantom: As an action the spirit can force a creature it can see within 30 feet of it to make a Mind Save against the summoner’s Arcane DC or become frightened of either the phantom or the summoner (summoner’s choice). The creature is afraid for 1 minute, but can remake the save whenever they take damage or are out of line of sight (ending the effects on a success).<br/><br/>
+
+ Stalker: The stalker is always invisible, and can move twice as far from the summoner than normal summons.<br/><br/>
+
+Possessor: As an action the spirit can attempt to possess a living creature. The creature must make a Mind Save against the summoner’s Arcane DC or become possessed by the spirit. a possessed creature falls under the summoner’s command as if they are a summoned creature (acting on the summoner’s turn). The creature can remake the save at the beginning of each of their turns, and whenever they take damage (ending the effects on a success).<br/><br/>
+
+Poltergeist: The spirit can use an action to possess an object that is its same size or smaller. While in an object the spirit gains a number of temporary Hit Points equal to the summoner’s Mind Score, and it can remain in the object until it uses an action to leave, or its temporary Hit Points are reduced to 0.<br/><br/>
+
+As a bonus action you can give the summons under your command a single command, and they do their best to follow your instructions. If you don’t give a command they defend themselves. The spirit can make a single unarmed attack using your Nature Attack, dealing 1d4 + your Mind Score necrotic damage.<br/><br/>
+
+The maximum number of summons you can have under your control is equal to your Mind Score (minimum of 1). When the spell ends the summons becomes hostile toward you and your allies, unless you cast the spell on it again (using the same amount of mana used to summon it). Before the spell ends you can use an action to dismiss the summon.<br/><br/>
+
+Empowering: When you empower this spell, you can modify your summon with 1 of the following options for each mana used to empower the spell. Choose from:<br/><br/>
+
+An extra attack (max of 4 attacks)<br/>
+Increase the spirit one size category (max size is huge. Increases movement speed by 5 feet, and the number of damage dice to 2 for large and 4 for huge)<br/>
+Increase damage die (increases from d4 to d6, and d6 to d8. Max of d12)<br/>
+Increase base movement speed by 10 feet (max of 70)<br/>
+Increase HP level by 2 (the spirit’s health = Mind Score x HP level + Mind Score. Max level is 10)</p>`,
   },
   // Tordek's Gravity Strike - Space
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Tordek's Gravity Strike",
+    level: 2,
+    plane: "Space",
     mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
-    type: "Utility",
+    manaCost: 2,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Buff, Protection",
     target: "",
-    components: "V,S",
+    components: "V,S,M (a weapon)",
     duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    description: `<p>If you fall at least 10 feet before making a weapon attack on a creature, you can cast this spell to transfer all of the collision damage you would have taken to the creature on a hit. You land gently within 5 feet of the creature whether you hit or miss with the attack.</p>`,
   },
   // Warp - Space
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "Warp",
+    level: 2,
+    plane: "Space",
     mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
+    manaCost: 2,
+    castTime: "Bonus Action",
+    range: "Self",
     type: "Utility",
     target: "",
-    components: "V,S",
+    components: "S",
     duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    description: `<p>You bend space to shorten the distance between you and a point within 30 feet of you, that you can see, and that is able to support you.<br/><br/>
+
+Empowering: When you empower this spell, you increase the distance you can warp by 15 feet for each mana used to empower the spell.</p>`,
   },
   // X-Ray Vision - Ethereal
   {
-    name: "Absorb Energy",
-    level: 0,
-    plane: "Dragon",
+    name: "X-Ray Vision",
+    level: 2,
+    plane: "Ethereal",
     mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "30ft",
+    manaCost: 2,
+    castTime: "Bonus Action",
+    range: "Self",
     type: "Utility",
     target: "",
     components: "V,S",
-    duration: "Instantaneous",
-    description: `<p style="margin-top: 55%;"></p>`,
+    duration: "1 Minute Concentration",
+    description: `<p>When you cast the spell, all objects within 60 of you become transparent to you, allowing you to see through them for the duration of the spell.</p>`,
   },
 ];
-const arcaneSpells3 = [];
+const arcaneSpells3 = [
+  // Age - Time
+  {
+    name: "Age",
+    level: 3,
+    plane: "Time",
+    mod: "",
+    manaCost: 3,
+    castTime: "Action",
+    range: "Self",
+    type: "Buff, Utility",
+    target: "Single",
+    components: "V,S",
+    duration: "8 Hours",
+    description: `<p style="margin-top:1000px;">You touch a willing creature, and age them up to 20 years for the duration. Not only does the creature's appearance change, but for the duration they gain a number of temporary Hit Points equal to your Mind Score and a +2 bonus to an Ability Score of their choice (can't go above level 10)</p>`,
+  },
+  // Arwyl's Compass - Arcane
+  {
+    name: "Arwyl's Compass",
+    level: 3,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "SIngle",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Bartholomew's Statuette - Eldritch
+  {
+    name: "Bartholomew's Statuette",
+    level: 3,
+    plane: "Eldricth",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Cole's Dragon weapon - Dragon
+  {
+    name: "Cole's Dragon weapon",
+    level: 3,
+    plane: "Dragon",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Counter Spell - Arcane
+  {
+    name: "Counter Spell",
+    level: 3,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Crafting Ritual - Material
+  {
+    name: "Crafting Ritual",
+    level: 3,
+    plane: "Material",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Daylen's Undead Servant - Material
+  {
+    name: "Daylen's Undead Servant",
+    level: 3,
+    plane: "Material",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Deflecting Missile - Arcane
+  {
+    name: "Deflecting Missile",
+    level: 3,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Dispel Magic - Arcane
+  {
+    name: "Dispel magic",
+    level: 3,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Dragon flight - Dragon
+  {
+    name: "Dragon Flight",
+    level: 3,
+    plane: "Dragon",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Flick - Space
+  {
+    name: "Flick",
+    level: 3,
+    plane: "Space",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Mirth's Magical Misplacement - Space
+  {
+    name: "Mirth's Magical Misplacement",
+    level: 3,
+    plane: "Space",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+
+  // Pass - Ethereal
+  {
+    name: "Pass",
+    level: 3,
+    plane: "Ethereal",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Phase - Ethereal
+  {
+    name: "Phase",
+    level: 3,
+    plane: "Ethereal",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Pocket Dimension - Space
+  {
+    name: "Pocket Dimension",
+    level: 3,
+    plane: "Space",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Retake - Time
+  {
+    name: "Retake",
+    level: 3,
+    plane: "Time",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // See Invisibility - Ethereal
+  {
+    name: "See Invisibility",
+    level: 3,
+    plane: "Ethereal",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Shared Skill - Eldritch
+  {
+    name: "Shared Skill",
+    level: 3,
+    plane: "Eldritch",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Shift Gravity - Space
+  {
+    name: "Shift Gravity",
+    level: 3,
+    plane: "Space",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Silence - Space
+  {
+    name: "Silence",
+    level: 3,
+    plane: "Space",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Skybound Ritual - Material
+  {
+    name: "Skybound Ritual",
+    level: 3,
+    plane: "Material",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Slow Bubble - Time
+  {
+    name: "Slow Bubble",
+    level: 3,
+    plane: "Time",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Sonic Wave - Space
+  {
+    name: "Sonic Wave",
+    level: 3,
+    plane: "Space",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Speed Bubble
+  {
+    name: "Speed Bubble",
+    level: 3,
+    plane: "Time",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Summon Beast - Material
+  {
+    name: "Summon Beast",
+    level: 3,
+    plane: "Material",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Summon Warriors - Material
+  {
+    name: "Summon Warriors",
+    level: 3,
+    plane: "Material",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // The Shadows Mask - Eldritch
+  {
+    name: "The Shadows Mask",
+    level: 3,
+    plane: "Eldritch",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+  // Trance - Arcane
+  {
+    name: "Trance",
+    level: 3,
+    plane: "Arcane",
+    mod: "",
+    manaCost: 3,
+    castTime: "Reflexive Action",
+    range: "Self",
+    type: "Protection, Utility",
+    target: "",
+    components: "V,S",
+    duration: "1 Round",
+    description: `<p style="margin-top:62%;"></p>`,
+  },
+];
 const arcaneSpells4 = [];
 const arcaneSpells5 = [];
 
@@ -1085,6 +1534,7 @@ function generateShelf() {
   hideFilter();
   generateSpellLvl0();
   generateSpellLvl1();
+  generateSpellLvl2();
 }
 
 function generateSpellLvl0() {
@@ -1139,6 +1589,32 @@ function generateSpellLvl1() {
   }
 }
 
+function generateSpellLvl2() {
+  let length = arcaneSpells2.length;
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * arcaneSpines.length);
+    const selectedSpine = arcaneSpines[randomIndex];
+    let p = document.createElement("p");
+    p.innerText = `${arcaneSpells2[i].name} - || - ${arcaneSpells2[i].plane} Plane`;
+    p.value = i;
+    p.classList.add("spell", `${arcaneSpells2[i].plane}`);
+    p.id = `lv2-${i}`;
+    p.style.backgroundImage = `url('${selectedSpine}')`;
+    p.addEventListener("click", () => {
+      displayedSpell = p.value;
+      currentArray = "lvl2";
+      if (sameCard === "" || sameCard != p.id) {
+        flipCard();
+        sameCard = p.id;
+      } else {
+        resetCard();
+        sameCard = "";
+      }
+    });
+    shelf2.appendChild(p);
+  }
+}
+
 // Card & Display Functions
 
 function displaySpell() {
@@ -1167,6 +1643,19 @@ function displaySpell() {
     spellComponents.innerText = `Components: ${arcaneSpells1[displayedSpell].components}`;
     spellDuration.innerText = `Duration: ${arcaneSpells1[displayedSpell].duration}`;
     spellDescription.innerHTML = arcaneSpells1[displayedSpell].description;
+  }
+  if (currentArray === "lvl2") {
+    spellName.innerText = arcaneSpells2[displayedSpell].name;
+    spellLevel.innerText = `Level: ${arcaneSpells2[displayedSpell].level}`;
+    spellPlane.innerText = arcaneSpells2[displayedSpell].plane;
+    spellMod.innerText = arcaneSpells2[displayedSpell].mod;
+    spellCost.innerText = `Mana Cost: ${arcaneSpells2[displayedSpell].manaCost}`;
+    spellCastTime.innerText = `Cast Time: ${arcaneSpells2[displayedSpell].castTime}`;
+    spellRange.innerText = `Range: ${arcaneSpells2[displayedSpell].range}`;
+    spellType.innerText = `Type: ${arcaneSpells2[displayedSpell].type}`;
+    spellComponents.innerText = `Components: ${arcaneSpells2[displayedSpell].components}`;
+    spellDuration.innerText = `Duration: ${arcaneSpells2[displayedSpell].duration}`;
+    spellDescription.innerHTML = arcaneSpells2[displayedSpell].description;
   }
 }
 
