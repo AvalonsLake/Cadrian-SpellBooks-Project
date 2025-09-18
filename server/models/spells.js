@@ -50,4 +50,4 @@ const spellSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("Arcane", spellSchema);
+module.exports = mongoose.model("arcane", spellSchema);

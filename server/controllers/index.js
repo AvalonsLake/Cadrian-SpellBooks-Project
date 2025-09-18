@@ -4,7 +4,7 @@ const ObjectId = require("mongodb").ObjectId;
 // Get All Spells
 const getAllSpells = async (req, res) => {
   try {
-    const result = await mongodb.getDb().db().collection("arcanes").find();
+    const result = await mongodb.getDb().db().collection("arcane").find();
     result.toArray().then((lists) => {
       res.setHeader("Content-Type", "application/json");
       res.status(200).json(lists);
@@ -22,7 +22,7 @@ const getSpell = async (req, res) => {
     const result = await mongodb
       .getDb()
       .db()
-      .collection("arcanes")
+      .collection("arcane")
       .find({ _id: userId });
     result.toArray().then((lists) => {
       res.setHeader("Content-Type", "application/json");
