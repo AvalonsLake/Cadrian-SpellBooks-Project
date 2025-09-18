@@ -61,27 +61,27 @@ nav a {
 .shelf {
   text-align: center;
   margin: 40px 30px;
-  background-color: #352315;
+  background-color: #523f30;
   /* background-color: rgb(164, 145, 122); */
-  width: 400px;
+  width: 450px;
   height: 850px;
   overflow-y: auto;
 }
 
-#arcaneShelf p {
+.shelf div p {
   padding: 10px 0px;
   margin: 3px;
   border: 1px solid grey;
 }
 
-#arcaneShelf p:hover {
+.shelf div p:hover {
   background-color: grey;
 }
 
 .spell {
-  color: white;
+  color: rgb(255, 196, 0);
   text-shadow: 1px 1px 0px black;
-  background-size: 390px 38px;
+  background-size: 427px 38px;
   /* font-weight: bold; */
   filter: brightness(70%);
 }
@@ -93,7 +93,8 @@ nav a {
 /* Shelf Filter */
 
 .filter {
-  background-color: rgb(237, 211, 179);
+  background-color: rgb(146, 112, 69);
+  border-radius: 20px;
 }
 
 .settings {
@@ -181,7 +182,7 @@ nav a {
   margin-left: -26%;
 }
 #spellCost {
-  margin: 0px 35%;
+  margin: -10px 35%;
 }
 #spellCastTime {
   margin-left: 10%;
@@ -190,15 +191,15 @@ nav a {
   margin-left: 13%;
 }
 #spellType {
-  margin-top: 5px;
+  margin-top: -5px;
   margin-left: 10%;
 }
 #spellComponents {
-  margin-top: 5px;
+  margin-top: -5px;
   margin-left: 13%;
 }
 #spellDuration {
-  margin: 0px 24%;
+  margin: -5px 24%;
 }
 
 /* CSS Grid Layout experiment */
@@ -281,6 +282,7 @@ nav a {
   display: flex;
   align-items: center;
   overflow-y: auto;
+  position: static;
 }
 
 /* Mobile Styles */
@@ -293,7 +295,11 @@ nav a {
   }
 
   .shelf {
-    height: 200px;
+    height: 400px;
     width: 400px;
+  }
+
+  .spell {
+    background-size: 392px 38px;
   }
 }

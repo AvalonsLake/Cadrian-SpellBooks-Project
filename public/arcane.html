@@ -56,7 +56,7 @@
                 type="checkbox"
                 id="time"
                 name="time"
-                onclick=""
+                onclick="timeFilter()"
                 checked
               />
               <label for="ethereal">Ethereal</label>
@@ -65,7 +65,7 @@
                 type="checkbox"
                 id="ethereal"
                 name="ethereal"
-                onclick="timeFilter()"
+                onclick="etherealFilter()"
                 checked
               />
               <label for="eldritch">Eldritch</label>
@@ -105,7 +105,7 @@
                 type="checkbox"
                 id="level5"
                 name="level5"
-                onclick=""
+                onclick="filterLevel5()"
                 checked
               />
               <label for="level1">Level 1</label>
@@ -123,7 +123,7 @@
                 type="checkbox"
                 id="level6"
                 name="level6"
-                onclick=""
+                onclick="filterLevel6()"
                 checked
               />
               <label for="level2">Level 2</label>
@@ -132,7 +132,7 @@
                 type="checkbox"
                 id="level2"
                 name="level2"
-                onclick=""
+                onclick="filterLevel2()"
                 checked
               />
               <label for="level7">Level 7</label>
@@ -141,7 +141,7 @@
                 type="checkbox"
                 id="level7"
                 name="level7"
-                onclick=""
+                onclick="filterLevel7()"
                 checked
               />
               <label for="level3">Level 3</label>
@@ -150,7 +150,7 @@
                 type="checkbox"
                 id="level3"
                 name="level3"
-                onclick=""
+                onclick="filterLevel3()"
                 checked
               />
               <label for="level8">Level 8</label>
@@ -159,7 +159,7 @@
                 type="checkbox"
                 id="level8"
                 name="level8"
-                onclick=""
+                onclick="filterLevel8()"
                 checked
               />
               <label for="Level 4">Level 4</label>
@@ -168,7 +168,7 @@
                 type="checkbox"
                 id="Level 4"
                 name="Level 4"
-                onclick=""
+                onclick="filterLevel4()"
                 checked
               />
               <label for="Level 9">Level 9</label>
@@ -177,7 +177,7 @@
                 type="checkbox"
                 id="Level 9"
                 name="Level 9"
-                onclick=""
+                onclick="filterLevel9()"
                 checked
               />
               <label for="level10">Level 10</label>
@@ -186,7 +186,7 @@
                 type="checkbox"
                 id="level10"
                 name="level10"
-                onclick=""
+                onclick="filterLevel10()"
                 checked
               />
             </section>
@@ -213,7 +213,40 @@
             <button onclick="clearFilter()">Clear</button>
           </section>
         </div>
-        <div id="arcaneShelf"></div>
+        <div id="lvl0Shelf">
+          <h3><u>Level 0</u></h3>
+        </div>
+        <div id="lvl1Shelf">
+          <h3><u>Level 1</u></h3>
+        </div>
+        <div id="lvl2Shelf">
+          <h3><u>Level 2</u></h3>
+        </div>
+        <div id="lvl3Shelf">
+          <h3><u>Level 3</u></h3>
+        </div>
+
+        <div id="lvl4Shelf">
+          <h3><u>Level 4</u></h3>
+        </div>
+        <div id="lvl5Shelf">
+          <h3><u>Level 5</u></h3>
+        </div>
+        <div id="lvl6Shelf">
+          <h3><u>Level 6</u></h3>
+        </div>
+        <div id="lvl7Shelf">
+          <h3><u>Level 7</u></h3>
+        </div>
+        <div id="lvl8Shelf">
+          <h3><u>Level 8</u></h3>
+        </div>
+        <div id="lvl9Shelf">
+          <h3><u>Level 9</u></h3>
+        </div>
+        <div id="lvl10Shelf">
+          <h3><u>Level 10</u></h3>
+        </div>
       </div>
 
       <div class="card">
