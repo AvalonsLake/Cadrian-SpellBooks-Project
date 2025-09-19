@@ -30,21 +30,6 @@ const Post = require("../models/spells");
 
 function insertData() {
   Post.insertMany([
-    {
-    name: "Arcane Blast",
-    level: 0,
-    plane: "Arcane",
-    mod: "",
-    manaCost: 0,
-    castTime: "Action",
-    range: "60ft",
-    type: "Energy",
-    target: "single",
-    components: "V,S",
-    duration: "Instantaneous",
-    description:
-      "You create a ball of arcane energy in your hands and fire it at a creature you can see within range. Make an *Arcane Attack*, on a hit you deal 1d6 + *Mind Score* of force damage.",
-  },
   {
     name: "Arcane Hand",
     level: 0,
@@ -58,7 +43,7 @@ function insertData() {
     components: "S",
     duration: "5 Minutes",
     description:
-      "You create a spectral hand that you can control with your mind by using your bonus action each turn (it has a flying speed equal to your movement speed). It can lift up to 5 pounds, and if it is used to attack a creature, make an *Arcane Attack* as a bonus action, on a hit the target takes damage equal to your *Mind Score*.",
+      "You create a spectral hand that you can control with your mind by using your bonus action each turn (it has a flying speed equal to your movement speed). It can lift up to 5 pounds, and if it is used to attack a creature, make an *Arcane Attack* as a bonus action, on a hit the target takes damage equal to your Mind Score.",
   },
   {
     name: "Manipulate",
@@ -126,6 +111,6 @@ function insertData() {
   ]);
 }
 
-insertData();
+// insertData();
 
 module.exports = { getDb, initDb };
