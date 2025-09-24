@@ -270,6 +270,58 @@
           </div>
         </div>
       </div>
+      <div class="addSpellPage">
+        <form action="/Cadrian-SpellBooks-Project/server/controllers/add-Spell" method="POST">
+          <label for="name"><b>Name</b></label>
+          <input type="text" name="name" />
+
+          <label for="level"><b>Level</b></label>
+          <input type="number" name="level" />
+
+          <br/>
+
+          <label for="plane"><b>Plane</b></label>
+          <input type="text" name="plane" />
+
+          <label for="mod"><b>Modifier</b></label>
+          <input type="text" name="mod" />
+
+          <br/>
+
+          <label for="manaCost"><b>Manacost</b></label>
+          <input type="number" name="manaCost" />
+
+          <label for="castTime"><b>Cast Time</b></label>
+          <input type="text" name="castTime" />
+
+          <br/>
+
+          <label for="range"><b>Range</b></label>
+          <input type="text" name="range" />
+
+          <label for="type"><b>Type</b></label>
+          <input type="text" name="type" />
+
+          <br/>
+
+          <label for="target"><b>Target</b></label>
+          <input type="text" name="target" />
+
+          <label for="components"><b>Components</b></label>
+          <input type="text" name="components" />
+
+          <br/><br/>
+
+          <label for="duration"><b>Duration</b></label>
+          <input type="text" name="duration" />
+
+
+          <label for="description"><b>Spell Description</b></label>
+          <textarea name="description" cols="50" rows="10"></textarea>
+
+          <input type="submit" value="Add" class="btn" />
+        </form>
+      </div>
     </div>
   </body>
   <footer></footer>

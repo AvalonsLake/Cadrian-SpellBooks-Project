@@ -285,6 +285,17 @@ nav a {
   position: static;
 }
 
+.addSpellPage {
+  background-color: #523f30;
+  padding: 10px;
+  width: 600px;
+  /* display: none; */
+}
+
+.addSpellPage input {
+ margin: 10px;
+}
+
 /* Mobile Styles */
 
 @media (device-width <= 600px) {

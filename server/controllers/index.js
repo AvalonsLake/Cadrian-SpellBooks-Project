@@ -1,6 +1,9 @@
 const mongodb = require("../config/db");
 const ObjectId = require("mongodb").ObjectId;
 
+
+
+
 // Get All Spells
 const getAllSpells = async (req, res) => {
   try {
@@ -10,7 +13,7 @@ const getAllSpells = async (req, res) => {
       res.status(200).json(lists);
     });
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).json(error + "it broke in GetAllSpells");
   }
 };
 
@@ -43,8 +46,6 @@ const updateSpell = async (req, res) => {
   res.send("you've updated a spell");
 };
 
-const addSpell = async (req, res) => {
-  res.send("you've added a spell");
-};
 
-module.exports = { getAllSpells, getSpell, deleteSpell, updateSpell, addSpell };
+
+module.exports = { getAllSpells, getSpell, deleteSpell, updateSpell };
