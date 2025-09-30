@@ -1,8 +1,43 @@
 const mongodb = require("../config/db");
 const ObjectId = require("mongodb").ObjectId;
+const spell = require("../models/spells");
 
+// Add spells
+const addSpell = async (req, res) => {
+  try {
+    const spell = {
+      name: req.body.name,
+      level: req.body.level,
+      plane: req.body.plane,
+      mod: req.body.mod,
+      manaCost: req.body.manaCost,
+      castTime: req.body.castTime,
+      range: req.body.range,
+      type: req.body.type,
+      target: req.body.target,
+      components: req.body.components,
+      duration: req.body.duration,
+      description: req.body.description,
+    };
 
-
+    const response = await mongodb
+      .getDb()
+      .db()
+      .collection("arcanes")
+      .insertOne(spell);
+    if (response.acknowledged) {
+      res.status(201).json(response);
+    } else {
+      res
+        .status(500)
+        .json(
+          response.error || "Some error occurred while creating the student"
+        );
+    }
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
 
 // Get All Spells
 const getAllSpells = async (req, res) => {
@@ -46,6 +81,10 @@ const updateSpell = async (req, res) => {
   res.send("you've updated a spell");
 };
 
-
-
-module.exports = { getAllSpells, getSpell, deleteSpell, updateSpell };
+module.exports = {
+  getAllSpells,
+  getSpell,
+  deleteSpell,
+  updateSpell,
+  addSpell,
+};
