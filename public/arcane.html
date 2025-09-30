@@ -271,10 +271,7 @@
         </div>
       </div>
       <div class="addSpellPage">
-        <form
-          action="/Cadrian-SpellBooks-Project/server/controllers/addSpell.js"
-          method="POST"
-        >
+        <form action="/addSpell" method="POST">
           <label for="name"><b>Name</b></label>
           <input type="text" name="name" />
 
@@ -321,7 +318,7 @@
           <label for="description"><b>Spell Description</b></label>
           <textarea name="description" cols="50" rows="10"></textarea>
 
-          <input type="submit" value="Add" class="btn" />
+          <input type="submit" value="Add" />
         </form>
       </div>
     </div>

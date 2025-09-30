@@ -1,13 +1,12 @@
 const router = require("express").Router();
 const myController = require("../controllers/index");
-const spell = require('../models/spells')
-
+const spell = require("../models/spells");
 
 router.get("/getAllSpell", myController.getAllSpells);
 
-router.get("/update", myController.updateSpell);
+router.get("/update/:id", myController.updateSpell);
 
-router.get("/delete", myController.deleteSpell);
+router.get("/delete/:id", myController.deleteSpell);
 
 router.post("/addSpell", myController.addSpell);
 
