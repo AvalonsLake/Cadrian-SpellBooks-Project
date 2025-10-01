@@ -10,12 +10,12 @@ const PORT = process.env.PORT || 4000;
 
 app
   .use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
-  .use(cors())
   .use(express.json())
   .use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     next();
-  });
+  })
+  .use("/", require("./server/routes"));
 
 app.use(express.static("public"));
 
