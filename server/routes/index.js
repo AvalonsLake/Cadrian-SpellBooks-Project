@@ -4,9 +4,9 @@ const spell = require("../models/spells");
 
 router.get("/getAllSpell", myController.getAllSpells);
 
-router.get("/update/:id", myController.updateSpell);
+router.patch("/update/:id", myController.updateSpell);
 
-router.get("/delete/:id", myController.deleteSpell);
+router.delete("/delete/:id", myController.deleteSpell);
 
 router.post("/addSpell", myController.addSpell);
 

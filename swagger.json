@@ -5,30 +5,24 @@
     "description": "An API that stores spells for a TTRPG",
     "version": "1.0.0"
   },
-  "host": "",
+  "host": "https://cadrian-spellbooks-project.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/getAllSpell": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
+            "description": "OK",
+            "name": "id"
           }
         }
       }
     },
     "/update/{id}": {
-      "get": {
+      "patch": {
         "description": "",
         "parameters": [
           {
@@ -49,7 +43,7 @@
       }
     },
     "/delete/{id}": {
-      "get": {
+      "delete": {
         "description": "",
         "parameters": [
           {
@@ -85,9 +79,7 @@
     "/getOneSpell/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",

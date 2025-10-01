@@ -5,8 +5,8 @@ const doc = {
     title: "My SpellBook API",
     description: "An API that stores spells for a TTRPG",
   },
-  host: "localhost:4000",
-  schemes: ["https"],
+  host: "https://cadrian-spellbooks-project.onrender.com",
+  schemes: ["http"],
 };
 
 const outputfile = "./swagger.json";

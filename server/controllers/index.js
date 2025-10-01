@@ -60,6 +60,7 @@ const addSpell = async (req, res) => {
 // Read All Spells
 const getAllSpells = async (req, res) => {
   try {
+    console.log("getting all spells!");
     const result = await mongodb.getDb().db().collection("arcanes").find();
     result.toArray().then((lists) => {
       res.setHeader("Content-Type", "application/json");
@@ -67,6 +68,7 @@ const getAllSpells = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json(error + "it broke in GetAllSpells");
+    console.log(error);
   }
 };
 
