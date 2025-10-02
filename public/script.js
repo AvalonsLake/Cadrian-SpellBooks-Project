@@ -1528,7 +1528,99 @@ const faithSpells4 = [];
 const faithSpells5 = [];
 
 // Nature Spells
-const natureSpells0 = [];
+const natureSpells0 = [
+  {
+    name: "Avail",
+    level: 0,
+    plane: "Nature",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (Bonus action at lvl6)",
+    range: "Touch",
+    type: "utility",
+    target: "",
+    components: "S",
+    duration: "Instantaneous",
+    description: `<p>Choose on of the following options:<br/><br/>
+Clip: You touch a medium or smaller creature that has hair/fur, feathers or small quills and clip, shave, or remove them as intricately or simply as you would like.<br/><br/>
+
+Preserve: You touch a dead creature or 1 cubic foot of food and magically preserve it so that it doesn’t spoil/rot for twice as long as it would normally take.<br/><br/>
+
+Remove: You touch a creature that has nails/claws, teeth/tusks, or horns/antlers/spikes and cause one of them to fall out after 1 minute or it falls out after being hit by an attack or used to attack another creature.<br/><br/>
+
+Tan:You touch a huge or smaller creature’s hide and cure/tan it, making it usable.</p>`,
+  },
+  {
+    name: "Control Water",
+    level: 0,
+    plane: "Water",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (Bonus action at lvl6)",
+    range: "60ft",
+    type: "Utility, Debuff",
+    target: "",
+    components: "V,S,M (7 Gallons of Water)",
+    duration: "1 Minute Concentration",
+    description: `<p>For the duration you can control water that can fit within a 1-foot cube (a little more than 7 gallons), you can cause it to float around you at your movement speed, but it must stay within range. Or you can cause the water in that area to freeze, the ice has a defense of 10 and 10 hit points, and it is weak to blunt and fire damage, and resists ice, piercing and slashing damage. If you freeze a creature’s leg, their movement is reduced by 10, if you freeze a creature’s arm, their next attack with that arm has disadvantage. If you attempt to freeze more than just a limb the ice breaks when they move.</p>`,
+  },
+  {
+    name: "Mr. Pipe’s Pyrotechnics",
+    level: 0,
+    plane: "Fire",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (Bonus action at lvl6)",
+    range: "60ft",
+    type: "AOE, Debuff",
+    target: "single",
+    components: "V,S",
+    duration: "Instantaneous",
+    description: `<p style="margin-top: 80%">Snapping your fingers you produce one of the following affects:<br/><br/>
+
+Dazzle: You cause a small display of sparks, fireworks, and explosives at a point you can see within range, all creatures within 5 feet must make a Mind Save against your Nature DC or be dazzled. The first attack made against the creature before the beginning of your next turn has advantage.<br/><br/>
+
+Blind: You send a firework at a creature you can see within range causing it to explode in a brilliant flash, the creature must make a Mind Save against your Nature DC or become blind until the beginning of your next turn.<br/><br/>
+
+Explosive: You send a firework at a creature you can see within range that explodes on contact, make a Nature Attack, on a hit you deal 1d6 + your Mind Score thunder damage.<br/><br/>
+
+Produce Flame: you create a flame in your hand that lasts for 1 minute, or you can throw it at a creature within range, make a Nature Attack, on a hit you deal 1d4 + your Mind Score fire damage and they start on fire. A creature that is on fire takes 1d6 fire damage at the beginning of their turn until they use an action to put out the fire.<br/><br/>
+
+Control Fire: You take control of fire that can fit within a 5-foot cube. As a bonus action on subsequent turns you can do any of the following, you have control of the fire for 1 minute.<br/><br/>
+
+You make shapes appear in the fire, or cause the fire to change shape to look like structures, objects or creatures.<br/><br/>
+You change the color of the fire.<br/><br/>
+You move the fire up to half your movement speed. If the fire hits a creature they must make a Power Save against your Nature DC or take 1d6 fire damage and start on fire (half as much damage on a success, and they don’t start on fire). A creature that is on fire takes 1d6 fire damage at the beginning of their turn until they use an action to put out the fire.</p>`,
+  },
+  {
+    name: "Razor leaves",
+    level: 0,
+    plane: "Nature",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (Bonus action at lvl6)",
+    range: "60ft",
+    type: "Attack",
+    target: "single",
+    components: "V,S, M (leaves)",
+    duration: "instantaneous",
+    description: `You cause the leaves in your hand to harden and become sharp before throwing them at a creature you can see within range. Make a Nature Attack, on a hit you deal 1d6 + your Mind Score slashing damage.`,
+  },
+  {
+    name: "Shadow Spike",
+    level: 0,
+    plane: "ShadowLands",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (Bonus action at lvl6)",
+    range: "30ft",
+    type: "Attack",
+    target: "single",
+    components: "S",
+    duration: "instantaneous",
+    description: `You gather the shadows within an area within range to gather and solidify into an obsidian-like spike. Make a Nature Attack against a creature that is within 5 feet of the gathered shadows, on a hit you deal (4)1d8 + your Mind Score necrotic damage.`,
+  },
+];
 const earth = [];
 const fire = [];
 const water = [];
@@ -1541,7 +1633,7 @@ let displayedSpell = 0;
 let currentArray;
 
 // var for setting the specific shelf
-let shelfSection = "faith";
+let shelfSection = "";
 
 // getting the Shelfs
 let shelf0 = document.getElementById("lvl0Shelf");
@@ -1591,18 +1683,22 @@ let sameCard = "";
 function redirectToArcane() {
   shelfSection = "arcane";
   window.location.href = "arcane.html";
+  console.log(shelfSection);
 }
 function redirectToFaith() {
   shelfSection = "faith";
   window.location.href = "faith.html";
+  console.log(shelfSection);
 }
 function redirectToNature() {
   shelfSection = "nature";
   window.location.href = "nature.html";
+  console.log(shelfSection);
 }
 function redirectToLobby() {
   shelfSection = "";
   window.location.href = "index.html";
+  console.log(shelfSection);
 }
 
 // Shelf Functions
@@ -1668,106 +1764,131 @@ function generateSpellLvl0() {
     }
   }
 
-  // let length = natureSpells0.length;
-  // for (let i = 0; i < length; i++) {
-  //   const randomIndex = Math.floor(Math.random() * bookSpines.length);
-  //   const selectedSpine = bookSpines[randomIndex];
-  //   let p = document.createElement("p");
-  //   p.innerText = `${natureSpells0[i].name} - || - ${natureSpells0[i].plane} Plane`;
-  //   p.value = i;
-  //   p.classList.add("spell", `${natureSpells0[i].plane}`);
-  //   p.id = `lv0-${i}`;
-  //   p.style.backgroundImage = `url('${selectedSpine}')`;
-  //   p.addEventListener("click", () => {
-  //     displayedSpell = p.value;
-  //     currentArray = "nlvl0";
-  //     if (sameCard === "" || sameCard != p.id) {
-  //       flipCard();
-  //       sameCard = p.id;
-  //     } else {
-  //       resetCard();
-  //       sameCard = "";
-  //     }
-  //   });
-  //   shelf0.appendChild(p);
-  // }
+  if (shelfSection === "nature") {
+    let length = natureSpells0.length;
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * bookSpines.length);
+      const selectedSpine = bookSpines[randomIndex];
+      let p = document.createElement("p");
+      p.innerText = `${natureSpells0[i].name} - || - ${natureSpells0[i].plane} Plane`;
+      p.value = i;
+      p.classList.add("spell", `${natureSpells0[i].plane}`);
+      p.id = `lv0-${i}`;
+      p.style.backgroundImage = `url('${selectedSpine}')`;
+      p.addEventListener("click", () => {
+        displayedSpell = p.value;
+        currentArray = "nlvl0";
+        if (sameCard === "" || sameCard != p.id) {
+          flipCard();
+          sameCard = p.id;
+        } else {
+          resetCard();
+          sameCard = "";
+        }
+      });
+      shelf0.appendChild(p);
+    }
+  }
 }
 
 function generateSpellLvl1() {
-  let length = arcaneSpells1.length;
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * bookSpines.length);
-    const selectedSpine = bookSpines[randomIndex];
-    let p = document.createElement("p");
-    p.innerText = `${arcaneSpells1[i].name} - || - ${arcaneSpells1[i].plane} Plane`;
-    p.value = i;
-    p.classList.add("spell", `${arcaneSpells1[i].plane}`);
-    p.id = `lv1-${i}`;
-    p.style.backgroundImage = `url('${selectedSpine}')`;
-    p.addEventListener("click", () => {
-      displayedSpell = p.value;
-      currentArray = "alvl1";
-      if (sameCard === "" || sameCard != p.id) {
-        flipCard();
-        sameCard = p.id;
-      } else {
-        resetCard();
-        sameCard = "";
-      }
-    });
-    shelf1.appendChild(p);
+  if (shelfSection === "arcane") {
+    let length = arcaneSpells1.length;
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * bookSpines.length);
+      const selectedSpine = bookSpines[randomIndex];
+      let p = document.createElement("p");
+      p.innerText = `${arcaneSpells1[i].name} - || - ${arcaneSpells1[i].plane} Plane`;
+      p.value = i;
+      p.classList.add("spell", `${arcaneSpells1[i].plane}`);
+      p.id = `lv1-${i}`;
+      p.style.backgroundImage = `url('${selectedSpine}')`;
+      p.addEventListener("click", () => {
+        displayedSpell = p.value;
+        currentArray = "alvl1";
+        if (sameCard === "" || sameCard != p.id) {
+          flipCard();
+          sameCard = p.id;
+        } else {
+          resetCard();
+          sameCard = "";
+        }
+      });
+      shelf1.appendChild(p);
+    }
+  }
+  if (shelfSection === "faith") {
+  }
+
+  if (shelfSection === "nature") {
   }
 }
 
 function generateSpellLvl2() {
-  let length = arcaneSpells2.length;
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * bookSpines.length);
-    const selectedSpine = bookSpines[randomIndex];
-    let p = document.createElement("p");
-    p.innerText = `${arcaneSpells2[i].name} - || - ${arcaneSpells2[i].plane} Plane`;
-    p.value = i;
-    p.classList.add("spell", `${arcaneSpells2[i].plane}`);
-    p.id = `lv2-${i}`;
-    p.style.backgroundImage = `url('${selectedSpine}')`;
-    p.addEventListener("click", () => {
-      displayedSpell = p.value;
-      currentArray = "alvl2";
-      if (sameCard === "" || sameCard != p.id) {
-        flipCard();
-        sameCard = p.id;
-      } else {
-        resetCard();
-        sameCard = "";
-      }
-    });
-    shelf2.appendChild(p);
+  if (shelfSection === "arcane") {
+    let length = arcaneSpells2.length;
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * bookSpines.length);
+      const selectedSpine = bookSpines[randomIndex];
+      let p = document.createElement("p");
+      p.innerText = `${arcaneSpells2[i].name} - || - ${arcaneSpells2[i].plane} Plane`;
+      p.value = i;
+      p.classList.add("spell", `${arcaneSpells2[i].plane}`);
+      p.id = `lv2-${i}`;
+      p.style.backgroundImage = `url('${selectedSpine}')`;
+      p.addEventListener("click", () => {
+        displayedSpell = p.value;
+        currentArray = "alvl2";
+        if (sameCard === "" || sameCard != p.id) {
+          flipCard();
+          sameCard = p.id;
+        } else {
+          resetCard();
+          sameCard = "";
+        }
+      });
+      shelf2.appendChild(p);
+    }
+  }
+
+  if (shelfSection === "faith") {
+  }
+
+  if (shelfSection === "nature") {
   }
 }
 
 function generateSpellLvl3() {
-  let length = arcaneSpells3.length;
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * bookSpines.length);
-    const selectedSpine = bookSpines[randomIndex];
-    let p = document.createElement("p");
-    p.innerText = `${arcaneSpells3[i].name} - || - ${arcaneSpells3[i].plane} Plane`;
-    p.value = i;
-    p.classList.add("spell", `${arcaneSpells3[i].plane}`);
-    p.id = `lv3-${i}`;
-    p.style.backgroundImage = `url('${selectedSpine}')`;
-    p.addEventListener("click", () => {
-      displayedSpell = p.value;
-      currentArray = "alvl3";
-      if (sameCard === "" || sameCard != p.id) {
-        flipCard();
-        sameCard = p.id;
-      } else {
-        resetCard();
-        sameCard = "";
-      }
-    });
-    shelf3.appendChild(p);
+  if (shelfSection === "arcane") {
+    let length = arcaneSpells3.length;
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * bookSpines.length);
+      const selectedSpine = bookSpines[randomIndex];
+      let p = document.createElement("p");
+      p.innerText = `${arcaneSpells3[i].name} - || - ${arcaneSpells3[i].plane} Plane`;
+      p.value = i;
+      p.classList.add("spell", `${arcaneSpells3[i].plane}`);
+      p.id = `lv3-${i}`;
+      p.style.backgroundImage = `url('${selectedSpine}')`;
+      p.addEventListener("click", () => {
+        displayedSpell = p.value;
+        currentArray = "alvl3";
+        if (sameCard === "" || sameCard != p.id) {
+          flipCard();
+          sameCard = p.id;
+        } else {
+          resetCard();
+          sameCard = "";
+        }
+      });
+      shelf3.appendChild(p);
+    }
+  }
+
+  if (shelfSection === "faith") {
+  }
+
+  if (shelfSection === "nature") {
   }
 }
 
@@ -1799,6 +1920,19 @@ function displaySpell() {
     spellComponents.innerHTML = `Components: ${faithSpells0[displayedSpell].components}`;
     spellDuration.innerText = `Duration: ${faithSpells0[displayedSpell].duration}`;
     spellDescription.innerHTML = faithSpells0[displayedSpell].description;
+  }
+  if (currentArray === "nlvl0") {
+    spellName.innerText = natureSpells0[displayedSpell].name;
+    spellLevel.innerText = `Level ${natureSpells0[displayedSpell].level}`;
+    spellPlane.innerText = natureSpells0[displayedSpell].plane;
+    spellMod.innerText = natureSpells0[displayedSpell].mod;
+    spellCost.innerText = `Mana Cost: ${natureSpells0[displayedSpell].manaCost}`;
+    spellCastTime.innerText = `Cast Time: ${natureSpells0[displayedSpell].castTime}`;
+    spellRange.innerText = `Range: ${natureSpells0[displayedSpell].range}`;
+    spellType.innerText = `Type: ${natureSpells0[displayedSpell].type}`;
+    spellComponents.innerHTML = `Components: ${natureSpells0[displayedSpell].components}`;
+    spellDuration.innerText = `Duration: ${natureSpells0[displayedSpell].duration}`;
+    spellDescription.innerHTML = natureSpells0[displayedSpell].description;
   }
   if (currentArray === "alvl1") {
     spellName.innerText = arcaneSpells1[displayedSpell].name;
