@@ -19,6 +19,17 @@ nav a {
   margin: 15px;
 }
 
+nav button {
+  color: whitesmoke;
+  font-size: 25px;
+  margin: 15px;
+
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .mainpage {
   display: flex;
   align-items: center;
@@ -293,7 +304,11 @@ nav a {
 }
 
 .addSpellPage input {
- margin: 10px;
+  margin: 10px;
+}
+
+.addSpellPage {
+  display: none;
 }
 
 /* Mobile Styles */

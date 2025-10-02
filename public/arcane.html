@@ -9,9 +9,9 @@
   </head>
   <body>
     <nav>
-      <a href="faith.html">Faith Section</a>
-      <a href="index.html">The Lobby</a>
-      <a href="nature.html">Nature Section</a>
+      <button onclick="redirectToFaith()">Faith Section</button>
+      <button onclick="redirectToLobby()">Lobby</button>
+      <button onclick="redirectToNature()">Nature Section</button>
     </nav>
     <!-- Desgin placement first -->
     <div class="mainpage">
@@ -270,6 +270,7 @@
           </div>
         </div>
       </div>
+
       <div class="addSpellPage">
         <form action="/addSpell" method="POST">
           <label for="name"><b>Name</b></label>

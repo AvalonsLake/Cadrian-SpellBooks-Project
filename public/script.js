@@ -2,16 +2,16 @@
   {
     name: "",
     level: ,
-    plane: ,
-    mod: ,
+    plane: "",
+    mod: "",
     manaCost: ,
-    castTime: ,
-    range: ,
-    type: ,
-    target: ,
-    components: ,
-    duration: ,
-    description: ,
+    castTime: "",
+    range: "",
+    type: "",
+    target: "",
+    components: "",
+    duration: "",
+    description: ``,
   },
     */
 
@@ -1430,15 +1430,105 @@ const arcaneSpells4 = [];
 const arcaneSpells5 = [];
 
 // Faith Spells
-const heavens = [];
-const judgement = [];
-const abyss = [];
-const divine = [];
-const everWar = [];
-const various = [];
+const faithSpells0 = [
+  {
+    name: "Divine Touch",
+    level: 0,
+    plane: "Divine",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (bonus action at lvl 6)",
+    range: "30ft",
+    type: "Utility",
+    target: "",
+    components: "V,S",
+    duration: "Instantaneous",
+    description: `<p>You are able to cause minor things to happen. When you cast the spell choose from the following affects:<br/><br/>
+
+You point at a willing creature and cause all the dirt, grime and water to burn away, cleansing their body and clothing.
+You point at food that can fit in a 1-foot cube and cause it to become very flavorful, making even the worst food palatable.
+You point at small or tiny objects that fit within a 5 foot cube and cause them to organize themselves in a way that you would like.
+You cause the candles/torches within range to light on fire, or be snuffed out.</p>`,
+  },
+  {
+    name: "Guidance",
+    level: 0,
+    plane: "Heavens",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (bonus action at lvl 6)",
+    range: "30ft",
+    type: "Utilty",
+    target: "single",
+    components: "V",
+    duration: "1 Minute",
+    description: `<p>You pray for guidance for a creature within 30 feet of you. Before the spell ends if they make an Ability Save, attack roll, or skill check they get to add half your Mind Score (minimum of 1) to the roll.</p>`,
+  },
+  {
+    name: "Light",
+    level: 0,
+    plane: "Heavens",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (bonus action at lvl 6)",
+    range: "Touch",
+    type: "Utility",
+    target: "",
+    components: "S",
+    duration: "1 Hour",
+    description: `<p>You touch an object and cause it to glow, giving off light in a 30-foot radius sphere.</p>`,
+  },
+  {
+    name: "Minor Illusion",
+    level: 0,
+    plane: "Various",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (bonus action at lvl 6)",
+    range: "30ft",
+    type: "Utility",
+    target: "",
+    components: "S",
+    duration: "1 Minute",
+    description: `<p>You cause an illusion to appear at a point you can see within range. The illusion can’t move after it has been cast, and must fit within a 5-foot cube, but unless a creature uses their action to make a Perception Check against your Faith DC the illusion seems real.</p>`,
+  },
+  {
+    name: "Radiant Flame",
+    level: 0,
+    plane: "Heavens",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (bonus action at lvl 6)",
+    range: "60ft",
+    type: "Energy",
+    target: "single",
+    components: "V,S",
+    duration: "Instantaneous",
+    description: `<p>You cause a creature you can see within range to burst into radiant fire. The creature must make a Power Save against your Faith DC or take (3)1d6 + your Mind Score radiant damage (half as much on a success).</p>`,
+  },
+  {
+    name: "Sacrifice",
+    level: 0,
+    plane: "Hells",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (bonus action at lvl 6)",
+    range: "Self",
+    type: "Utility",
+    target: "",
+    components: "V,S,M (a drop of your blood)",
+    duration: "Instantaneous",
+    description: `<p>You take necrotic damage (this damage can’t be reduced) up to 5 x your Mind Score to gain 1 mana for every 5 Hit Points sacrificed.</p>`,
+  },
+];
+const faithSpells1 = [];
+const faithSpells2 = [];
+const faithSpells3 = [];
+const faithSpells4 = [];
+const faithSpells5 = [];
 
 // Nature Spells
-const air = [];
+const natureSpells0 = [];
 const earth = [];
 const fire = [];
 const water = [];
@@ -1449,6 +1539,9 @@ let aura = [];
 let featuredSpell;
 let displayedSpell = 0;
 let currentArray;
+
+// var for setting the specific shelf
+let shelfSection = "faith";
 
 // getting the Shelfs
 let shelf0 = document.getElementById("lvl0Shelf");
@@ -1478,7 +1571,7 @@ let spellDuration = document.getElementById("spellDuration");
 let spellDescription = document.getElementById("spellDescription");
 
 // Book spine styling for the shelfs
-const arcaneSpines = [
+const bookSpines = [
   "img/BookSpines/arcane/ArcaneSpine1.jpg",
   "img/BookSpines/nature/NatureSpine1.png",
   "img/BookSpines/nature/NatureSpine3.png",
@@ -1494,6 +1587,24 @@ const arcaneSpines = [
 let flipped = false;
 let sameCard = "";
 
+// Defining which shelf to be generated
+function redirectToArcane() {
+  shelfSection = "arcane";
+  window.location.href = "arcane.html";
+}
+function redirectToFaith() {
+  shelfSection = "faith";
+  window.location.href = "faith.html";
+}
+function redirectToNature() {
+  shelfSection = "nature";
+  window.location.href = "nature.html";
+}
+function redirectToLobby() {
+  shelfSection = "";
+  window.location.href = "index.html";
+}
+
 // Shelf Functions
 
 function generateShelf() {
@@ -1505,36 +1616,88 @@ function generateShelf() {
 }
 
 function generateSpellLvl0() {
-  let length = arcaneSpells0.length;
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * arcaneSpines.length);
-    const selectedSpine = arcaneSpines[randomIndex];
-    let p = document.createElement("p");
-    p.innerText = `${arcaneSpells0[i].name} - || - ${arcaneSpells0[i].plane} Plane`;
-    p.value = i;
-    p.classList.add("spell", `${arcaneSpells0[i].plane}`);
-    p.id = `lv0-${i}`;
-    p.style.backgroundImage = `url('${selectedSpine}')`;
-    p.addEventListener("click", () => {
-      displayedSpell = p.value;
-      currentArray = "lvl0";
-      if (sameCard === "" || sameCard != p.id) {
-        flipCard();
-        sameCard = p.id;
-      } else {
-        resetCard();
-        sameCard = "";
-      }
-    });
-    shelf0.appendChild(p);
+  if (shelfSection === "arcane") {
+    let length = arcaneSpells0.length;
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * bookSpines.length);
+      const selectedSpine = bookSpines[randomIndex];
+      let p = document.createElement("p");
+      p.innerText = `${arcaneSpells0[i].name} - || - ${arcaneSpells0[i].plane} Plane`;
+      p.value = i;
+      p.classList.add("spell", `${arcaneSpells0[i].plane}`);
+      p.id = `lv0-${i}`;
+      p.style.backgroundImage = `url('${selectedSpine}')`;
+      p.addEventListener("click", () => {
+        displayedSpell = p.value;
+        currentArray = "alvl0";
+        if (sameCard === "" || sameCard != p.id) {
+          flipCard();
+          sameCard = p.id;
+        } else {
+          resetCard();
+          sameCard = "";
+        }
+      });
+      shelf0.appendChild(p);
+    }
   }
+
+  if (shelfSection === "faith") {
+    let length = faithSpells0.length;
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * bookSpines.length);
+      const selectedSpine = bookSpines[randomIndex];
+      let p = document.createElement("p");
+      p.innerText = `${faithSpells0[i].name} - || - ${faithSpells0[i].plane} Plane`;
+      p.value = i;
+      p.classList.add("spell", `${faithSpells0[i].plane}`);
+      p.id = `lv0-${i}`;
+      p.style.backgroundImage = `url('${selectedSpine}')`;
+      p.addEventListener("click", () => {
+        displayedSpell = p.value;
+        currentArray = "flvl0";
+        if (sameCard === "" || sameCard != p.id) {
+          flipCard();
+          sameCard = p.id;
+        } else {
+          resetCard();
+          sameCard = "";
+        }
+      });
+      shelf0.appendChild(p);
+    }
+  }
+
+  // let length = natureSpells0.length;
+  // for (let i = 0; i < length; i++) {
+  //   const randomIndex = Math.floor(Math.random() * bookSpines.length);
+  //   const selectedSpine = bookSpines[randomIndex];
+  //   let p = document.createElement("p");
+  //   p.innerText = `${natureSpells0[i].name} - || - ${natureSpells0[i].plane} Plane`;
+  //   p.value = i;
+  //   p.classList.add("spell", `${natureSpells0[i].plane}`);
+  //   p.id = `lv0-${i}`;
+  //   p.style.backgroundImage = `url('${selectedSpine}')`;
+  //   p.addEventListener("click", () => {
+  //     displayedSpell = p.value;
+  //     currentArray = "nlvl0";
+  //     if (sameCard === "" || sameCard != p.id) {
+  //       flipCard();
+  //       sameCard = p.id;
+  //     } else {
+  //       resetCard();
+  //       sameCard = "";
+  //     }
+  //   });
+  //   shelf0.appendChild(p);
+  // }
 }
 
 function generateSpellLvl1() {
   let length = arcaneSpells1.length;
   for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * arcaneSpines.length);
-    const selectedSpine = arcaneSpines[randomIndex];
+    const randomIndex = Math.floor(Math.random() * bookSpines.length);
+    const selectedSpine = bookSpines[randomIndex];
     let p = document.createElement("p");
     p.innerText = `${arcaneSpells1[i].name} - || - ${arcaneSpells1[i].plane} Plane`;
     p.value = i;
@@ -1543,7 +1706,7 @@ function generateSpellLvl1() {
     p.style.backgroundImage = `url('${selectedSpine}')`;
     p.addEventListener("click", () => {
       displayedSpell = p.value;
-      currentArray = "lvl1";
+      currentArray = "alvl1";
       if (sameCard === "" || sameCard != p.id) {
         flipCard();
         sameCard = p.id;
@@ -1559,8 +1722,8 @@ function generateSpellLvl1() {
 function generateSpellLvl2() {
   let length = arcaneSpells2.length;
   for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * arcaneSpines.length);
-    const selectedSpine = arcaneSpines[randomIndex];
+    const randomIndex = Math.floor(Math.random() * bookSpines.length);
+    const selectedSpine = bookSpines[randomIndex];
     let p = document.createElement("p");
     p.innerText = `${arcaneSpells2[i].name} - || - ${arcaneSpells2[i].plane} Plane`;
     p.value = i;
@@ -1569,7 +1732,7 @@ function generateSpellLvl2() {
     p.style.backgroundImage = `url('${selectedSpine}')`;
     p.addEventListener("click", () => {
       displayedSpell = p.value;
-      currentArray = "lvl2";
+      currentArray = "alvl2";
       if (sameCard === "" || sameCard != p.id) {
         flipCard();
         sameCard = p.id;
@@ -1585,8 +1748,8 @@ function generateSpellLvl2() {
 function generateSpellLvl3() {
   let length = arcaneSpells3.length;
   for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * arcaneSpines.length);
-    const selectedSpine = arcaneSpines[randomIndex];
+    const randomIndex = Math.floor(Math.random() * bookSpines.length);
+    const selectedSpine = bookSpines[randomIndex];
     let p = document.createElement("p");
     p.innerText = `${arcaneSpells3[i].name} - || - ${arcaneSpells3[i].plane} Plane`;
     p.value = i;
@@ -1595,7 +1758,7 @@ function generateSpellLvl3() {
     p.style.backgroundImage = `url('${selectedSpine}')`;
     p.addEventListener("click", () => {
       displayedSpell = p.value;
-      currentArray = "lvl3";
+      currentArray = "alvl3";
       if (sameCard === "" || sameCard != p.id) {
         flipCard();
         sameCard = p.id;
@@ -1611,7 +1774,7 @@ function generateSpellLvl3() {
 // Card & Display Functions
 
 function displaySpell() {
-  if (currentArray === "lvl0") {
+  if (currentArray === "alvl0") {
     spellName.innerText = arcaneSpells0[displayedSpell].name;
     spellLevel.innerText = `Level ${arcaneSpells0[displayedSpell].level}`;
     spellPlane.innerText = arcaneSpells0[displayedSpell].plane;
@@ -1624,7 +1787,20 @@ function displaySpell() {
     spellDuration.innerText = `Duration: ${arcaneSpells0[displayedSpell].duration}`;
     spellDescription.innerHTML = arcaneSpells0[displayedSpell].description;
   }
-  if (currentArray === "lvl1") {
+  if (currentArray === "flvl0") {
+    spellName.innerText = faithSpells0[displayedSpell].name;
+    spellLevel.innerText = `Level ${faithSpells0[displayedSpell].level}`;
+    spellPlane.innerText = faithSpells0[displayedSpell].plane;
+    spellMod.innerText = faithSpells0[displayedSpell].mod;
+    spellCost.innerText = `Mana Cost: ${faithSpells0[displayedSpell].manaCost}`;
+    spellCastTime.innerText = `Cast Time: ${faithSpells0[displayedSpell].castTime}`;
+    spellRange.innerText = `Range: ${faithSpells0[displayedSpell].range}`;
+    spellType.innerText = `Type: ${faithSpells0[displayedSpell].type}`;
+    spellComponents.innerHTML = `Components: ${faithSpells0[displayedSpell].components}`;
+    spellDuration.innerText = `Duration: ${faithSpells0[displayedSpell].duration}`;
+    spellDescription.innerHTML = faithSpells0[displayedSpell].description;
+  }
+  if (currentArray === "alvl1") {
     spellName.innerText = arcaneSpells1[displayedSpell].name;
     spellLevel.innerText = `Level: ${arcaneSpells1[displayedSpell].level}`;
     spellPlane.innerText = arcaneSpells1[displayedSpell].plane;
@@ -1637,7 +1813,7 @@ function displaySpell() {
     spellDuration.innerText = `Duration: ${arcaneSpells1[displayedSpell].duration}`;
     spellDescription.innerHTML = arcaneSpells1[displayedSpell].description;
   }
-  if (currentArray === "lvl2") {
+  if (currentArray === "alvl2") {
     spellName.innerText = arcaneSpells2[displayedSpell].name;
     spellLevel.innerText = `Level: ${arcaneSpells2[displayedSpell].level}`;
     spellPlane.innerText = arcaneSpells2[displayedSpell].plane;
@@ -1650,7 +1826,7 @@ function displaySpell() {
     spellDuration.innerText = `Duration: ${arcaneSpells2[displayedSpell].duration}`;
     spellDescription.innerHTML = arcaneSpells2[displayedSpell].description;
   }
-  if (currentArray === "lvl3") {
+  if (currentArray === "alvl3") {
     spellName.innerText = arcaneSpells3[displayedSpell].name;
     spellLevel.innerText = `Level: ${arcaneSpells3[displayedSpell].level}`;
     spellPlane.innerText = arcaneSpells3[displayedSpell].plane;
