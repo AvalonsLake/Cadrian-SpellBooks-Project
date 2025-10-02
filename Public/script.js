@@ -2,16 +2,16 @@
   {
     name: "",
     level: ,
-    plane: ,
-    mod: ,
+    plane: "",
+    mod: "",
     manaCost: ,
-    castTime: ,
-    range: ,
-    type: ,
-    target: ,
-    components: ,
-    duration: ,
-    description: ,
+    castTime: "",
+    range: "",
+    type: "",
+    target: "",
+    components: "",
+    duration: "",
+    description: ``,
   },
     */
 
@@ -936,7 +936,11 @@ Increase HP level by 2 (the automaton’s health = Mind Score x HP level + Mind 
     duration: "24 Hours",
     description: `<p style="margin-top: 1020px;">You summon an alien within range. You can use magic to alter them to give them different attacks, movement speeds, and more. When you cast the spell you summon a tiny alien (you choose which type of alien you summon). The alien has: immunity to fire and ice damage, a number of HP equal to your Mind Score (minimum of 1), a 20 feet flying speed, and each of its Ability Scores is equal to your Mind Score. Choose which type of alien you summon:<br/><br/>
 
-Armor Fish has natural armor so it can add your Mind Score to its defense, and it can shoot slag at a creature it can see within 15 feet of it dealing (2)1d4 fire damage on a hit. Meteor Muncher has natural armor so it can add your Mind Score to its defense, and it does critical damage to objects. Oxygen Jelly creates a bubble of oxygen 5 feet around itself, and its attacks deal an additional (2)1d4 radiant damage. Pseudo Kanuki resists necrotic and psychic damage, and when it bites a creature it can transform into one of the creature’s weapons (using its defense while in that form) it can stay in that form for 1 minute, maintaining concentration as if concentrating on a spell. Space Worm resists physical damage, and resists radiant damage.<br/><br/>
+Armor Fish has natural armor so it can add your Mind Score to its defense, and it can shoot slag at a creature it can see within 15 feet of it dealing (2)1d4 fire damage on a hit.<br/><br/>
+Meteor Muncher has natural armor so it can add your Mind Score to its defense, and it does critical damage to objects.<br/><br/>
+Oxygen Jelly creates a bubble of oxygen 5 feet around itself, and its attacks deal an additional (2)1d4 radiant damage.<br/><br/>
+Pseudo Kanuki resists necrotic and psychic damage, and when it bites a creature it can transform into one of the creature’s weapons (using its defense while in that form) it can stay in that form for 1 minute, maintaining concentration as if concentrating on a spell.<br/><br/>
+Space Worm resists physical damage, and resists radiant damage.<br/><br/>
 
 As a bonus action you can give the summons under your command a single command, and they do their best to follow your instructions. If you don’t give a command they defend themselves. The alien can make a single unarmed attack using your Nature Attack, dealing (2)1d4 + your Mind Score blunt, piercing or slashing damage (your choice when you summon it).<br/><br/>
 
@@ -1051,7 +1055,7 @@ const arcaneSpells3 = [
     target: "Single",
     components: "V,S",
     duration: "8 Hours",
-    description: `<p style="margin-top:1000px;">You touch a willing creature, and age them up to 20 years for the duration. Not only does the creature's appearance change, but for the duration they gain a number of temporary Hit Points equal to your Mind Score and a +2 bonus to an Ability Score of their choice (can't go above level 10)</p>`,
+    description: `<p>You touch a willing creature, and age them up to 20 years for the duration. Not only does the creature's appearance change, but for the duration they gain a number of temporary Hit Points equal to your Mind Score and a +2 bonus to an Ability Score of their choice (can't go above level 10)</p>`,
   },
   // Arwyl's Compass - Arcane
   {
@@ -1066,22 +1070,28 @@ const arcaneSpells3 = [
     target: "SIngle",
     components: "V,S",
     duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    description: `<p style="margin-top:3%;">You touch a compass and for the duration it will point to a location, creature, or object that you name. If the thing you name is protected from scrying the compass needle will just spin until you name something else for it to point to. At any time before the spell ends you can use a bonus action to change what the compass points toward.<br/><br/>
+
+Empowering: When you empower this spell, you increase the duration of the spell by 24 hours for each mana used to empower the spell.</p>`,
   },
   // Bartholomew's Statuette - Eldritch
   {
     name: "Bartholomew's Statuette",
     level: 3,
-    plane: "Eldricth",
+    plane: "Eldritch",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
+    castTime: "1 Minute",
     range: "Self",
     type: "Protection, Utility",
     target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    components: "V,S, M (a simple wooden statuette)",
+    duration: "Instantaneous",
+    description: `<p style="margin-top:310px;">You target a creature you have summoned and bind its essence to the statuette, making the summoned creature vanish into the statuette, and the wood of the statuette changes to look like the summon. Once the summon is in the statuette it no longer counts toward your total summoned creatures, and the statuette becomes magical.<br/><br/>
+
+A creature holding the statuette can use an action to expend 1 mana to summon the creature out of the statuette to an empty area within 15 feet. The creature uses the holder’s Mind Score and Magic Attack bonus for its stats and bonuses, but the creature keeps all of the other alterations that happened before they were put into the statuette, and those can’t be changed/altered in any way.<br/><br/>
+
+While the summon is out of its statuette, the holder must maintain concentration as if concentrating on a spell or the summon returns to its statuette. The holder can keep the summon out of its statuette for a number of hours equal to half their Mind Score (minimum of 1). If the summon’s Hit Points are reduced to 0 the statuette breaks, and becomes plain wood again.</p>`,
   },
   // Cole's Dragon weapon - Dragon
   {
@@ -1090,13 +1100,15 @@ const arcaneSpells3 = [
     plane: "Dragon",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
+    castTime: "Bonus Action",
     range: "Self",
-    type: "Protection, Utility",
-    target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    type: "Energy",
+    target: "Multiple",
+    components: "V,S,M (a weapon)",
+    duration: "1 Minute",
+    description: `<p style="margin-top:35%;">Your next attack that hits before the spell ends, deals an additional (11)2d10 acid, ice, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder damage (your choice). Hit or miss, if there is another creature within 5 feet of the target, you can make an Arcane Attack to have the dragon energy leap to them, dealing (5)1d10 + your Mind Score of the chosen damage type.<br/><br/>
+
+Empowering: When you empower this spell, you increase the leaping distance of the dragon energy by 5 feet, and you increase the number of creatures the dragon energy can leap to by 1 for each mana used to empower the spell (the target must be within the leaping distance of the second creature).</p>`,
   },
   // Counter Spell - Arcane
   {
@@ -1106,43 +1118,17 @@ const arcaneSpells3 = [
     mod: "",
     manaCost: 3,
     castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
+    range: "60ft",
+    type: "Protection",
     target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    components: "V",
+    duration: "Instantaneous",
+    description: `<p>If a spell is being cast within range, and you can see them casting the spell (due to them using components) you can attempt to interrupt the spell. If the mana used to cast this spell is equal to or more than the mana used to cast the spell you are countering, the other spell fails.<br/><br/>
+
+Empowering: When you empower this spell, you increase the amount of mana you can counter.</p>`,
   },
   // Crafting Ritual - Material
-  {
-    name: "Crafting Ritual",
-    level: 3,
-    plane: "Material",
-    mod: "",
-    manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
-  },
   // Daylen's Undead Servant - Material
-  {
-    name: "Daylen's Undead Servant",
-    level: 3,
-    plane: "Material",
-    mod: "",
-    manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
-  },
   // Deflecting Missile - Arcane
   {
     name: "Deflecting Missile",
@@ -1156,22 +1142,28 @@ const arcaneSpells3 = [
     target: "",
     components: "V,S",
     duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    description: `<p style="margin-top:13%;">You fire a missile to intercept a weapon attack that you can see coming that is targeting a creature within range, and you reduce the damage by 4d10 + your Mind Score. If a ranged attack is reduced to 0 damage it drops harmlessly within 5 feet of the target. If a melee attack made with a weapon is reduced to 0 damage, the wielder must make a Power Save against your Arcane DC or drop the weapon.<br/><br/>
+
+Empowering: When you empower this spell you reduce the damage by an additional 1d10 for each mana spent to empower the spell. </p>`,
   },
   // Dispel Magic - Arcane
   {
     name: "Dispel magic",
     level: 3,
     plane: "Arcane",
-    mod: "",
+    mod: "(Ritual)",
     manaCost: 3,
-    castTime: "Reflexive Action",
+    castTime: "Action",
     range: "Self",
-    type: "Protection, Utility",
+    type: "Utility",
     target: "",
     components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    duration: "Instantaneous",
+    description: `<p style="margin-top:23%;">You focus on a creature or an object that has some kind of magic affecting it, and disperse the mana holding the effect in place. You can only disperse the effects of a spell if the mana you used to cast this spell is equal to or more than the mana used to cast the spell you are trying to dispel.<br/><br/>
+
+Empowering: When you empower this spell, you increase the amount of mana you can dispel.<br/><br/>
+
+Ritual (Requires 1cp worth of Salt or Chalk per spell level): When you cast this spell as a ritual you can increase the amount of mana you can dispel.</p>`,
   },
   // Dragon flight - Dragon
   {
@@ -1180,13 +1172,15 @@ const arcaneSpells3 = [
     plane: "Dragon",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    castTime: "Action",
+    range: "15ft",
+    type: "Buff, Utility",
+    target: "single",
+    components: "S",
+    duration: "1 Minute",
+    description: `<p>You target a willing creature within range that isn't wearing heavy armor, and cause dragon-like wings to grow out of their back that lasts for the duration, giving the creature a 40-foot flying speed. The wings make the creature count as one size larger when determining if they can fit in structures and vehicles and they gain a -1 to their defense.<br/><br/>
+
+Empowering: When you empower this spell, you increase the flying speed by 5 feet for each mana used to empower the spell.</p>`,
   },
   // Flick - Space
   {
@@ -1195,13 +1189,15 @@ const arcaneSpells3 = [
     plane: "Space",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    castTime: "Action",
+    range: "60ft",
+    type: "Utility",
+    target: "single",
+    components: "S",
+    duration: "Instantaneous",
+    description: `<p>You target a creature you can see in range and cause them to move 15 feet away from you, or to either side, and they must make a Power Save against your *Arcane DC* or fall prone. If they run into a large object or other creature they both take 1d6 collision damage for every 10 feet they are thrown.<br/><br/>
+
+Empowering: When you empower this spell you increase the distance a creature is thrown by 5 feet for each mana used to empower the spell.</p>`,
   },
   // Mirth's Magical Misplacement - Space
   {
@@ -1216,7 +1212,9 @@ const arcaneSpells3 = [
     target: "",
     components: "V,S",
     duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    description: `<p>You target a creature you can see within range and force them to make a Mind Save (a creature can choose to fail) against your Arcane DC or swap places with you, making them appear where you were, in the same position you were in when you swapped, and you appear where they were, (in the same position as they were).<br/><br/>
+
+Empowering: When you empower this spell, you increase the range by 15 feet for each mana used to empower the spell.</p>`,
   },
 
   // Pass - Ethereal
@@ -1226,13 +1224,15 @@ const arcaneSpells3 = [
     plane: "Ethereal",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
+    castTime: "Action",
+    range: "15ft",
+    type: "Utility",
+    target: "multiple",
     components: "V,S",
     duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    description: `<p style="margin-top:22%;">You target 3 willing creatures that you can see within range, and until the beginning of your next turn, they and everything they are carrying can pass through solid objects. If the creature is in a solid object when the spell ends they become restrained, and begin to suffocate. While in this state they are unable to deal damage with weapons, and they resist damage from physical weapons.<br/><br/>
+
+Empowering: When you empower this spell, you increase the number of creatures you can target by 1 or you can increase the number of rounds by 1 for each mana used to empower the spell.</p>`,
   },
   // Phase - Ethereal
   {
@@ -1241,13 +1241,13 @@ const arcaneSpells3 = [
     plane: "Ethereal",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
+    castTime: "Action",
     range: "Self",
-    type: "Protection, Utility",
+    type: "Buff",
     target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    components: "V",
+    duration: "1 Minute Concentration",
+    description: `<p>You phase in and out of the Ethereal Plane, making you difficult to hit. For the duration, attacks against you have disadvantage.</p>`,
   },
   // Pocket Dimension - Space
   {
@@ -1256,13 +1256,13 @@ const arcaneSpells3 = [
     plane: "Space",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
+    castTime: "Action",
     range: "Self",
-    type: "Protection, Utility",
+    type: "Utility",
     target: "",
     components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    duration: "1 Minute Concentration",
+    description: `<p>The first time you cast the spell you open a little rift in the space in front of you, inside the rift is your own little pocket dimension that is a 5-foot cube. While the rift is open you can put objects in or take them out. It doesn't matter how heavy an object is as long as it fits within the 5-foot cube. If it doesn’t fit within the cube or is a living creature it is shunted out to an unoccupied space within 5 feet of where the rift was. When you cast the spell again you open the same pocket dimension. If this spell is bound to an item the dimension is bound to the object.</p>`,
   },
   // Retake - Time
   {
@@ -1272,12 +1272,12 @@ const arcaneSpells3 = [
     mod: "",
     manaCost: 3,
     castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    range: "30ft",
+    type: "Buff",
+    target: "single",
+    components: "S",
+    duration: "Instantaneous",
+    description: `<p>If you see a creature within range fail an Ability Save, attack roll, or skill check, you can reverse time to allow them to reroll, and they gain advantage on the roll. They must keep the second roll.</p>`,
   },
   // See Invisibility - Ethereal
   {
@@ -1286,13 +1286,13 @@ const arcaneSpells3 = [
     plane: "Ethereal",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
+    castTime: "Action",
+    range: "Touch",
+    type: "Buff, Utility",
+    target: "single",
     components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    duration: "1 Hour",
+    description: `<p>You touch a willing creature and grant them the ability to see invisible objects and creatures within 60 feet of them for the duration.</p>`,
   },
   // Shared Skill - Eldritch
   {
@@ -1301,13 +1301,13 @@ const arcaneSpells3 = [
     plane: "Eldritch",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
+    castTime: "1 Minute",
+    range: "Touch",
+    type: "Buff",
+    target: "single",
     components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    duration: "8 Hours",
+    description: `<p>You touch a willing creature and create a pact between you, so that for the duration you use their skill level in a skill of your choice, and they use your skill level In a skill of their choice. For example, if you have 5 levels in Perception, and they have 5 levels in Insight, you make it so that for the duration you have 5 levels in Insight and they have 5 levels in Perception. This spell can't be cast on a creature that is under its effects from a previous casting.</p>`,
   },
   // Shift Gravity - Space
   {
@@ -1316,13 +1316,17 @@ const arcaneSpells3 = [
     plane: "Space",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
+    castTime: "Bonus Action",
     range: "Self",
-    type: "Protection, Utility",
+    type: "Utility",
     target: "",
     components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    duration: "1 Minute Concentration",
+    description: `<p style="margin-top:20%;">You shift the gravity for yourself for the duration, allowing you to walk up walls, on the sealing, or even up sheer cliffs. If you shift gravity and there is nothing there to stand on you will begin to fall in the direction you shifted gravity for yourself.<br/><br/>
+
+On subsequent turns you can use your bonus action to shift gravity in a different direction. If you lose concentration on the spell gravity returns to normal and you begin to fall.<br/><br/>
+
+Empowering: When you empower this spell, you increase the duration by 1 minute for each mana used to empower the spell.</p>`,
   },
   // Silence - Space
   {
@@ -1331,29 +1335,17 @@ const arcaneSpells3 = [
     plane: "Space",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
+    castTime: "Action",
+    range: "60ft",
+    type: "AOE. Buff, Debuff",
     target: "",
     components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    duration: "1 Minute concentration",
+    description: `<p>You create a bubble of silence in a 10 foot radius sphere, centered on a point you can see within range. No sound can enter or leave the area. Any creatures in the sphere are immune to thunder damage, and any spells that require verbal components can’t be cast while in the area.
+
+Empowering: When you empower this spell, you increase the radius of the sphere by 5 feet for each mana used to empower the spell.</p>`,
   },
   // Skybound Ritual - Material
-  {
-    name: "Skybound Ritual",
-    level: 3,
-    plane: "Material",
-    mod: "",
-    manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
-  },
   // Slow Bubble - Time
   {
     name: "Slow Bubble",
@@ -1361,74 +1353,38 @@ const arcaneSpells3 = [
     plane: "Time",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
+    castTime: "Bonus Action",
     range: "Self",
-    type: "Protection, Utility",
+    type: "AOE, Debuff",
     target: "",
     components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    duration: "1 Minute Concentration",
+    description: `<p style="margin-top:25%;">You create a bubble of slowed time in a 5-foot radius sphere around you that stays in place even if you move. While within the sphere a creature's movement speed is halved, they are only able to make one attack, and if they cast a spell it takes two rounds to cast. Attacks that target a creature through the wall of the sphere are made with advantage. And if a creature within the sphere is subject to an Ability Save they make it with disadvantage. If you leave the sphere the spell ends early.<br/><br/>
+
+Empowering: When you empower this spell, you increase the radius of the spell by 5 feet for each mana used to empower the spell.</p>`,
   },
   // Sonic Wave - Space
   {
     name: "Sonic Wave",
     level: 3,
     plane: "Space",
-    mod: "",
+    mod: "(Charge)",
     manaCost: 3,
-    castTime: "Reflexive Action",
+    castTime: "Action",
     range: "Self",
-    type: "Protection, Utility",
-    target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    type: "AOE, Energy",
+    target: "Multiple",
+    components: "V",
+    duration: "Instantaneous",
+    description: `<p style="margin-top:50%;">You create a 15-foot cone of supersonic sound waves. All creature in the area must make a Durability Save against your *Arcane DC* or take (16)3d10 + your Mind Score thunder damage (half as much damage on a success). Structures take double damage.<br/><br/>
+
+Empowering: When you empower this spell, you increase the damage by (5)1d10 for each mana used to empower the spell.<br/><br/>
+
+Charge: When you charge this spell you must maintain concentration on the spell until you release it. You can charge the spell for a number of rounds equal to half your Mind Score, and for each round you charge the spell you must expend the necessary mana to cast the spell, and the damage increases by (27)5d10 + your Mind Score each round.</p>`,
   },
   // Speed Bubble
-  {
-    name: "Speed Bubble",
-    level: 3,
-    plane: "Time",
-    mod: "",
-    manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
-  },
   // Summon Beast - Material
-  {
-    name: "Summon Beast",
-    level: 3,
-    plane: "Material",
-    mod: "",
-    manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
-  },
   // Summon Warriors - Material
-  {
-    name: "Summon Warriors",
-    level: 3,
-    plane: "Material",
-    mod: "",
-    manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
-  },
   // The Shadows Mask - Eldritch
   {
     name: "The Shadows Mask",
@@ -1436,13 +1392,17 @@ const arcaneSpells3 = [
     plane: "Eldritch",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
-    target: "",
+    castTime: "1 Minute",
+    range: "Touch",
+    type: "Utility",
+    target: "single",
     components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    duration: "instantaneous",
+    description: `<p style="margin-top:300px;">You target a creature you have summoned and bind its essence to the mask, making the summoned creature vanish into the mask, and the wood of the mask changes to look like the face of the summon. Once the summon is in the mask it no longer counts toward your total summoned creatures, and the mask becomes magical.<br/><br/>
+
+A creature holding the mask can use an action to put it on and expend 1 mana to become the creature in the mask. The creature uses the wearer’s Mind Score and Magic Attack bonus for its stats and bonuses, but the creature keeps all of the other alterations that happened before they were put into the mask, and those can’t be changed/altered in any way.<br/><br/>
+
+While in mask form the wearer must maintain concentration as if concentrating on a spell or revert back to their normal form. The wearer loses access to all of their normal traits and abilities, and only has those of the mask form. The wearer can stay in mask form for a number of hours equal to half their Mind Score (minimum of 1). If the creature’s Hit Points are reduced to 0 the mask breaks, and becomes plain wood again.</p>`,
   },
   // Trance - Arcane
   {
@@ -1451,28 +1411,124 @@ const arcaneSpells3 = [
     plane: "Arcane",
     mod: "",
     manaCost: 3,
-    castTime: "Reflexive Action",
-    range: "Self",
-    type: "Protection, Utility",
+    castTime: "1 Minute",
+    range: "15ft",
+    type: "Utility",
     target: "",
-    components: "V,S",
-    duration: "1 Round",
-    description: `<p style="margin-top:62%;"></p>`,
+    components: "V,S,M (incense)",
+    duration: "24 Hours",
+    description: `<p style="margin-top:50%;">You cause a willing creature to enter a dreamless trance, The trance lasts for 24 hours, or until the creature takes damage, or another creature uses their action to snap them out of the trance.<br/><br/>
+
+If a creature stays in the trance for the full 24 hours they gain the benefits of a long rest. If a creature uses a trance in place of a long rest more than once in a row they will gain a level of exhaustion for every consecutive use of the spell. This spell does not reduce a creature's exhaustion level.<br/><br/>
+
+Undead and non-humanoids don’t benefit from this spell.<br/><br/>
+
+Empowering: When you empower this spell, you increase the number of creatures by 1 for each mana used to empower the spell.</p>`,
   },
 ];
 const arcaneSpells4 = [];
 const arcaneSpells5 = [];
 
 // Faith Spells
-const heavens = [];
-const judgement = [];
-const abyss = [];
-const divine = [];
-const everWar = [];
-const various = [];
+const faithSpells0 = [
+  {
+    name: "Divine Touch",
+    level: 0,
+    plane: "Divine",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (bonus action at lvl 6)",
+    range: "30ft",
+    type: "Utility",
+    target: "",
+    components: "V,S",
+    duration: "Instantaneous",
+    description: `<p>You are able to cause minor things to happen. When you cast the spell choose from the following affects:<br/><br/>
+
+You point at a willing creature and cause all the dirt, grime and water to burn away, cleansing their body and clothing.
+You point at food that can fit in a 1-foot cube and cause it to become very flavorful, making even the worst food palatable.
+You point at small or tiny objects that fit within a 5 foot cube and cause them to organize themselves in a way that you would like.
+You cause the candles/torches within range to light on fire, or be snuffed out.</p>`,
+  },
+  {
+    name: "Guidance",
+    level: 0,
+    plane: "Heavens",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (bonus action at lvl 6)",
+    range: "30ft",
+    type: "Utilty",
+    target: "single",
+    components: "V",
+    duration: "1 Minute",
+    description: `<p>You pray for guidance for a creature within 30 feet of you. Before the spell ends if they make an Ability Save, attack roll, or skill check they get to add half your Mind Score (minimum of 1) to the roll.</p>`,
+  },
+  {
+    name: "Light",
+    level: 0,
+    plane: "Heavens",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (bonus action at lvl 6)",
+    range: "Touch",
+    type: "Utility",
+    target: "",
+    components: "S",
+    duration: "1 Hour",
+    description: `<p>You touch an object and cause it to glow, giving off light in a 30-foot radius sphere.</p>`,
+  },
+  {
+    name: "Minor Illusion",
+    level: 0,
+    plane: "Various",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (bonus action at lvl 6)",
+    range: "30ft",
+    type: "Utility",
+    target: "",
+    components: "S",
+    duration: "1 Minute",
+    description: `<p>You cause an illusion to appear at a point you can see within range. The illusion can’t move after it has been cast, and must fit within a 5-foot cube, but unless a creature uses their action to make a Perception Check against your Faith DC the illusion seems real.</p>`,
+  },
+  {
+    name: "Radiant Flame",
+    level: 0,
+    plane: "Heavens",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (bonus action at lvl 6)",
+    range: "60ft",
+    type: "Energy",
+    target: "single",
+    components: "V,S",
+    duration: "Instantaneous",
+    description: `<p>You cause a creature you can see within range to burst into radiant fire. The creature must make a Power Save against your Faith DC or take (3)1d6 + your Mind Score radiant damage (half as much on a success).</p>`,
+  },
+  {
+    name: "Sacrifice",
+    level: 0,
+    plane: "Hells",
+    mod: "",
+    manaCost: 0,
+    castTime: "Action (bonus action at lvl 6)",
+    range: "Self",
+    type: "Utility",
+    target: "",
+    components: "V,S,M (a drop of your blood)",
+    duration: "Instantaneous",
+    description: `<p>You take necrotic damage (this damage can’t be reduced) up to 5 x your Mind Score to gain 1 mana for every 5 Hit Points sacrificed.</p>`,
+  },
+];
+const faithSpells1 = [];
+const faithSpells2 = [];
+const faithSpells3 = [];
+const faithSpells4 = [];
+const faithSpells5 = [];
 
 // Nature Spells
-const air = [];
+const natureSpells0 = [];
 const earth = [];
 const fire = [];
 const water = [];
@@ -1483,6 +1539,9 @@ let aura = [];
 let featuredSpell;
 let displayedSpell = 0;
 let currentArray;
+
+// var for setting the specific shelf
+let shelfSection = "faith";
 
 // getting the Shelfs
 let shelf0 = document.getElementById("lvl0Shelf");
@@ -1512,7 +1571,7 @@ let spellDuration = document.getElementById("spellDuration");
 let spellDescription = document.getElementById("spellDescription");
 
 // Book spine styling for the shelfs
-const arcaneSpines = [
+const bookSpines = [
   "img/BookSpines/arcane/ArcaneSpine1.jpg",
   "img/BookSpines/nature/NatureSpine1.png",
   "img/BookSpines/nature/NatureSpine3.png",
@@ -1528,6 +1587,24 @@ const arcaneSpines = [
 let flipped = false;
 let sameCard = "";
 
+// Defining which shelf to be generated
+function redirectToArcane() {
+  shelfSection = "arcane";
+  window.location.href = "arcane.html";
+}
+function redirectToFaith() {
+  shelfSection = "faith";
+  window.location.href = "faith.html";
+}
+function redirectToNature() {
+  shelfSection = "nature";
+  window.location.href = "nature.html";
+}
+function redirectToLobby() {
+  shelfSection = "";
+  window.location.href = "index.html";
+}
+
 // Shelf Functions
 
 function generateShelf() {
@@ -1535,39 +1612,92 @@ function generateShelf() {
   generateSpellLvl0();
   generateSpellLvl1();
   generateSpellLvl2();
+  generateSpellLvl3();
 }
 
 function generateSpellLvl0() {
-  let length = arcaneSpells0.length;
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * arcaneSpines.length);
-    const selectedSpine = arcaneSpines[randomIndex];
-    let p = document.createElement("p");
-    p.innerText = `${arcaneSpells0[i].name} - || - ${arcaneSpells0[i].plane} Plane`;
-    p.value = i;
-    p.classList.add("spell", `${arcaneSpells0[i].plane}`);
-    p.id = `lv0-${i}`;
-    p.style.backgroundImage = `url('${selectedSpine}')`;
-    p.addEventListener("click", () => {
-      displayedSpell = p.value;
-      currentArray = "lvl0";
-      if (sameCard === "" || sameCard != p.id) {
-        flipCard();
-        sameCard = p.id;
-      } else {
-        resetCard();
-        sameCard = "";
-      }
-    });
-    shelf0.appendChild(p);
+  if (shelfSection === "arcane") {
+    let length = arcaneSpells0.length;
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * bookSpines.length);
+      const selectedSpine = bookSpines[randomIndex];
+      let p = document.createElement("p");
+      p.innerText = `${arcaneSpells0[i].name} - || - ${arcaneSpells0[i].plane} Plane`;
+      p.value = i;
+      p.classList.add("spell", `${arcaneSpells0[i].plane}`);
+      p.id = `lv0-${i}`;
+      p.style.backgroundImage = `url('${selectedSpine}')`;
+      p.addEventListener("click", () => {
+        displayedSpell = p.value;
+        currentArray = "alvl0";
+        if (sameCard === "" || sameCard != p.id) {
+          flipCard();
+          sameCard = p.id;
+        } else {
+          resetCard();
+          sameCard = "";
+        }
+      });
+      shelf0.appendChild(p);
+    }
   }
+
+  if (shelfSection === "faith") {
+    let length = faithSpells0.length;
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * bookSpines.length);
+      const selectedSpine = bookSpines[randomIndex];
+      let p = document.createElement("p");
+      p.innerText = `${faithSpells0[i].name} - || - ${faithSpells0[i].plane} Plane`;
+      p.value = i;
+      p.classList.add("spell", `${faithSpells0[i].plane}`);
+      p.id = `lv0-${i}`;
+      p.style.backgroundImage = `url('${selectedSpine}')`;
+      p.addEventListener("click", () => {
+        displayedSpell = p.value;
+        currentArray = "flvl0";
+        if (sameCard === "" || sameCard != p.id) {
+          flipCard();
+          sameCard = p.id;
+        } else {
+          resetCard();
+          sameCard = "";
+        }
+      });
+      shelf0.appendChild(p);
+    }
+  }
+
+  // let length = natureSpells0.length;
+  // for (let i = 0; i < length; i++) {
+  //   const randomIndex = Math.floor(Math.random() * bookSpines.length);
+  //   const selectedSpine = bookSpines[randomIndex];
+  //   let p = document.createElement("p");
+  //   p.innerText = `${natureSpells0[i].name} - || - ${natureSpells0[i].plane} Plane`;
+  //   p.value = i;
+  //   p.classList.add("spell", `${natureSpells0[i].plane}`);
+  //   p.id = `lv0-${i}`;
+  //   p.style.backgroundImage = `url('${selectedSpine}')`;
+  //   p.addEventListener("click", () => {
+  //     displayedSpell = p.value;
+  //     currentArray = "nlvl0";
+  //     if (sameCard === "" || sameCard != p.id) {
+  //       flipCard();
+  //       sameCard = p.id;
+  //     } else {
+  //       resetCard();
+  //       sameCard = "";
+  //     }
+  //   });
+  //   shelf0.appendChild(p);
+  // }
 }
 
 function generateSpellLvl1() {
   let length = arcaneSpells1.length;
   for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * arcaneSpines.length);
-    const selectedSpine = arcaneSpines[randomIndex];
+    const randomIndex = Math.floor(Math.random() * bookSpines.length);
+    const selectedSpine = bookSpines[randomIndex];
     let p = document.createElement("p");
     p.innerText = `${arcaneSpells1[i].name} - || - ${arcaneSpells1[i].plane} Plane`;
     p.value = i;
@@ -1576,7 +1706,7 @@ function generateSpellLvl1() {
     p.style.backgroundImage = `url('${selectedSpine}')`;
     p.addEventListener("click", () => {
       displayedSpell = p.value;
-      currentArray = "lvl1";
+      currentArray = "alvl1";
       if (sameCard === "" || sameCard != p.id) {
         flipCard();
         sameCard = p.id;
@@ -1592,8 +1722,8 @@ function generateSpellLvl1() {
 function generateSpellLvl2() {
   let length = arcaneSpells2.length;
   for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * arcaneSpines.length);
-    const selectedSpine = arcaneSpines[randomIndex];
+    const randomIndex = Math.floor(Math.random() * bookSpines.length);
+    const selectedSpine = bookSpines[randomIndex];
     let p = document.createElement("p");
     p.innerText = `${arcaneSpells2[i].name} - || - ${arcaneSpells2[i].plane} Plane`;
     p.value = i;
@@ -1602,7 +1732,7 @@ function generateSpellLvl2() {
     p.style.backgroundImage = `url('${selectedSpine}')`;
     p.addEventListener("click", () => {
       displayedSpell = p.value;
-      currentArray = "lvl2";
+      currentArray = "alvl2";
       if (sameCard === "" || sameCard != p.id) {
         flipCard();
         sameCard = p.id;
@@ -1615,10 +1745,36 @@ function generateSpellLvl2() {
   }
 }
 
+function generateSpellLvl3() {
+  let length = arcaneSpells3.length;
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * bookSpines.length);
+    const selectedSpine = bookSpines[randomIndex];
+    let p = document.createElement("p");
+    p.innerText = `${arcaneSpells3[i].name} - || - ${arcaneSpells3[i].plane} Plane`;
+    p.value = i;
+    p.classList.add("spell", `${arcaneSpells3[i].plane}`);
+    p.id = `lv3-${i}`;
+    p.style.backgroundImage = `url('${selectedSpine}')`;
+    p.addEventListener("click", () => {
+      displayedSpell = p.value;
+      currentArray = "alvl3";
+      if (sameCard === "" || sameCard != p.id) {
+        flipCard();
+        sameCard = p.id;
+      } else {
+        resetCard();
+        sameCard = "";
+      }
+    });
+    shelf3.appendChild(p);
+  }
+}
+
 // Card & Display Functions
 
 function displaySpell() {
-  if (currentArray === "lvl0") {
+  if (currentArray === "alvl0") {
     spellName.innerText = arcaneSpells0[displayedSpell].name;
     spellLevel.innerText = `Level ${arcaneSpells0[displayedSpell].level}`;
     spellPlane.innerText = arcaneSpells0[displayedSpell].plane;
@@ -1631,7 +1787,20 @@ function displaySpell() {
     spellDuration.innerText = `Duration: ${arcaneSpells0[displayedSpell].duration}`;
     spellDescription.innerHTML = arcaneSpells0[displayedSpell].description;
   }
-  if (currentArray === "lvl1") {
+  if (currentArray === "flvl0") {
+    spellName.innerText = faithSpells0[displayedSpell].name;
+    spellLevel.innerText = `Level ${faithSpells0[displayedSpell].level}`;
+    spellPlane.innerText = faithSpells0[displayedSpell].plane;
+    spellMod.innerText = faithSpells0[displayedSpell].mod;
+    spellCost.innerText = `Mana Cost: ${faithSpells0[displayedSpell].manaCost}`;
+    spellCastTime.innerText = `Cast Time: ${faithSpells0[displayedSpell].castTime}`;
+    spellRange.innerText = `Range: ${faithSpells0[displayedSpell].range}`;
+    spellType.innerText = `Type: ${faithSpells0[displayedSpell].type}`;
+    spellComponents.innerHTML = `Components: ${faithSpells0[displayedSpell].components}`;
+    spellDuration.innerText = `Duration: ${faithSpells0[displayedSpell].duration}`;
+    spellDescription.innerHTML = faithSpells0[displayedSpell].description;
+  }
+  if (currentArray === "alvl1") {
     spellName.innerText = arcaneSpells1[displayedSpell].name;
     spellLevel.innerText = `Level: ${arcaneSpells1[displayedSpell].level}`;
     spellPlane.innerText = arcaneSpells1[displayedSpell].plane;
@@ -1644,7 +1813,7 @@ function displaySpell() {
     spellDuration.innerText = `Duration: ${arcaneSpells1[displayedSpell].duration}`;
     spellDescription.innerHTML = arcaneSpells1[displayedSpell].description;
   }
-  if (currentArray === "lvl2") {
+  if (currentArray === "alvl2") {
     spellName.innerText = arcaneSpells2[displayedSpell].name;
     spellLevel.innerText = `Level: ${arcaneSpells2[displayedSpell].level}`;
     spellPlane.innerText = arcaneSpells2[displayedSpell].plane;
@@ -1656,6 +1825,19 @@ function displaySpell() {
     spellComponents.innerText = `Components: ${arcaneSpells2[displayedSpell].components}`;
     spellDuration.innerText = `Duration: ${arcaneSpells2[displayedSpell].duration}`;
     spellDescription.innerHTML = arcaneSpells2[displayedSpell].description;
+  }
+  if (currentArray === "alvl3") {
+    spellName.innerText = arcaneSpells3[displayedSpell].name;
+    spellLevel.innerText = `Level: ${arcaneSpells3[displayedSpell].level}`;
+    spellPlane.innerText = arcaneSpells3[displayedSpell].plane;
+    spellMod.innerText = arcaneSpells3[displayedSpell].mod;
+    spellCost.innerText = `Mana Cost: ${arcaneSpells3[displayedSpell].manaCost}`;
+    spellCastTime.innerText = `Cast Time: ${arcaneSpells3[displayedSpell].castTime}`;
+    spellRange.innerText = `Range: ${arcaneSpells3[displayedSpell].range}`;
+    spellType.innerText = `Type: ${arcaneSpells3[displayedSpell].type}`;
+    spellComponents.innerText = `Components: ${arcaneSpells3[displayedSpell].components}`;
+    spellDuration.innerText = `Duration: ${arcaneSpells3[displayedSpell].duration}`;
+    spellDescription.innerHTML = arcaneSpells3[displayedSpell].description;
   }
 }
 

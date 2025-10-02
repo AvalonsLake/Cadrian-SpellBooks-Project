@@ -19,6 +19,17 @@ nav a {
   margin: 15px;
 }
 
+nav button {
+  color: whitesmoke;
+  font-size: 25px;
+  margin: 15px;
+
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .mainpage {
   display: flex;
   align-items: center;
@@ -283,6 +294,21 @@ nav a {
   align-items: center;
   overflow-y: auto;
   position: static;
+}
+
+.addSpellPage {
+  background-color: #523f30;
+  padding: 10px;
+  width: 600px;
+  /* display: none; */
+}
+
+.addSpellPage input {
+  margin: 10px;
+}
+
+.addSpellPage {
+  display: none;
 }
 
 /* Mobile Styles */

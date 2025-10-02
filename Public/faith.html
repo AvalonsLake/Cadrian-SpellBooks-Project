@@ -9,54 +9,243 @@
   </head>
   <body>
     <nav>
-      <a href="arcane.html">Arcane Section</a>
-      <a href="index.html">The Lobby</a>
-      <a href="nature.html">Nature Section</a>
+      <button onclick="redirectToArcane()">Arcane Section</button>
+      <button onclick="redirectToLobby()">Lobby</button>
+      <button onclick="redirectToNature()">Nature Section</button>
     </nav>
     <div class="mainpage">
       <div class="shelf">
         <h3>The Shelf / index</h3>
-        <section class="filter">
-          <section class="planes">
-            <label for="arcane">Arcane</label>
-            <input type="checkbox" id="arcane" name="arcane" /><br /><br />
-            <label for="dragon">Dragon</label>
-            <input type="checkbox" id="dragon" name="dragon" /><br /><br />
-            <label for="space">Space</label>
-            <input type="checkbox" id="space" name="space" /><br /><br />
-            <label for="time">Time</label>
-            <input type="checkbox" id="time" name="time" /><br /><br />
-            <label for="ethereal">Ethereal</label>
-            <input type="checkbox" id="ethereal" name="ethereal" /><br /><br />
-            <label for="eldritch">Eldritch</label>
-            <input type="checkbox" id="eldritch" name="eldritch" /><br /><br />
+        <button id="showFltr" onclick="showFilter()">Show Filter</button>
+        <button id="hideFltr" onclick="hideFilter()">Hide Filter</button>
+        <div class="filter">
+          <div class="settings">
+            <section class="planes">
+              <h3><u>Planes</u></h3>
+              <label for="abyss">Abyss</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="abyss"
+                name="abyss"
+                onclick="abyssFilter()"
+                checked
+              />
+              <label for="dragon">Dragon</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="dragon"
+                name="dragon"
+                onclick="dragonFilter()"
+                checked
+              />
+              <label for="space">Space</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="space"
+                name="space"
+                onclick="spaceFilter()"
+                checked
+              />
+              <label for="time">Time</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="time"
+                name="time"
+                onclick="timeFilter()"
+                checked
+              />
+              <label for="ethereal">Ethereal</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="ethereal"
+                name="ethereal"
+                onclick="etherealFilter()"
+                checked
+              />
+              <label for="eldritch">Eldritch</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="eldritch"
+                name="eldritch"
+                onclick="eldritchFilter()"
+                checked
+              />
+              <label for="material">Material</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="material"
+                name="material"
+                onclick="materialFilter()"
+                checked
+              />
+            </section>
+
+            <section class="level">
+              <h3><u>Levels</u></h3>
+              <label for="level0">Level 0</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level0"
+                name="level0"
+                onclick="filterLevel0()"
+                checked
+              />
+              <label for="level5">Level 5</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level5"
+                name="level5"
+                onclick="filterLevel5()"
+                checked
+              />
+              <label for="level1">Level 1</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level1"
+                name="level1"
+                onclick="filterLevel1()"
+                checked
+              />
+              <label for="level6">Level 6</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level6"
+                name="level6"
+                onclick="filterLevel6()"
+                checked
+              />
+              <label for="level2">Level 2</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level2"
+                name="level2"
+                onclick="filterLevel2()"
+                checked
+              />
+              <label for="level7">Level 7</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level7"
+                name="level7"
+                onclick="filterLevel7()"
+                checked
+              />
+              <label for="level3">Level 3</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level3"
+                name="level3"
+                onclick="filterLevel3()"
+                checked
+              />
+              <label for="level8">Level 8</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level8"
+                name="level8"
+                onclick="filterLevel8()"
+                checked
+              />
+              <label for="Level 4">Level 4</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="Level 4"
+                name="Level 4"
+                onclick="filterLevel4()"
+                checked
+              />
+              <label for="Level 9">Level 9</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="Level 9"
+                name="Level 9"
+                onclick="filterLevel9()"
+                checked
+              />
+              <label for="level10">Level 10</label>
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="level10"
+                name="level10"
+                onclick="filterLevel10()"
+                checked
+              />
+            </section>
+
+            <!-- <section class="misc">
+              <h3><u>Misc</u></h3>
+              <label for="utility">Utility</label>
+              <input type="checkbox" id="utility" name="utility" />
+              <label for="ritual">Ritual</label>
+              <input type="checkbox" id="ritual" name="ritual" />
+              <label for="manaCost">Mana Cost</label>
+              <input type="checkbox" id="manaCost" name="manaCost" />
+              <label for="castTime">Cast Time</label>
+              <select id="castTime" name="castTime">
+                <option value="None">None</option>
+                <option value="Action">Arcane</option>
+                <option value="Bonus-Action">Bonus Action</option>
+              </select>
+            </section> -->
+          </div>
+
+          <section class="apply">
+            <button onclick="resetFilter()">Select All</button>
+            <button onclick="clearFilter()">Clear</button>
           </section>
-          <section class="Level">
-            <label for="level0">Level 0</label>
-            <input type="checkbox" id="level0" name="level0" /><br /><br />
-            <label for="level1">Level 1</label>
-            <input type="checkbox" id="level1" name="level1" /><br /><br />
-            <label for="level2">Level 2</label>
-            <input type="checkbox" id="level2" name="level2" /><br /><br />
-            <label for="level3">Level 3</label>
-            <input type="checkbox" id="level3" name="level3" /><br /><br />
-            <label for="Level 4">Level 4</label>
-            <input type="checkbox" id="Level 4" name="Level 4" /><br /><br />
-            <label for="level5">Level 5</label>
-            <input type="checkbox" id="level5" name="level5" /><br /><br />
-            <label for="level6">Level 6</label>
-            <input type="checkbox" id="level6" name="level6" /><br /><br />
-            <label for="level7">Level 7</label>
-            <input type="checkbox" id="level7" name="level7" /><br /><br />
-            <label for="level8">Level 8</label>
-            <input type="checkbox" id="level8" name="level8" /><br /><br />
-            <label for="Level 9">Level 9</label>
-            <input type="checkbox" id="Level 9" name="Level 9" /><br /><br />
-            <label for="level10">Level 10</label>
-            <input type="checkbox" id="level10" name="level10" /><br /><br />
-          </section>
-        </section>
-        <div id="faithShelf"></div>
+        </div>
+        <div id="lvl0Shelf">
+          <h3><u>Level 0</u></h3>
+        </div>
+        <div id="lvl1Shelf">
+          <h3><u>Level 1</u></h3>
+        </div>
+        <div id="lvl2Shelf">
+          <h3><u>Level 2</u></h3>
+        </div>
+        <div id="lvl3Shelf">
+          <h3><u>Level 3</u></h3>
+        </div>
+
+        <div id="lvl4Shelf">
+          <h3><u>Level 4</u></h3>
+        </div>
+        <div id="lvl5Shelf">
+          <h3><u>Level 5</u></h3>
+        </div>
+        <div id="lvl6Shelf">
+          <h3><u>Level 6</u></h3>
+        </div>
+        <div id="lvl7Shelf">
+          <h3><u>Level 7</u></h3>
+        </div>
+        <div id="lvl8Shelf">
+          <h3><u>Level 8</u></h3>
+        </div>
+        <div id="lvl9Shelf">
+          <h3><u>Level 9</u></h3>
+        </div>
+        <div id="lvl10Shelf">
+          <h3><u>Level 10</u></h3>
+        </div>
       </div>
 
       <div class="card">
@@ -67,7 +256,7 @@
           <div class="spellDetails">
             <p id="spellLevel"></p>
             <p id="spellPlane"></p>
-            <p id="spellRitual"></p>
+            <p id="spellMod"></p>
             <p id="spellCost"></p>
             <p id="spellCastTime"></p>
             <p id="spellRange"></p>
