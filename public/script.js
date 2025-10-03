@@ -1633,7 +1633,7 @@ let displayedSpell = 0;
 let currentArray;
 
 // var for setting the specific shelf
-let shelfSection = "";
+let shelfSection = "arcane";
 
 // getting the Shelfs
 let shelf0 = document.getElementById("lvl0Shelf");

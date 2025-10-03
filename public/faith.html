@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>The Faith Section</title>
-    <script defer src="script.js"></script>
+    <script defer src="faithScript.js"></script>
   </head>
   <body>
     <nav>
-      <button onclick="redirectToArcane()">Arcane Section</button>
-      <button onclick="redirectToLobby()">Lobby</button>
-      <button onclick="redirectToNature()">Nature Section</button>
+      <a href="arcane.html">Arcane Section</a>
+      <a href="index.html">The Lobby</a>
+      <a href="nature.html">Nature Section</a>
     </nav>
     <div class="mainpage">
       <div class="shelf">
@@ -31,58 +31,58 @@
                 onclick="abyssFilter()"
                 checked
               />
-              <label for="dragon">Dragon</label>
+              <label for="divine">Divine</label>
               <input
                 class="checkbox"
                 type="checkbox"
-                id="dragon"
-                name="dragon"
-                onclick="dragonFilter()"
+                id="divine"
+                name="divine"
+                onclick="divineFilter()"
                 checked
               />
-              <label for="space">Space</label>
+              <label for="everWar">EverWar</label>
               <input
                 class="checkbox"
                 type="checkbox"
-                id="space"
-                name="space"
-                onclick="spaceFilter()"
+                id="everWar"
+                name="everWar"
+                onclick="everWarFilter()"
                 checked
               />
-              <label for="time">Time</label>
+              <label for="heavens">Heavens</label>
               <input
                 class="checkbox"
                 type="checkbox"
-                id="time"
-                name="time"
-                onclick="timeFilter()"
+                id="heavens"
+                name="heavens"
+                onclick="heavensFilter()"
                 checked
               />
-              <label for="ethereal">Ethereal</label>
+              <label for="hells">Hells</label>
               <input
                 class="checkbox"
                 type="checkbox"
-                id="ethereal"
-                name="ethereal"
-                onclick="etherealFilter()"
+                id="hells"
+                name="hells"
+                onclick="hellsFilter()"
                 checked
               />
-              <label for="eldritch">Eldritch</label>
+              <label for="judgement">Judgement</label>
               <input
                 class="checkbox"
                 type="checkbox"
-                id="eldritch"
-                name="eldritch"
-                onclick="eldritchFilter()"
+                id="judgement"
+                name="judgement"
+                onclick="judgementFilter()"
                 checked
               />
-              <label for="material">Material</label>
+              <label for="various">Various</label>
               <input
                 class="checkbox"
                 type="checkbox"
-                id="material"
-                name="material"
-                onclick="materialFilter()"
+                id="various"
+                name="various"
+                onclick="variousFilter()"
                 checked
               />
             </section>
